@@ -14,6 +14,10 @@
 		9BBD32742572A2C600FDA7CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBD32732572A2C600FDA7CC /* Assets.xcassets */; };
 		9BBD32772572A2C600FDA7CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBD32752572A2C600FDA7CC /* LaunchScreen.storyboard */; };
 		9BBD327A2572A2C600FDA7CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD32792572A2C600FDA7CC /* main.m */; };
+		9BBD37A82577B8F800FDA7CC /* LFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37A72577B8F800FDA7CC /* LFUser.m */; };
+		9BBD37AB2577BBF800FDA7CC /* LFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37AA2577BBF800FDA7CC /* LFLoginViewController.m */; };
+		9BBD37AE2577BC7E00FDA7CC /* LFRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37AD2577BC7E00FDA7CC /* LFRegisterViewController.m */; };
+		9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37B02577F37E00FDA7CC /* LFLoginContentView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,14 @@
 		9BBD32762572A2C600FDA7CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BBD32782572A2C600FDA7CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BBD32792572A2C600FDA7CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9BBD37A62577B8F800FDA7CC /* LFUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFUser.h; sourceTree = "<group>"; };
+		9BBD37A72577B8F800FDA7CC /* LFUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFUser.m; sourceTree = "<group>"; };
+		9BBD37A92577BBF800FDA7CC /* LFLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFLoginViewController.h; sourceTree = "<group>"; };
+		9BBD37AA2577BBF800FDA7CC /* LFLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFLoginViewController.m; sourceTree = "<group>"; };
+		9BBD37AC2577BC7E00FDA7CC /* LFRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFRegisterViewController.h; sourceTree = "<group>"; };
+		9BBD37AD2577BC7E00FDA7CC /* LFRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFRegisterViewController.m; sourceTree = "<group>"; };
+		9BBD37AF2577F37E00FDA7CC /* LFLoginContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFLoginContentView.h; sourceTree = "<group>"; };
+		9BBD37B02577F37E00FDA7CC /* LFLoginContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFLoginContentView.m; sourceTree = "<group>"; };
 		A3E688FAE9198C1219CB4311 /* Pods_life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5C4A66B3519C8C9F23DD44 /* Pods-life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-life.debug.xcconfig"; path = "Target Support Files/Pods-life/Pods-life.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +250,10 @@
 		9BBD379D2577AB2300FDA7CC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9BBD37A92577BBF800FDA7CC /* LFLoginViewController.h */,
+				9BBD37AA2577BBF800FDA7CC /* LFLoginViewController.m */,
+				9BBD37AC2577BC7E00FDA7CC /* LFRegisterViewController.h */,
+				9BBD37AD2577BC7E00FDA7CC /* LFRegisterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,6 +261,8 @@
 		9BBD379E2577AB2300FDA7CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9BBD37A62577B8F800FDA7CC /* LFUser.h */,
+				9BBD37A72577B8F800FDA7CC /* LFUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,6 +270,8 @@
 		9BBD379F2577AB2300FDA7CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9BBD37AF2577F37E00FDA7CC /* LFLoginContentView.h */,
+				9BBD37B02577F37E00FDA7CC /* LFLoginContentView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -436,10 +456,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */,
 				9BBD327A2572A2C600FDA7CC /* main.m in Sources */,
 				9BBD326C2572A2C500FDA7CC /* ViewController.m in Sources */,
+				9BBD37AB2577BBF800FDA7CC /* LFLoginViewController.m in Sources */,
 				9BBD32722572A2C500FDA7CC /* life.xcdatamodeld in Sources */,
 				9BBD32662572A2C500FDA7CC /* AppDelegate.m in Sources */,
+				9BBD37A82577B8F800FDA7CC /* LFUser.m in Sources */,
+				9BBD37AE2577BC7E00FDA7CC /* LFRegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
