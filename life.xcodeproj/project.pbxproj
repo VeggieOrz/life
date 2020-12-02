@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				9BBD32632572A2C500FDA7CC /* life */,
+				9BBD378A2577A82400FDA7CC /* Resources */,
 				9BBD32622572A2C500FDA7CC /* Products */,
 				F2C76526421329333FDB4A62 /* Pods */,
 				C780945A3B41848E0535410E /* Frameworks */,
@@ -65,17 +66,244 @@
 		9BBD32632572A2C500FDA7CC /* life */ = {
 			isa = PBXGroup;
 			children = (
-				9BBD32642572A2C500FDA7CC /* AppDelegate.h */,
-				9BBD32652572A2C500FDA7CC /* AppDelegate.m */,
+				9BBD378D2577A8FC00FDA7CC /* Classes */,
 				9BBD326A2572A2C500FDA7CC /* ViewController.h */,
 				9BBD326B2572A2C500FDA7CC /* ViewController.m */,
-				9BBD32732572A2C600FDA7CC /* Assets.xcassets */,
-				9BBD32752572A2C600FDA7CC /* LaunchScreen.storyboard */,
 				9BBD32782572A2C600FDA7CC /* Info.plist */,
-				9BBD32792572A2C600FDA7CC /* main.m */,
 				9BBD32702572A2C500FDA7CC /* life.xcdatamodeld */,
 			);
 			path = life;
+			sourceTree = "<group>";
+		};
+		9BBD378A2577A82400FDA7CC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9BBD37A52577AFC800FDA7CC /* Storyboard */,
+				9BBD378C2577A88300FDA7CC /* Localization */,
+				9BBD378B2577A87200FDA7CC /* Fonts */,
+				9BBD32732572A2C600FDA7CC /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9BBD378B2577A87200FDA7CC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9BBD378C2577A88300FDA7CC /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		9BBD378D2577A8FC00FDA7CC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9BBD37A42577AFA100FDA7CC /* Main */,
+				9BBD37932577A9FA00FDA7CC /* LifeCommon */,
+				9BBD37922577A9ED00FDA7CC /* LifeUICommon */,
+				9BBD37942577AB2200FDA7CC /* LifeEdit */,
+				9BBD37A02577AB2300FDA7CC /* LifeLine */,
+				9BBD379C2577AB2300FDA7CC /* LifeLogin */,
+				9BBD37982577AB2200FDA7CC /* LifeSetting */,
+				9BBD378E2577A90800FDA7CC /* LifeHome */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9BBD378E2577A90800FDA7CC /* LifeHome */ = {
+			isa = PBXGroup;
+			children = (
+				9BBD37912577A95600FDA7CC /* Controller */,
+				9BBD37902577A94900FDA7CC /* View */,
+				9BBD378F2577A93400FDA7CC /* Model */,
+			);
+			path = LifeHome;
+			sourceTree = "<group>";
+		};
+		9BBD378F2577A93400FDA7CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9BBD37902577A94900FDA7CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9BBD37912577A95600FDA7CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9BBD37922577A9ED00FDA7CC /* LifeUICommon */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LifeUICommon;
+			sourceTree = "<group>";
+		};
+		9BBD37932577A9FA00FDA7CC /* LifeCommon */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LifeCommon;
+			sourceTree = "<group>";
+		};
+		9BBD37942577AB2200FDA7CC /* LifeEdit */ = {
+			isa = PBXGroup;
+			children = (
+				9BBD37952577AB2200FDA7CC /* Controller */,
+				9BBD37962577AB2200FDA7CC /* Model */,
+				9BBD37972577AB2200FDA7CC /* View */,
+			);
+			name = LifeEdit;
+			path = life/Classes/LifeEdit;
+			sourceTree = SOURCE_ROOT;
+		};
+		9BBD37952577AB2200FDA7CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9BBD37962577AB2200FDA7CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9BBD37972577AB2200FDA7CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9BBD37982577AB2200FDA7CC /* LifeSetting */ = {
+			isa = PBXGroup;
+			children = (
+				9BBD37992577AB2200FDA7CC /* Controller */,
+				9BBD379A2577AB2300FDA7CC /* Model */,
+				9BBD379B2577AB2300FDA7CC /* View */,
+			);
+			name = LifeSetting;
+			path = life/Classes/LifeSetting;
+			sourceTree = SOURCE_ROOT;
+		};
+		9BBD37992577AB2200FDA7CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9BBD379A2577AB2300FDA7CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9BBD379B2577AB2300FDA7CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9BBD379C2577AB2300FDA7CC /* LifeLogin */ = {
+			isa = PBXGroup;
+			children = (
+				9BBD379D2577AB2300FDA7CC /* Controller */,
+				9BBD379E2577AB2300FDA7CC /* Model */,
+				9BBD379F2577AB2300FDA7CC /* View */,
+			);
+			name = LifeLogin;
+			path = life/Classes/LifeLogin;
+			sourceTree = SOURCE_ROOT;
+		};
+		9BBD379D2577AB2300FDA7CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9BBD379E2577AB2300FDA7CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9BBD379F2577AB2300FDA7CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9BBD37A02577AB2300FDA7CC /* LifeLine */ = {
+			isa = PBXGroup;
+			children = (
+				9BBD37A12577AB2300FDA7CC /* Controller */,
+				9BBD37A22577AB2300FDA7CC /* Model */,
+				9BBD37A32577AB2300FDA7CC /* View */,
+			);
+			name = LifeLine;
+			path = life/Classes/LifeLine;
+			sourceTree = SOURCE_ROOT;
+		};
+		9BBD37A12577AB2300FDA7CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9BBD37A22577AB2300FDA7CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9BBD37A32577AB2300FDA7CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9BBD37A42577AFA100FDA7CC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9BBD32642572A2C500FDA7CC /* AppDelegate.h */,
+				9BBD32652572A2C500FDA7CC /* AppDelegate.m */,
+				9BBD32792572A2C600FDA7CC /* main.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9BBD37A52577AFC800FDA7CC /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9BBD32752572A2C600FDA7CC /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		C780945A3B41848E0535410E /* Frameworks */ = {
@@ -92,7 +320,6 @@
 				DD5C4A66B3519C8C9F23DD44 /* Pods-life.debug.xcconfig */,
 				01CFFBFD9884916CF7AEFC6B /* Pods-life.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
