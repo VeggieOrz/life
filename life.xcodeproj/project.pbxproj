@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		96A88E3CFBFB053CAE4590B7 /* Pods_life.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E688FAE9198C1219CB4311 /* Pods_life.framework */; };
 		9BBD32662572A2C500FDA7CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD32652572A2C500FDA7CC /* AppDelegate.m */; };
-		9BBD326C2572A2C500FDA7CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD326B2572A2C500FDA7CC /* ViewController.m */; };
 		9BBD32722572A2C500FDA7CC /* life.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD32702572A2C500FDA7CC /* life.xcdatamodeld */; };
 		9BBD32742572A2C600FDA7CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBD32732572A2C600FDA7CC /* Assets.xcassets */; };
 		9BBD32772572A2C600FDA7CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBD32752572A2C600FDA7CC /* LaunchScreen.storyboard */; };
@@ -18,6 +17,8 @@
 		9BBD37AB2577BBF800FDA7CC /* LFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37AA2577BBF800FDA7CC /* LFLoginViewController.m */; };
 		9BBD37AE2577BC7E00FDA7CC /* LFRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37AD2577BC7E00FDA7CC /* LFRegisterViewController.m */; };
 		9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37B02577F37E00FDA7CC /* LFLoginContentView.m */; };
+		9BBD37B42578775200FDA7CC /* LFTextEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37B32578775200FDA7CC /* LFTextEditView.m */; };
+		9BBD37B92578AFC300FDA7CC /* UIColor+RGBA.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37B82578AFC300FDA7CC /* UIColor+RGBA.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +26,6 @@
 		9BBD32612572A2C500FDA7CC /* life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = life.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBD32642572A2C500FDA7CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BBD32652572A2C500FDA7CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9BBD326A2572A2C500FDA7CC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9BBD326B2572A2C500FDA7CC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9BBD32712572A2C500FDA7CC /* life.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = life.xcdatamodel; sourceTree = "<group>"; };
 		9BBD32732572A2C600FDA7CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BBD32762572A2C600FDA7CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +39,10 @@
 		9BBD37AD2577BC7E00FDA7CC /* LFRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFRegisterViewController.m; sourceTree = "<group>"; };
 		9BBD37AF2577F37E00FDA7CC /* LFLoginContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFLoginContentView.h; sourceTree = "<group>"; };
 		9BBD37B02577F37E00FDA7CC /* LFLoginContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFLoginContentView.m; sourceTree = "<group>"; };
+		9BBD37B22578775200FDA7CC /* LFTextEditView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTextEditView.h; sourceTree = "<group>"; };
+		9BBD37B32578775200FDA7CC /* LFTextEditView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFTextEditView.m; sourceTree = "<group>"; };
+		9BBD37B72578AFC300FDA7CC /* UIColor+RGBA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGBA.h"; sourceTree = "<group>"; };
+		9BBD37B82578AFC300FDA7CC /* UIColor+RGBA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGBA.m"; sourceTree = "<group>"; };
 		A3E688FAE9198C1219CB4311 /* Pods_life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5C4A66B3519C8C9F23DD44 /* Pods-life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-life.debug.xcconfig"; path = "Target Support Files/Pods-life/Pods-life.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,8 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				9BBD378D2577A8FC00FDA7CC /* Classes */,
-				9BBD326A2572A2C500FDA7CC /* ViewController.h */,
-				9BBD326B2572A2C500FDA7CC /* ViewController.m */,
 				9BBD32782572A2C600FDA7CC /* Info.plist */,
 				9BBD32702572A2C500FDA7CC /* life.xcdatamodeld */,
 			);
@@ -161,6 +162,7 @@
 		9BBD37922577A9ED00FDA7CC /* LifeUICommon */ = {
 			isa = PBXGroup;
 			children = (
+				9BBD37B52578AC5F00FDA7CC /* Category */,
 			);
 			path = LifeUICommon;
 			sourceTree = "<group>";
@@ -168,6 +170,7 @@
 		9BBD37932577A9FA00FDA7CC /* LifeCommon */ = {
 			isa = PBXGroup;
 			children = (
+				9BBD37B62578AC7B00FDA7CC /* Category */,
 			);
 			path = LifeCommon;
 			sourceTree = "<group>";
@@ -272,6 +275,8 @@
 			children = (
 				9BBD37AF2577F37E00FDA7CC /* LFLoginContentView.h */,
 				9BBD37B02577F37E00FDA7CC /* LFLoginContentView.m */,
+				9BBD37B22578775200FDA7CC /* LFTextEditView.h */,
+				9BBD37B32578775200FDA7CC /* LFTextEditView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +329,22 @@
 				9BBD32752572A2C600FDA7CC /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		9BBD37B52578AC5F00FDA7CC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9BBD37B72578AFC300FDA7CC /* UIColor+RGBA.h */,
+				9BBD37B82578AFC300FDA7CC /* UIColor+RGBA.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		9BBD37B62578AC7B00FDA7CC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		C780945A3B41848E0535410E /* Frameworks */ = {
@@ -458,9 +479,10 @@
 			files = (
 				9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */,
 				9BBD327A2572A2C600FDA7CC /* main.m in Sources */,
-				9BBD326C2572A2C500FDA7CC /* ViewController.m in Sources */,
 				9BBD37AB2577BBF800FDA7CC /* LFLoginViewController.m in Sources */,
+				9BBD37B42578775200FDA7CC /* LFTextEditView.m in Sources */,
 				9BBD32722572A2C500FDA7CC /* life.xcdatamodeld in Sources */,
+				9BBD37B92578AFC300FDA7CC /* UIColor+RGBA.m in Sources */,
 				9BBD32662572A2C500FDA7CC /* AppDelegate.m in Sources */,
 				9BBD37A82577B8F800FDA7CC /* LFUser.m in Sources */,
 				9BBD37AE2577BC7E00FDA7CC /* LFRegisterViewController.m in Sources */,

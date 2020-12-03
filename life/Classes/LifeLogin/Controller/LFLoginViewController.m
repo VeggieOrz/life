@@ -11,13 +11,16 @@
 
 @interface LFLoginViewController ()
 
+@property (nonatomic, strong) LFLoginContentView *contentView;
+
 @end
 
 @implementation LFLoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.contentView = [[LFLoginContentView alloc] initWithFrame:self.view.bounds];
+    self.view = self.contentView;
 }
 
 
