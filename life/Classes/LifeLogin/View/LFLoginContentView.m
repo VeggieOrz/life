@@ -13,7 +13,7 @@
 
 CGFloat const kLFLoginElementHeight = 48.0f;    // 控件的高度
 CGFloat const kLFLoginElementLRPadding = 24.0f;  // 控件距离屏幕边框的左右距离
-CGFloat const kLFLoginElementTDPadding = 20.0f;  // 控件之间的距离
+CGFloat const kLFLoginElementTBPadding = 20.0f;  // 控件之间的距离
 
 @interface LFLoginContentView ()
 
@@ -36,12 +36,35 @@ CGFloat const kLFLoginElementTDPadding = 20.0f;  // 控件之间的距离
 }
 
 - (void)setupUI {
+    [self addSubview:self.logoImageView];
+    [self addSubview:self.emailEditView];
+    [self addSubview:self.passwordEditView];
     [self addSubview:self.loginBtn];
     [self addSubview:self.registerBtn];
     [self addSubview:self.forgetBtn];
     
+    [self.logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.mas_top).offset(64);
+        make.size.mas_equalTo(CGSizeMake(200, 118.75));
+        make.centerX.mas_equalTo(self.mas_centerX);
+    }];
+    
+    [self.emailEditView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.logoImageView.mas_bottom).offset(kLFLoginElementTBPadding);
+        make.left.mas_equalTo(self.mas_left).offset(kLFLoginElementLRPadding);
+        make.right.mas_equalTo(self.mas_right).offset(-kLFLoginElementLRPadding);
+        make.height.mas_equalTo(kLFLoginElementHeight);
+    }];
+    
+    [self.passwordEditView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.emailEditView.mas_bottom).offset(kLFLoginElementTBPadding);
+        make.left.mas_equalTo(self.mas_left).offset(kLFLoginElementLRPadding);
+        make.right.mas_equalTo(self.mas_right).offset(-kLFLoginElementLRPadding);
+        make.height.mas_equalTo(kLFLoginElementHeight);
+    }];
+    
     [self.loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.mas_equalTo(self.mas_centerY);
+        make.top.mas_equalTo(self.passwordEditView.mas_bottom).offset(kLFLoginElementTBPadding);
         make.left.mas_equalTo(self.mas_left).offset(kLFLoginElementLRPadding);
         make.right.mas_equalTo(self.mas_right).offset(-kLFLoginElementLRPadding);
         make.height.mas_equalTo(kLFLoginElementHeight);
@@ -64,7 +87,7 @@ CGFloat const kLFLoginElementTDPadding = 20.0f;  // 控件之间的距离
 
 - (UIImageView *)logoImageView {
     if (!_logoImageView) {
-        UIImage *logoImage = [UIImage imageNamed:@""];
+        UIImage *logoImage = [UIImage imageNamed:@"life_logo"];
         _logoImageView = [[UIImageView alloc] initWithImage:logoImage];
     }
     return _logoImageView;
@@ -72,14 +95,18 @@ CGFloat const kLFLoginElementTDPadding = 20.0f;  // 控件之间的距离
 
 - (LFTextEditView *)emailEditView {
     if (!_emailEditView) {
-        
+        UIImage *image = [UIImage imageNamed:@"login_email"];
+        _emailEditView = [[LFTextEditView alloc] initWithImage:image
+                                                   placeholder:@"输入邮箱"];
     }
     return _emailEditView;
 }
 
 - (LFTextEditView *)passwordEditView {
     if (!_passwordEditView) {
-        
+        UIImage *image = [UIImage imageNamed:@"login_password"];
+        _passwordEditView = [[LFTextEditView alloc] initWithImage:image
+                                                      placeholder:@"输入密码"];
     }
     return _passwordEditView;
 }

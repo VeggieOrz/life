@@ -7,6 +7,7 @@
 //
 
 #import "LFTextEditView.h"
+#import "UIColor+RGBA.h"
 #import <Masonry/Masonry.h>
 
 @interface LFTextEditView ()
@@ -18,12 +19,32 @@
 
 @implementation LFTextEditView
 
-- (instancetype)initWithImage:(UIImage *)image {
+- (instancetype)initWithImage:(UIImage *)image
+                  placeholder:(NSString *)placeholder {
     if (self = [super init]) {
         self.iconView.image = image;
+        NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:placeholder
+                                                                           attributes:@{
+                                                                               NSForegroundColorAttributeName:[UIColor colorWithRGB:0x515151],
+                                                                               NSFontAttributeName:self.inputField.font
+                                                                           }];
+        self.inputField.attributedPlaceholder = attributeStr;
+        [self setupUI];
     }
     return self;
 }
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    if (self.layer.cornerRadius < 0.01f) {
+        self.layer.borderWidth = 0.5f;
+        self.layer.borderColor = [UIColor colorWithRGB:0x515151].CGColor;
+        self.layer.cornerRadius = self.bounds.size.height / 2;
+        self.layer.masksToBounds = YES;
+    }
+}
+
+#pragma mark - UI About
 
 - (void)setupUI {
     [self addSubview:self.iconView];
@@ -54,6 +75,8 @@
 - (UITextField *)inputField {
     if (!_inputField) {
         _inputField = [[UITextField alloc] init];
+        _inputField.textColor = [UIColor colorWithRGB:0x515151];
+        _inputField.font = [UIFont systemFontOfSize:14.0f];
     }
     return _inputField;
 }

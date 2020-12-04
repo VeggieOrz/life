@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		96A88E3CFBFB053CAE4590B7 /* Pods_life.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E688FAE9198C1219CB4311 /* Pods_life.framework */; };
+		9B104478257A8B1C008728CF /* LFRegisterContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B104477257A8B1C008728CF /* LFRegisterContentView.m */; };
 		9BBD32662572A2C500FDA7CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD32652572A2C500FDA7CC /* AppDelegate.m */; };
 		9BBD32722572A2C500FDA7CC /* life.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD32702572A2C500FDA7CC /* life.xcdatamodeld */; };
 		9BBD32742572A2C600FDA7CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBD32732572A2C600FDA7CC /* Assets.xcassets */; };
@@ -23,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		01CFFBFD9884916CF7AEFC6B /* Pods-life.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-life.release.xcconfig"; path = "Target Support Files/Pods-life/Pods-life.release.xcconfig"; sourceTree = "<group>"; };
+		9B104476257A8B1C008728CF /* LFRegisterContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFRegisterContentView.h; sourceTree = "<group>"; };
+		9B104477257A8B1C008728CF /* LFRegisterContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFRegisterContentView.m; sourceTree = "<group>"; };
 		9BBD32612572A2C500FDA7CC /* life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = life.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBD32642572A2C500FDA7CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BBD32652572A2C500FDA7CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 				9BBD37B02577F37E00FDA7CC /* LFLoginContentView.m */,
 				9BBD37B22578775200FDA7CC /* LFTextEditView.h */,
 				9BBD37B32578775200FDA7CC /* LFTextEditView.m */,
+				9B104476257A8B1C008728CF /* LFRegisterContentView.h */,
+				9B104477257A8B1C008728CF /* LFRegisterContentView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -480,6 +485,7 @@
 				9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */,
 				9BBD327A2572A2C600FDA7CC /* main.m in Sources */,
 				9BBD37AB2577BBF800FDA7CC /* LFLoginViewController.m in Sources */,
+				9B104478257A8B1C008728CF /* LFRegisterContentView.m in Sources */,
 				9BBD37B42578775200FDA7CC /* LFTextEditView.m in Sources */,
 				9BBD32722572A2C500FDA7CC /* life.xcdatamodeld in Sources */,
 				9BBD37B92578AFC300FDA7CC /* UIColor+RGBA.m in Sources */,

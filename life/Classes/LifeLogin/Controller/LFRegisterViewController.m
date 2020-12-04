@@ -7,8 +7,11 @@
 //
 
 #import "LFRegisterViewController.h"
+#import "LFRegisterContentView.h"
 
 @interface LFRegisterViewController ()
+
+@property (nonatomic, strong) LFRegisterContentView *contentView;
 
 @end
 
@@ -16,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.contentView = [[LFRegisterContentView alloc] initWithFrame:self.view.bounds];
+    self.view = self.contentView;
 }
-
 
 @end

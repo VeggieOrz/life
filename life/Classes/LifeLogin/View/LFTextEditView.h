@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LFTextEditView : UIView
 
+- (instancetype)initWithImage:(UIImage *)image
+                  placeholder:(NSString *)placeholder;
+
 @end
 
 NS_ASSUME_NONNULL_END
