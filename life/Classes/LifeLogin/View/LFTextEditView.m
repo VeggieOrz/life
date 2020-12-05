@@ -34,6 +34,10 @@
     return self;
 }
 
+- (void)setSecureTextEntry:(BOOL)secureTextEntry {
+    self.inputField.secureTextEntry = secureTextEntry;
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     if (self.layer.cornerRadius < 0.01f) {
@@ -58,7 +62,7 @@
     
     [self.inputField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.iconView.mas_right).offset(16);
-        make.right.mas_equalTo(self.mas_right);
+        make.right.mas_equalTo(self.mas_right).offset(-16);
         make.centerY.mas_equalTo(self.mas_centerY);
     }];
 }

@@ -107,6 +107,7 @@ CGFloat const kLFLoginElementTBPadding = 20.0f;  // 控件之间的距离
         UIImage *image = [UIImage imageNamed:@"login_password"];
         _passwordEditView = [[LFTextEditView alloc] initWithImage:image
                                                       placeholder:@"输入密码"];
+        [_passwordEditView setSecureTextEntry:YES];
     }
     return _passwordEditView;
 }
