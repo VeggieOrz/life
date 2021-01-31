@@ -29,6 +29,7 @@
 		9B104477257A8B1C008728CF /* LFRegisterContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFRegisterContentView.m; sourceTree = "<group>"; };
 		9B104479257B217E008728CF /* LFHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFHomeViewController.h; sourceTree = "<group>"; };
 		9B10447A257B217E008728CF /* LFHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFHomeViewController.m; sourceTree = "<group>"; };
+		9BB5FBF325C6932F00DD5665 /* LFUIMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFUIMacro.h; sourceTree = "<group>"; };
 		9BBD32612572A2C500FDA7CC /* life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = life.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBD32642572A2C500FDA7CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BBD32652572A2C500FDA7CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -171,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				9BBD37B52578AC5F00FDA7CC /* Category */,
+				9BB5FBF325C6932F00DD5665 /* LFUIMacro.h */,
 			);
 			path = LifeUICommon;
 			sourceTree = "<group>";
