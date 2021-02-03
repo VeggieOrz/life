@@ -17,6 +17,7 @@ CGFloat const kLFRegisterElementTBPadding = 20.0f;  // 控件之间的距离
 
 @interface LFRegisterContentView ()
 
+@property (nonatomic, strong) UIView *view; // 承载View
 @property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic, strong) LFTextEditView *emailEditView;
 @property (nonatomic, strong) LFTextEditView *nickNameEditView;
@@ -35,48 +36,64 @@ CGFloat const kLFRegisterElementTBPadding = 20.0f;  // 控件之间的距离
 }
 
 - (void)setupUI {
-    [self addSubview:self.logoImageView];
-    [self addSubview:self.emailEditView];
-    [self addSubview:self.nickNameEditView];
-    [self addSubview:self.passwordEditView];
-    [self addSubview:self.registerBtn];
+    [self addSubview:self.view];
+    [self.view addSubview:self.logoImageView];
+    [self.view addSubview:self.emailEditView];
+    [self.view addSubview:self.nickNameEditView];
+    [self.view addSubview:self.passwordEditView];
+    [self.view addSubview:self.registerBtn];
+    
+    [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(self);
+        make.width.mas_equalTo(self);
+        make.top.mas_equalTo(self.logoImageView);
+        make.bottom.mas_equalTo(self.registerBtn);
+    }];
     
     [self.logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.mas_top).offset(64);
+        make.top.mas_equalTo(self.view.mas_top);
         make.size.mas_equalTo(CGSizeMake(200, 118.75));
-        make.centerX.mas_equalTo(self.mas_centerX);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
     }];
     
     [self.emailEditView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.logoImageView.mas_bottom).offset(kLFRegisterElementTBPadding);
-        make.left.mas_equalTo(self.mas_left).offset(kLFRegisterElementLRPadding);
-        make.right.mas_equalTo(self.mas_right).offset(-kLFRegisterElementLRPadding);
+        make.top.mas_equalTo(self.logoImageView.mas_bottom).offset(kLFRegisterElementTBPadding * 2);
+        make.left.mas_equalTo(self.view.mas_left).offset(kLFRegisterElementLRPadding);
+        make.right.mas_equalTo(self.view.mas_right).offset(-kLFRegisterElementLRPadding);
         make.height.mas_equalTo(kLFRegisterElementHeight);
     }];
     
     [self.nickNameEditView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.emailEditView.mas_bottom).offset(kLFRegisterElementTBPadding);
-        make.left.mas_equalTo(self.mas_left).offset(kLFRegisterElementLRPadding);
-        make.right.mas_equalTo(self.mas_right).offset(-kLFRegisterElementLRPadding);
+        make.left.mas_equalTo(self.view.mas_left).offset(kLFRegisterElementLRPadding);
+        make.right.mas_equalTo(self.view.mas_right).offset(-kLFRegisterElementLRPadding);
         make.height.mas_equalTo(kLFRegisterElementHeight);
     }];
     
     [self.passwordEditView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.nickNameEditView.mas_bottom).offset(kLFRegisterElementTBPadding);
-        make.left.mas_equalTo(self.mas_left).offset(kLFRegisterElementLRPadding);
-        make.right.mas_equalTo(self.mas_right).offset(-kLFRegisterElementLRPadding);
+        make.left.mas_equalTo(self.view.mas_left).offset(kLFRegisterElementLRPadding);
+        make.right.mas_equalTo(self.view.mas_right).offset(-kLFRegisterElementLRPadding);
         make.height.mas_equalTo(kLFRegisterElementHeight);
     }];
     
     [self.registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.passwordEditView.mas_bottom).offset(kLFRegisterElementTBPadding);
-        make.left.mas_equalTo(self.mas_left).offset(kLFRegisterElementLRPadding);
-        make.right.mas_equalTo(self.mas_right).offset(-kLFRegisterElementLRPadding);
+        make.left.mas_equalTo(self.view.mas_left).offset(kLFRegisterElementLRPadding);
+        make.right.mas_equalTo(self.view.mas_right).offset(-kLFRegisterElementLRPadding);
         make.height.mas_equalTo(kLFRegisterElementHeight);
     }];
 }
 
 #pragma mark - Getter
+
+- (UIView *)view {
+    if (!_view) {
+        _view = [UIView new];
+        _view.backgroundColor = [UIColor clearColor];
+    }
+    return _view;
+}
 
 - (UIImageView *)logoImageView {
     if (!_logoImageView) {

@@ -9,6 +9,7 @@
 #import "LFLoginContentView.h"
 #import "LFTextEditView.h"
 #import "UIColor+RGBA.h"
+#import "LFUIMacro.h"
 #import <Masonry/Masonry.h>
 
 CGFloat const kLFLoginElementHeight = 48.0f;    // 控件的高度
@@ -17,6 +18,7 @@ CGFloat const kLFLoginElementTBPadding = 20.0f;  // 控件之间的距离
 
 @interface LFLoginContentView ()
 
+@property (nonatomic, strong) UIView *view; // 承载view
 @property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic, strong) LFTextEditView *emailEditView;
 @property (nonatomic, strong) LFTextEditView *passwordEditView;
@@ -36,54 +38,70 @@ CGFloat const kLFLoginElementTBPadding = 20.0f;  // 控件之间的距离
 }
 
 - (void)setupUI {
-    [self addSubview:self.logoImageView];
-    [self addSubview:self.emailEditView];
-    [self addSubview:self.passwordEditView];
-    [self addSubview:self.loginBtn];
-    [self addSubview:self.registerBtn];
-    [self addSubview:self.forgetBtn];
+    [self addSubview:self.view];
+    [self.view addSubview:self.logoImageView];
+    [self.view addSubview:self.emailEditView];
+    [self.view addSubview:self.passwordEditView];
+    [self.view addSubview:self.loginBtn];
+    [self.view addSubview:self.registerBtn];
+    [self.view addSubview:self.forgetBtn];
+    
+    [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(self);
+        make.width.mas_equalTo(self);
+        make.top.mas_equalTo(self.logoImageView);
+        make.bottom.mas_equalTo(self.registerBtn);
+    }];
     
     [self.logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.mas_top).offset(64);
+        make.top.mas_equalTo(self.view.mas_top);
         make.size.mas_equalTo(CGSizeMake(200, 118.75));
-        make.centerX.mas_equalTo(self.mas_centerX);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
     }];
     
     [self.emailEditView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.logoImageView.mas_bottom).offset(kLFLoginElementTBPadding);
-        make.left.mas_equalTo(self.mas_left).offset(kLFLoginElementLRPadding);
-        make.right.mas_equalTo(self.mas_right).offset(-kLFLoginElementLRPadding);
+        make.top.mas_equalTo(self.logoImageView.mas_bottom).offset(kLFLoginElementTBPadding * 2);
+        make.left.mas_equalTo(self.view.mas_left).offset(kLFLoginElementLRPadding);
+        make.right.mas_equalTo(self.view.mas_right).offset(-kLFLoginElementLRPadding);
         make.height.mas_equalTo(kLFLoginElementHeight);
     }];
     
     [self.passwordEditView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.emailEditView.mas_bottom).offset(kLFLoginElementTBPadding);
-        make.left.mas_equalTo(self.mas_left).offset(kLFLoginElementLRPadding);
-        make.right.mas_equalTo(self.mas_right).offset(-kLFLoginElementLRPadding);
+        make.left.mas_equalTo(self.view.mas_left).offset(kLFLoginElementLRPadding);
+        make.right.mas_equalTo(self.view.mas_right).offset(-kLFLoginElementLRPadding);
         make.height.mas_equalTo(kLFLoginElementHeight);
     }];
     
     [self.loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.passwordEditView.mas_bottom).offset(kLFLoginElementTBPadding);
-        make.left.mas_equalTo(self.mas_left).offset(kLFLoginElementLRPadding);
-        make.right.mas_equalTo(self.mas_right).offset(-kLFLoginElementLRPadding);
+        make.left.mas_equalTo(self.view.mas_left).offset(kLFLoginElementLRPadding);
+        make.right.mas_equalTo(self.view.mas_right).offset(-kLFLoginElementLRPadding);
         make.height.mas_equalTo(kLFLoginElementHeight);
     }];
     
     [self.registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.loginBtn.mas_bottom);
-        make.left.mas_equalTo(self.mas_left).offset(kLFLoginElementLRPadding);
+        make.left.mas_equalTo(self.view.mas_left).offset(kLFLoginElementLRPadding);
         make.size.mas_equalTo(CGSizeMake(80, 30));
     }];
     
     [self.forgetBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.loginBtn.mas_bottom);
-        make.right.mas_equalTo(self.mas_right).offset(-kLFLoginElementLRPadding);
+        make.right.mas_equalTo(self.view.mas_right).offset(-kLFLoginElementLRPadding);
         make.size.mas_equalTo(CGSizeMake(80, 30));
     }];
 }
 
 #pragma mark - Getter
+
+- (UIView *)view {
+    if (!_view) {
+        _view = [UIView new];
+        _view.backgroundColor = [UIColor clearColor];
+    }
+    return _view;
+}
 
 - (UIImageView *)logoImageView {
     if (!_logoImageView) {
