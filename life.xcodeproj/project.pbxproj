@@ -10,6 +10,8 @@
 		96A88E3CFBFB053CAE4590B7 /* Pods_life.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E688FAE9198C1219CB4311 /* Pods_life.framework */; };
 		9B104478257A8B1C008728CF /* LFRegisterContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B104477257A8B1C008728CF /* LFRegisterContentView.m */; };
 		9B10447B257B217E008728CF /* LFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B10447A257B217E008728CF /* LFHomeViewController.m */; };
+		9BA8EF5425D8DCBF0086A1CD /* LFTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8EF5325D8DCBF0086A1CD /* LFTimeLineViewController.m */; };
+		9BA8EF5825D8DD820086A1CD /* LFTimeLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8EF5725D8DD820086A1CD /* LFTimeLineTableViewCell.m */; };
 		9BB5FBF825C6DFAA00DD5665 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5FBF725C6DFAA00DD5665 /* UIView+frame.m */; };
 		9BBD32662572A2C500FDA7CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD32652572A2C500FDA7CC /* AppDelegate.m */; };
 		9BBD32722572A2C500FDA7CC /* life.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD32702572A2C500FDA7CC /* life.xcdatamodeld */; };
@@ -22,6 +24,8 @@
 		9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37B02577F37E00FDA7CC /* LFLoginContentView.m */; };
 		9BBD37B42578775200FDA7CC /* LFTextEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37B32578775200FDA7CC /* LFTextEditView.m */; };
 		9BBD37B92578AFC300FDA7CC /* UIColor+RGBA.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37B82578AFC300FDA7CC /* UIColor+RGBA.m */; };
+		9BC180FA25D92C0700DE1FD1 /* LFBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC180F925D92C0700DE1FD1 /* LFBubbleView.m */; };
+		9BC1811C25DCD79100DE1FD1 /* LFDiary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1811B25DCD79100DE1FD1 /* LFDiary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		9B104477257A8B1C008728CF /* LFRegisterContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFRegisterContentView.m; sourceTree = "<group>"; };
 		9B104479257B217E008728CF /* LFHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFHomeViewController.h; sourceTree = "<group>"; };
 		9B10447A257B217E008728CF /* LFHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFHomeViewController.m; sourceTree = "<group>"; };
+		9BA8EF5225D8DCBF0086A1CD /* LFTimeLineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTimeLineViewController.h; sourceTree = "<group>"; };
+		9BA8EF5325D8DCBF0086A1CD /* LFTimeLineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFTimeLineViewController.m; sourceTree = "<group>"; };
+		9BA8EF5625D8DD820086A1CD /* LFTimeLineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTimeLineTableViewCell.h; sourceTree = "<group>"; };
+		9BA8EF5725D8DD820086A1CD /* LFTimeLineTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFTimeLineTableViewCell.m; sourceTree = "<group>"; };
 		9BB5FBF325C6932F00DD5665 /* LFUIMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFUIMacro.h; sourceTree = "<group>"; };
 		9BB5FBF625C6DFAA00DD5665 /* UIView+frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
 		9BB5FBF725C6DFAA00DD5665 /* UIView+frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
@@ -53,6 +61,10 @@
 		9BBD37B32578775200FDA7CC /* LFTextEditView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFTextEditView.m; sourceTree = "<group>"; };
 		9BBD37B72578AFC300FDA7CC /* UIColor+RGBA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+RGBA.h"; sourceTree = "<group>"; };
 		9BBD37B82578AFC300FDA7CC /* UIColor+RGBA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RGBA.m"; sourceTree = "<group>"; };
+		9BC180F825D92C0700DE1FD1 /* LFBubbleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFBubbleView.h; sourceTree = "<group>"; };
+		9BC180F925D92C0700DE1FD1 /* LFBubbleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFBubbleView.m; sourceTree = "<group>"; };
+		9BC1811A25DCD79100DE1FD1 /* LFDiary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDiary.h; sourceTree = "<group>"; };
+		9BC1811B25DCD79100DE1FD1 /* LFDiary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDiary.m; sourceTree = "<group>"; };
 		A3E688FAE9198C1219CB4311 /* Pods_life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5C4A66B3519C8C9F23DD44 /* Pods-life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-life.debug.xcconfig"; path = "Target Support Files/Pods-life/Pods-life.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,6 +221,8 @@
 		9BBD37962577AB2200FDA7CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9BC1811A25DCD79100DE1FD1 /* LFDiary.h */,
+				9BC1811B25DCD79100DE1FD1 /* LFDiary.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,6 +324,8 @@
 		9BBD37A12577AB2300FDA7CC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9BA8EF5225D8DCBF0086A1CD /* LFTimeLineViewController.h */,
+				9BA8EF5325D8DCBF0086A1CD /* LFTimeLineViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -324,6 +340,9 @@
 		9BBD37A32577AB2300FDA7CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9BC180F725D92B9900DE1FD1 /* BubbleView */,
+				9BA8EF5625D8DD820086A1CD /* LFTimeLineTableViewCell.h */,
+				9BA8EF5725D8DD820086A1CD /* LFTimeLineTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -362,6 +381,15 @@
 			children = (
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		9BC180F725D92B9900DE1FD1 /* BubbleView */ = {
+			isa = PBXGroup;
+			children = (
+				9BC180F825D92C0700DE1FD1 /* LFBubbleView.h */,
+				9BC180F925D92C0700DE1FD1 /* LFBubbleView.m */,
+			);
+			path = BubbleView;
 			sourceTree = "<group>";
 		};
 		C780945A3B41848E0535410E /* Frameworks */ = {
@@ -498,14 +526,18 @@
 				9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */,
 				9BBD327A2572A2C600FDA7CC /* main.m in Sources */,
 				9BBD37AB2577BBF800FDA7CC /* LFLoginViewController.m in Sources */,
+				9BC180FA25D92C0700DE1FD1 /* LFBubbleView.m in Sources */,
 				9B104478257A8B1C008728CF /* LFRegisterContentView.m in Sources */,
 				9BBD37B42578775200FDA7CC /* LFTextEditView.m in Sources */,
 				9B10447B257B217E008728CF /* LFHomeViewController.m in Sources */,
+				9BA8EF5425D8DCBF0086A1CD /* LFTimeLineViewController.m in Sources */,
+				9BA8EF5825D8DD820086A1CD /* LFTimeLineTableViewCell.m in Sources */,
 				9BBD32722572A2C500FDA7CC /* life.xcdatamodeld in Sources */,
 				9BBD37B92578AFC300FDA7CC /* UIColor+RGBA.m in Sources */,
 				9BBD32662572A2C500FDA7CC /* AppDelegate.m in Sources */,
 				9BBD37A82577B8F800FDA7CC /* LFUser.m in Sources */,
 				9BBD37AE2577BC7E00FDA7CC /* LFRegisterViewController.m in Sources */,
+				9BC1811C25DCD79100DE1FD1 /* LFDiary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

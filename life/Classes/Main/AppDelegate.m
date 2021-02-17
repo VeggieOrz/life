@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LFLoginViewController.h"
 #import "LFRegisterViewController.h"
+#import "LFTimeLineViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    LFRegisterViewController *vc = [[LFRegisterViewController alloc] init];
+    LFTimeLineViewController *vc = [[LFTimeLineViewController alloc] init];
     [self.window setRootViewController:vc];
     [self.window makeKeyAndVisible];
     return YES;
