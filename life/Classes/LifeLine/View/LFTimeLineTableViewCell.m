@@ -12,8 +12,10 @@
 #import "LFBubbleView.h"
 #import "UIView+frame.h"
 
-const CGFloat kLineLeftPadding = 67;
-const CGFloat kPointViewWidth = 12;
+const CGFloat kLineLeftPadding = 67.0f;
+const CGFloat kPointViewWidth = 12.0f;
+const CGFloat kContentLRPadding = 7.0f;
+const CGFloat kContentUDPadding = 5.0f;
 
 @interface LFTimeLineTableViewCell ()
 // 日期标签
@@ -44,11 +46,24 @@ const CGFloat kPointViewWidth = 12;
 
 #pragma mark - Public Method
 
+- (void)configWithModel:(id)model {
+    
+}
+
+#pragma mark - Private Method
+
+- (NSAttributedString *)_getStringWithDate:(NSDate *)date {
+    NSString *str = @"04周四\n2021.02";
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:str];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16.0f] range:NSMakeRange(0, 2)];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12.0f] range:NSMakeRange(2, str.length - 2)];
+    return attributedString;
+}
 
 #pragma mark - UI About
 
 - (void)setupSubViews {
-//    [self.contentView addSubview:self.dateLabel];
+    [self.contentView addSubview:self.dateLabel];
     [self.contentView addSubview:self.verticalLine1];
     [self.contentView addSubview:self.pointView];
     [self.contentView addSubview:self.verticalLine2];
@@ -61,7 +76,9 @@ const CGFloat kPointViewWidth = 12;
 
 - (UILabel *)dateLabel {
     if (!_dateLabel) {
-        
+        CGRect frame = CGRectMake(8, 16, 47, 40);
+        _dateLabel = [[UILabel alloc] initWithFrame:frame];
+        _dateLabel.numberOfLines = 0;
     }
     return _dateLabel;
 }
@@ -110,7 +127,11 @@ const CGFloat kPointViewWidth = 12;
 
 - (UILabel *)contentLabel {
     if (!_contentLabel) {
-        
+        CGRect frame = CGRectMake(kContentLRPadding, kContentUDPadding, self.bubbleView.width - 2 * kContentLRPadding, self.bubbleView.height - 2 * kContentUDPadding);
+        _contentLabel = [[UILabel alloc] initWithFrame:frame];
+        _contentLabel.numberOfLines = 0;
+        _contentLabel.font = [UIFont systemFontOfSize:14.0f];
+        _contentLabel.text = @"历法能使人类确定每一日再无限的时间中的确切位置并记录历史。日历，历法，一般历法都是遵循固定的规则的，具有周期性。日历都是已知的或可预测的。";
     }
     return _contentLabel;
 }
