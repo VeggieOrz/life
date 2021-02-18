@@ -26,6 +26,7 @@
 		9BBD37B92578AFC300FDA7CC /* UIColor+RGBA.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37B82578AFC300FDA7CC /* UIColor+RGBA.m */; };
 		9BC180FA25D92C0700DE1FD1 /* LFBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC180F925D92C0700DE1FD1 /* LFBubbleView.m */; };
 		9BC1811C25DCD79100DE1FD1 /* LFDiary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1811B25DCD79100DE1FD1 /* LFDiary.m */; };
+		9BC1812C25DE9E0A00DE1FD1 /* NSDate+Easy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1812B25DE9E0A00DE1FD1 /* NSDate+Easy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		9BC180F925D92C0700DE1FD1 /* LFBubbleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFBubbleView.m; sourceTree = "<group>"; };
 		9BC1811A25DCD79100DE1FD1 /* LFDiary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDiary.h; sourceTree = "<group>"; };
 		9BC1811B25DCD79100DE1FD1 /* LFDiary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDiary.m; sourceTree = "<group>"; };
+		9BC1812A25DE9E0A00DE1FD1 /* NSDate+Easy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Easy.h"; sourceTree = "<group>"; };
+		9BC1812B25DE9E0A00DE1FD1 /* NSDate+Easy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Easy.m"; sourceTree = "<group>"; };
 		A3E688FAE9198C1219CB4311 /* Pods_life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5C4A66B3519C8C9F23DD44 /* Pods-life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-life.debug.xcconfig"; path = "Target Support Files/Pods-life/Pods-life.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -379,6 +382,7 @@
 		9BBD37B62578AC7B00FDA7CC /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				9BC1812925DE9D6500DE1FD1 /* NSDate */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -390,6 +394,15 @@
 				9BC180F925D92C0700DE1FD1 /* LFBubbleView.m */,
 			);
 			path = BubbleView;
+			sourceTree = "<group>";
+		};
+		9BC1812925DE9D6500DE1FD1 /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				9BC1812A25DE9E0A00DE1FD1 /* NSDate+Easy.h */,
+				9BC1812B25DE9E0A00DE1FD1 /* NSDate+Easy.m */,
+			);
+			path = NSDate;
 			sourceTree = "<group>";
 		};
 		C780945A3B41848E0535410E /* Frameworks */ = {
@@ -524,6 +537,7 @@
 			files = (
 				9BB5FBF825C6DFAA00DD5665 /* UIView+frame.m in Sources */,
 				9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */,
+				9BC1812C25DE9E0A00DE1FD1 /* NSDate+Easy.m in Sources */,
 				9BBD327A2572A2C600FDA7CC /* main.m in Sources */,
 				9BBD37AB2577BBF800FDA7CC /* LFLoginViewController.m in Sources */,
 				9BC180FA25D92C0700DE1FD1 /* LFBubbleView.m in Sources */,

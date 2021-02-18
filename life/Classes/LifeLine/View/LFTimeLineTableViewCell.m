@@ -31,7 +31,7 @@ const CGFloat kContentUDPadding = 5.0f;
 // 内容标签
 @property (nonatomic, strong) UILabel *contentLabel;
 // 日记图片
-@property (nonatomic, strong) UIImageView *contentImageView;
+//@property (nonatomic, strong) UIImageView *contentImageView;
 
 @end
 
@@ -136,11 +136,11 @@ const CGFloat kContentUDPadding = 5.0f;
     return _contentLabel;
 }
 
-- (UIImageView *)contentImageView {
-    if (!_contentImageView) {
-        
-    }
-    return _contentImageView;
-}
+//- (UIImageView *)contentImageView {
+//    if (!_contentImageView) {
+//
+//    }
+//    return _contentImageView;
+//}
 
 @end
