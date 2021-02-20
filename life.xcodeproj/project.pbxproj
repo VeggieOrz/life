@@ -27,6 +27,11 @@
 		9BC180FA25D92C0700DE1FD1 /* LFBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC180F925D92C0700DE1FD1 /* LFBubbleView.m */; };
 		9BC1811C25DCD79100DE1FD1 /* LFDiary.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1811B25DCD79100DE1FD1 /* LFDiary.m */; };
 		9BC1812C25DE9E0A00DE1FD1 /* NSDate+Easy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1812B25DE9E0A00DE1FD1 /* NSDate+Easy.m */; };
+		9BC1813125E0FE6400DE1FD1 /* LFDiaryCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1813025E0FE6400DE1FD1 /* LFDiaryCardCell.m */; };
+		9BC1813525E100B300DE1FD1 /* LFDiaryCardFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1813425E100B300DE1FD1 /* LFDiaryCardFlowLayout.m */; };
+		9BC1813925E1014200DE1FD1 /* UICollectionView+Smart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1813825E1014200DE1FD1 /* UICollectionView+Smart.m */; };
+		9BC188B725E1043A00DE1FD1 /* UICollectionViewCell+Smart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC188B625E1043A00DE1FD1 /* UICollectionViewCell+Smart.m */; };
+		9BC188BB25E106AF00DE1FD1 /* UICollectionReusableView+Smart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC188BA25E106AF00DE1FD1 /* UICollectionReusableView+Smart.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +73,16 @@
 		9BC1811B25DCD79100DE1FD1 /* LFDiary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDiary.m; sourceTree = "<group>"; };
 		9BC1812A25DE9E0A00DE1FD1 /* NSDate+Easy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Easy.h"; sourceTree = "<group>"; };
 		9BC1812B25DE9E0A00DE1FD1 /* NSDate+Easy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Easy.m"; sourceTree = "<group>"; };
+		9BC1812F25E0FE6400DE1FD1 /* LFDiaryCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDiaryCardCell.h; sourceTree = "<group>"; };
+		9BC1813025E0FE6400DE1FD1 /* LFDiaryCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDiaryCardCell.m; sourceTree = "<group>"; };
+		9BC1813325E100B300DE1FD1 /* LFDiaryCardFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDiaryCardFlowLayout.h; sourceTree = "<group>"; };
+		9BC1813425E100B300DE1FD1 /* LFDiaryCardFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDiaryCardFlowLayout.m; sourceTree = "<group>"; };
+		9BC1813725E1014200DE1FD1 /* UICollectionView+Smart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Smart.h"; sourceTree = "<group>"; };
+		9BC1813825E1014200DE1FD1 /* UICollectionView+Smart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Smart.m"; sourceTree = "<group>"; };
+		9BC188B525E1043A00DE1FD1 /* UICollectionViewCell+Smart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+Smart.h"; sourceTree = "<group>"; };
+		9BC188B625E1043A00DE1FD1 /* UICollectionViewCell+Smart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+Smart.m"; sourceTree = "<group>"; };
+		9BC188B925E106AF00DE1FD1 /* UICollectionReusableView+Smart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionReusableView+Smart.h"; sourceTree = "<group>"; };
+		9BC188BA25E106AF00DE1FD1 /* UICollectionReusableView+Smart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionReusableView+Smart.m"; sourceTree = "<group>"; };
 		A3E688FAE9198C1219CB4311 /* Pods_life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5C4A66B3519C8C9F23DD44 /* Pods-life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-life.debug.xcconfig"; path = "Target Support Files/Pods-life/Pods-life.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +188,10 @@
 		9BBD37902577A94900FDA7CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9BC1812F25E0FE6400DE1FD1 /* LFDiaryCardCell.h */,
+				9BC1813025E0FE6400DE1FD1 /* LFDiaryCardCell.m */,
+				9BC1813325E100B300DE1FD1 /* LFDiaryCardFlowLayout.h */,
+				9BC1813425E100B300DE1FD1 /* LFDiaryCardFlowLayout.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,6 +394,12 @@
 				9BBD37B82578AFC300FDA7CC /* UIColor+RGBA.m */,
 				9BB5FBF625C6DFAA00DD5665 /* UIView+frame.h */,
 				9BB5FBF725C6DFAA00DD5665 /* UIView+frame.m */,
+				9BC1813725E1014200DE1FD1 /* UICollectionView+Smart.h */,
+				9BC1813825E1014200DE1FD1 /* UICollectionView+Smart.m */,
+				9BC188B525E1043A00DE1FD1 /* UICollectionViewCell+Smart.h */,
+				9BC188B625E1043A00DE1FD1 /* UICollectionViewCell+Smart.m */,
+				9BC188B925E106AF00DE1FD1 /* UICollectionReusableView+Smart.h */,
+				9BC188BA25E106AF00DE1FD1 /* UICollectionReusableView+Smart.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -536,13 +561,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BB5FBF825C6DFAA00DD5665 /* UIView+frame.m in Sources */,
+				9BC188B725E1043A00DE1FD1 /* UICollectionViewCell+Smart.m in Sources */,
+				9BC1813125E0FE6400DE1FD1 /* LFDiaryCardCell.m in Sources */,
+				9BC1813525E100B300DE1FD1 /* LFDiaryCardFlowLayout.m in Sources */,
 				9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */,
 				9BC1812C25DE9E0A00DE1FD1 /* NSDate+Easy.m in Sources */,
 				9BBD327A2572A2C600FDA7CC /* main.m in Sources */,
 				9BBD37AB2577BBF800FDA7CC /* LFLoginViewController.m in Sources */,
 				9BC180FA25D92C0700DE1FD1 /* LFBubbleView.m in Sources */,
 				9B104478257A8B1C008728CF /* LFRegisterContentView.m in Sources */,
+				9BC188BB25E106AF00DE1FD1 /* UICollectionReusableView+Smart.m in Sources */,
 				9BBD37B42578775200FDA7CC /* LFTextEditView.m in Sources */,
+				9BC1813925E1014200DE1FD1 /* UICollectionView+Smart.m in Sources */,
 				9B10447B257B217E008728CF /* LFHomeViewController.m in Sources */,
 				9BA8EF5425D8DCBF0086A1CD /* LFTimeLineViewController.m in Sources */,
 				9BA8EF5825D8DD820086A1CD /* LFTimeLineTableViewCell.m in Sources */,
