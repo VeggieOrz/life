@@ -10,4 +10,14 @@
 
 @implementation LFDiaryCardFlowLayout
 
+- (instancetype)init {
+    if (self = [super init]) {
+//        self.minimumLineSpacing =
+//        self.minimumInteritemSpacing =
+//        self.itemSize =
+        self.scrollDirection = UICollectionViewScrollDirectionVertical;
+    }
+    return self;
+}
+
 @end

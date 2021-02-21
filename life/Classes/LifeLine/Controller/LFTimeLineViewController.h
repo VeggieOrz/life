@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-extern const CGFloat kTimeLineCellHeight;
+UIKIT_EXTERN const CGFloat kTimeLineCellHeight;
 
 NS_ASSUME_NONNULL_BEGIN
 
