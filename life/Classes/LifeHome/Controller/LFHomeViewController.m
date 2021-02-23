@@ -9,6 +9,8 @@
 #import "LFHomeViewController.h"
 #import "LFDiaryCardCell.h"
 #import "LFDiaryCardFlowLayout.h"
+#import "UICollectionView+Smart.h"
+#import <Masonry/Masonry.h>
 
 @interface LFHomeViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -22,7 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setupSubViews];
+    [self setupLayoutConstraint];
 }
 
 #pragma mark - Public Method
@@ -34,11 +37,12 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    return 3;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [UICollectionViewCell new];
+    LFDiaryCardCell *cell = [collectionView dequeueReusableCellWithCellClass:[LFDiaryCardCell class] forIndexPath:indexPath];
+    return cell;
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -53,12 +57,22 @@
     [self.view addSubview:self.collectionView];
 }
 
+- (void)setupLayoutConstraint {
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+}
 
 #pragma mark - Getter Method
 
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
-        
+        LFDiaryCardFlowLayout *flowLayout = [[LFDiaryCardFlowLayout alloc] init];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        _collectionView.backgroundColor = [UIColor whiteColor];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        [_collectionView registerClass:[LFDiaryCardCell class]];
     }
     return _collectionView;
 }

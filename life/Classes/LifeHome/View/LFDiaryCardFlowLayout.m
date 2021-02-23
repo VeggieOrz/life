@@ -7,14 +7,20 @@
 //
 
 #import "LFDiaryCardFlowLayout.h"
+#import "LFUIMacro.h"
+
+#define CardCellWidth ((ScreenWidth - 40.0f) / 2)
+
+const CGFloat kCardCellHeight = 250;
 
 @implementation LFDiaryCardFlowLayout
 
 - (instancetype)init {
     if (self = [super init]) {
-//        self.minimumLineSpacing =
-//        self.minimumInteritemSpacing =
-//        self.itemSize =
+        self.minimumLineSpacing = 16;
+        self.minimumInteritemSpacing = 8;
+        self.itemSize = CGSizeMake(CardCellWidth, kCardCellHeight);
+        self.sectionInset = UIEdgeInsetsMake(0, 16, 0, 16);
         self.scrollDirection = UICollectionViewScrollDirectionVertical;
     }
     return self;
