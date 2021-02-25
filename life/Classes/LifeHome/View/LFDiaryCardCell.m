@@ -19,4 +19,23 @@
     return self;
 }
 
+#pragma mark - Public Method
+
+
+#pragma mark - Private Method
+
+
+#pragma mark - UI About
+
+- (void)setupSubViews {
+    
+}
+
+- (void)setupLayoutConstrain {
+    
+}
+
+#pragma mark - Getter Method
+
+
 @end
