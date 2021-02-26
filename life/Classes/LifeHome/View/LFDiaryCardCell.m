@@ -8,6 +8,10 @@
 
 #import "LFDiaryCardCell.h"
 
+@interface LFDiaryCardCell ()
+
+@end
+
 @implementation LFDiaryCardCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
