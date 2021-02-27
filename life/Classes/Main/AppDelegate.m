@@ -7,10 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "LFLoginViewController.h"
-#import "LFRegisterViewController.h"
 #import "LFHomeViewController.h"
 #import "LFTimeLineViewController.h"
+#import "LFSettingViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,8 +21,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    LFHomeViewController *vc = [[LFHomeViewController alloc] init];
-    [self.window setRootViewController:vc];
+    
+    UITabBarController *tbController = [[UITabBarController alloc] init];
+    [self.window setRootViewController:tbController];
+    
+    LFHomeViewController *homeVC = [[LFHomeViewController alloc] init];
+    UINavigationController *homeNavVC = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    homeNavVC.tabBarItem.title = @"主页";
+    
+    LFTimeLineViewController *timeLineVC = [[LFTimeLineViewController alloc] init];
+    UINavigationController *timeLiveNavVC = [[UINavigationController alloc] initWithRootViewController:timeLineVC];
+    timeLiveNavVC.tabBarItem.title = @"时间轴";
+    
+    LFSettingViewController *settingVC = [[LFSettingViewController alloc] init];
+    settingVC.tabBarItem.title = @"设置";
+    
+    tbController.viewControllers = @[homeNavVC, timeLiveNavVC, settingVC];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

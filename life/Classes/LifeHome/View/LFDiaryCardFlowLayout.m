@@ -20,7 +20,7 @@ const CGFloat kCardCellHeight = 250;
         self.minimumLineSpacing = 16;
         self.minimumInteritemSpacing = 8;
         self.itemSize = CGSizeMake(CardCellWidth, kCardCellHeight);
-        self.sectionInset = UIEdgeInsetsMake(0, 16, 0, 16);
+        self.sectionInset = UIEdgeInsetsMake(16, 16, 0, 16);
         self.scrollDirection = UICollectionViewScrollDirectionVertical;
     }
     return self;
