@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// 注册页
 @interface LFRegisterViewController : UIViewController
 
 @end

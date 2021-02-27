@@ -12,6 +12,7 @@ UIKIT_EXTERN const CGFloat kTimeLineCellHeight;
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// 时间轴页
 @interface LFTimeLineViewController : UIViewController
 
 @end

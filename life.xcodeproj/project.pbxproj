@@ -34,6 +34,7 @@
 		9BC188BB25E106AF00DE1FD1 /* UICollectionReusableView+Smart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC188BA25E106AF00DE1FD1 /* UICollectionReusableView+Smart.m */; };
 		9BC1903E25E740EC00DE1FD1 /* LFDiaryEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1903D25E740EC00DE1FD1 /* LFDiaryEditViewController.m */; };
 		9BC1904225E9E75D00DE1FD1 /* LFSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1904125E9E75D00DE1FD1 /* LFSettingViewController.m */; };
+		9BC1904625EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1904525EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,8 @@
 		9BC1903D25E740EC00DE1FD1 /* LFDiaryEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDiaryEditViewController.m; sourceTree = "<group>"; };
 		9BC1904025E9E75D00DE1FD1 /* LFSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFSettingViewController.h; sourceTree = "<group>"; };
 		9BC1904125E9E75D00DE1FD1 /* LFSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFSettingViewController.m; sourceTree = "<group>"; };
+		9BC1904425EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDiaryDetailShowViewController.h; sourceTree = "<group>"; };
+		9BC1904525EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDiaryDetailShowViewController.m; sourceTree = "<group>"; };
 		A3E688FAE9198C1219CB4311 /* Pods_life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5C4A66B3519C8C9F23DD44 /* Pods-life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-life.debug.xcconfig"; path = "Target Support Files/Pods-life/Pods-life.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -244,6 +247,8 @@
 			children = (
 				9BC1903C25E740EC00DE1FD1 /* LFDiaryEditViewController.h */,
 				9BC1903D25E740EC00DE1FD1 /* LFDiaryEditViewController.m */,
+				9BC1904425EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.h */,
+				9BC1904525EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -581,6 +586,7 @@
 				9BBD37AB2577BBF800FDA7CC /* LFLoginViewController.m in Sources */,
 				9BC180FA25D92C0700DE1FD1 /* LFBubbleView.m in Sources */,
 				9B104478257A8B1C008728CF /* LFRegisterContentView.m in Sources */,
+				9BC1904625EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.m in Sources */,
 				9BC188BB25E106AF00DE1FD1 /* UICollectionReusableView+Smart.m in Sources */,
 				9BBD37B42578775200FDA7CC /* LFTextEditView.m in Sources */,
 				9BC1813925E1014200DE1FD1 /* UICollectionView+Smart.m in Sources */,
