@@ -35,6 +35,9 @@
 		9BC1903E25E740EC00DE1FD1 /* LFDiaryEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1903D25E740EC00DE1FD1 /* LFDiaryEditViewController.m */; };
 		9BC1904225E9E75D00DE1FD1 /* LFSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1904125E9E75D00DE1FD1 /* LFSettingViewController.m */; };
 		9BC1904625EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1904525EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.m */; };
+		9BC1904A25ECE28A00DE1FD1 /* LFDateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1904925ECE28A00DE1FD1 /* LFDateButton.m */; };
+		9BC1904E25ECE59900DE1FD1 /* LFWeatherSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1904D25ECE59900DE1FD1 /* LFWeatherSelectorView.m */; };
+		9BC1905325ED1DBA00DE1FD1 /* LFWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1905225ED1DBA00DE1FD1 /* LFWeatherCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +95,12 @@
 		9BC1904125E9E75D00DE1FD1 /* LFSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFSettingViewController.m; sourceTree = "<group>"; };
 		9BC1904425EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDiaryDetailShowViewController.h; sourceTree = "<group>"; };
 		9BC1904525EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDiaryDetailShowViewController.m; sourceTree = "<group>"; };
+		9BC1904825ECE28A00DE1FD1 /* LFDateButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDateButton.h; sourceTree = "<group>"; };
+		9BC1904925ECE28A00DE1FD1 /* LFDateButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDateButton.m; sourceTree = "<group>"; };
+		9BC1904C25ECE59900DE1FD1 /* LFWeatherSelectorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFWeatherSelectorView.h; sourceTree = "<group>"; };
+		9BC1904D25ECE59900DE1FD1 /* LFWeatherSelectorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFWeatherSelectorView.m; sourceTree = "<group>"; };
+		9BC1905125ED1DBA00DE1FD1 /* LFWeatherCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFWeatherCell.h; sourceTree = "<group>"; };
+		9BC1905225ED1DBA00DE1FD1 /* LFWeatherCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFWeatherCell.m; sourceTree = "<group>"; };
 		A3E688FAE9198C1219CB4311 /* Pods_life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5C4A66B3519C8C9F23DD44 /* Pods-life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-life.debug.xcconfig"; path = "Target Support Files/Pods-life/Pods-life.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -265,6 +274,12 @@
 		9BBD37972577AB2200FDA7CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9BC1904825ECE28A00DE1FD1 /* LFDateButton.h */,
+				9BC1904925ECE28A00DE1FD1 /* LFDateButton.m */,
+				9BC1904C25ECE59900DE1FD1 /* LFWeatherSelectorView.h */,
+				9BC1904D25ECE59900DE1FD1 /* LFWeatherSelectorView.m */,
+				9BC1905125ED1DBA00DE1FD1 /* LFWeatherCell.h */,
+				9BC1905225ED1DBA00DE1FD1 /* LFWeatherCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -582,13 +597,16 @@
 				9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */,
 				9BC1812C25DE9E0A00DE1FD1 /* NSDate+Easy.m in Sources */,
 				9BBD327A2572A2C600FDA7CC /* main.m in Sources */,
+				9BC1904E25ECE59900DE1FD1 /* LFWeatherSelectorView.m in Sources */,
 				9BC1903E25E740EC00DE1FD1 /* LFDiaryEditViewController.m in Sources */,
 				9BBD37AB2577BBF800FDA7CC /* LFLoginViewController.m in Sources */,
+				9BC1904A25ECE28A00DE1FD1 /* LFDateButton.m in Sources */,
 				9BC180FA25D92C0700DE1FD1 /* LFBubbleView.m in Sources */,
 				9B104478257A8B1C008728CF /* LFRegisterContentView.m in Sources */,
 				9BC1904625EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.m in Sources */,
 				9BC188BB25E106AF00DE1FD1 /* UICollectionReusableView+Smart.m in Sources */,
 				9BBD37B42578775200FDA7CC /* LFTextEditView.m in Sources */,
+				9BC1905325ED1DBA00DE1FD1 /* LFWeatherCell.m in Sources */,
 				9BC1813925E1014200DE1FD1 /* UICollectionView+Smart.m in Sources */,
 				9B10447B257B217E008728CF /* LFHomeViewController.m in Sources */,
 				9BA8EF5425D8DCBF0086A1CD /* LFTimeLineViewController.m in Sources */,
