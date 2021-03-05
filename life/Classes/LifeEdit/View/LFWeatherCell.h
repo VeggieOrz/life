@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LFWeatherCell : UICollectionViewCell
 
+@property (nonatomic, assign, readonly) NSInteger index;
+
 - (void)congfigWithIndex:(NSInteger)index;
 
 /// 设置 Cell 的被选中情况

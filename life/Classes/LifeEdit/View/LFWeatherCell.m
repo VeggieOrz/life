@@ -14,6 +14,8 @@
 
 @property (nonatomic, assign) BOOL isSelected;
 
+@property (nonatomic, assign) NSInteger index;
+
 @end
 
 @implementation LFWeatherCell
@@ -30,6 +32,11 @@
 }
 
 - (void)setSelected:(BOOL)selected {
+    if (selected) {
+        self.contentView.backgroundColor = [UIColor blueColor];
+    } else {
+        self.contentView.backgroundColor = [UIColor whiteColor];
+    }
     
 }
 

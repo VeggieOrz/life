@@ -7,6 +7,7 @@
 //
 
 #import "LFSettingViewController.h"
+#import "LFWeatherSelectorView.h"
 
 @interface LFSettingViewController ()
 
@@ -19,6 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [LFWeatherSelectorView showWithInitIdex:1 block:^(NSInteger index) {
+        NSLog(@"[LFWeatherSelectorView] %d", (int)index);
+    }];
 }
 
 #pragma mark - Public Method
