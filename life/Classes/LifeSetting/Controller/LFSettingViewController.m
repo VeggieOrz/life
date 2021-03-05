@@ -24,7 +24,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [LFWeatherSelectorView showWithInitIdex:1 block:^(NSInteger index) {
+    [LFWeatherSelectorView showWithInitIdex:1
+                                touchRemove:YES
+                                      block:^(NSInteger index) {
         NSLog(@"[LFWeatherSelectorView] %d", (int)index);
     }];
 }

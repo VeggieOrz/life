@@ -19,7 +19,7 @@ const CGFloat kContentViewHeight = 268.0f;
 const CGFloat kOkButtonWidth = 170.0f;
 const CGFloat kOkButtonHeight = 38.0f;
 
-@interface LFWeatherSelectorView () <UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate>
+@interface LFWeatherSelectorView () <UICollectionViewDataSource, UICollectionViewDelegate>
 // 承载View
 @property (nonatomic, strong) UIView *contentView;
 // 确认按钮
@@ -33,26 +33,13 @@ const CGFloat kOkButtonHeight = 38.0f;
 
 @implementation LFWeatherSelectorView
 
-#pragma mark - LifeCycle
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
-    if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6f];
-        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hide)];
-        tapGestureRecognizer.delegate = self;
-        [self addGestureRecognizer:tapGestureRecognizer];
-        [self setupSubViews];
-        [self setupLayoutConstrain];
-    }
-    return self;
-}
-
 #pragma mark - Public Method
 
 + (void)showWithInitIdex:(NSInteger)index
+             touchRemove:(BOOL)touchRemove
                    block:(LFWeatherSelectorBlock)buttonClickBlock {
     LFWeatherSelectorView *view = [[LFWeatherSelectorView alloc] init];
+    view.touchRemove = touchRemove;
     view.currentIndex = index;
     view.buttonClickBlock = buttonClickBlock;
     [view show];
@@ -67,36 +54,6 @@ const CGFloat kOkButtonHeight = 38.0f;
     if (self.buttonClickBlock) {
         self.buttonClickBlock(self.currentIndex);
     }
-}
-
-#pragma mark - Private Method
-
-- (void)show {
-    // 避免重复展示
-    [self hide];
-    
-    self.alpha = 0.0;
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    [window addSubview:self];
-    [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-        self.alpha = 1.0;
-    } completion:nil];
-}
-
-- (void)hide {
-    if (self.superview) {
-        [self removeFromSuperview];
-    }
-}
-
-#pragma mark - UIGestureRecognizerDelegate
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    CGPoint point = [gestureRecognizer locationInView:self];
-    if (CGRectContainsPoint(self.frame, point)) {
-        return NO;
-    }
-    return YES;
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -129,13 +86,11 @@ const CGFloat kOkButtonHeight = 38.0f;
 
 #pragma mark - UI About
 
-- (void)setupSubViews {
+- (void)setupUI {
     [self addSubview:self.contentView];
     [self.contentView addSubview:self.weatherCollectionView];
     [self.contentView addSubview:self.okButton];
-}
-
-- (void)setupLayoutConstrain {
+    
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(kContentViewWidth);
         make.height.mas_equalTo(kContentViewHeight);
