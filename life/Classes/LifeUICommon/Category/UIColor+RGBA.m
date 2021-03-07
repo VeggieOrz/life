@@ -89,6 +89,4 @@ static short hexCharToShort(char a)
     return [self colorWithRed:r green:g blue:b alpha:a];
 }
 
-
-
 @end

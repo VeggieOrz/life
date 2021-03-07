@@ -11,7 +11,7 @@
 
 @interface LFAlertBackgroundView () <UIGestureRecognizerDelegate>
 
-// 承载View
+// 承载View，所展示的弹窗
 @property (nonatomic, strong) UIView *contentView;
 
 @end
@@ -61,7 +61,6 @@
         [self removeFromSuperview];
     }
 }
-
 
 #pragma mark - UIGestureRecognizerDelegate
 

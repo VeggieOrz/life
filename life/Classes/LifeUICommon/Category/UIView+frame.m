@@ -12,11 +12,11 @@
 
 
 #pragma mark - Getter Method
-- (CGFloat)x{
+- (CGFloat)x {
     return self.bounds.origin.x;
 }
 
-- (CGFloat)y{
+- (CGFloat)y {
     return self.bounds.origin.y;
 }
 
@@ -73,6 +73,5 @@
     frame.size = size;
     self.frame = frame;
 }
-
 
 @end
