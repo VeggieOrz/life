@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LFDateButton : UIButton
 
+/// 通过设置date，可以改变按钮日期
 @property (nonatomic, strong) NSDate *date;
 
 - (instancetype)initWithDate:(NSDate *)date;

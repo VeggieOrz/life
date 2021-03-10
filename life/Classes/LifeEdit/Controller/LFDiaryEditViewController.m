@@ -9,7 +9,7 @@
 #import "LFDiaryEditViewController.h"
 
 @interface LFDiaryEditViewController ()
-
+// 标题
 @property (nonatomic, strong) UITextField *titleTextField;
 
 @end
@@ -20,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setupSubViews];
+    [self setupLayoutConstrain];
 }
 
 #pragma mark - Public Method
@@ -41,5 +42,11 @@
 
 #pragma mark - Getter Method
 
+- (UITextField *)titleTextField {
+    if (!_titleTextField) {
+        _titleTextField = [[UITextField alloc] init];
+    }
+    return _titleTextField;
+}
 
 @end
