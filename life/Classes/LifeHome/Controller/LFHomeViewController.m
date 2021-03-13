@@ -12,6 +12,7 @@
 #import "LFDiaryCardFlowLayout.h"
 #import "UICollectionView+Smart.h"
 #import "UIColor+RGBA.h"
+#import "UIView+frame.h"
 #import "LFHomeHeaderView.h"
 #import "LFLoginViewController.h"
 #import <Masonry/Masonry.h>
@@ -19,7 +20,7 @@
 @interface LFHomeViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) LFHomeHeaderView *headerView;
-
+@property (nonatomic, strong) UIView *maskView; // 渐变蒙层
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
@@ -32,7 +33,7 @@
     [super viewDidLoad];
     // 隐藏tabbar
     self.hidesBottomBarWhenPushed = YES;
-    self.view.backgroundColor = [UIColor blueColor];
+//    self.view.backgroundColor = [UIColor blueColor];
     [self setupSubViews];
     [self setupLayoutConstraint];
 }
@@ -70,7 +71,10 @@
 
 - (void)setupSubViews {
     [self.view addSubview:self.headerView];
+    [self.view addSubview:self.maskView];
     [self.view addSubview:self.collectionView];
+    // 将蒙层提到最上层
+    [self.view bringSubviewToFront:self.maskView];
 }
 
 - (void)setupLayoutConstraint {
@@ -78,6 +82,11 @@
         make.top.equalTo(self.view.mas_top).offset(StatusBar_NaviBar_Height);
         make.left.right.equalTo(self.view);
         make.height.equalTo(@176);
+    }];
+    [self.maskView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.headerView.mas_bottom);
+        make.left.right.equalTo(self.headerView);
+        make.height.equalTo(@8);
     }];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
@@ -93,6 +102,23 @@
         _headerView.backgroundColor = [UIColor whiteColor];
     }
     return _headerView;
+}
+
+- (UIView *)maskView {
+    if (!_maskView) {
+        _maskView = [UIView new];
+        _maskView.backgroundColor = [UIColor clearColor];
+        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+        gradientLayer.frame = CGRectMake(0, 0, self.view.width, 8);
+        UIColor *fromColor = [UIColor whiteColor];
+        UIColor *toColor = [[UIColor whiteColor] colorWithAlphaComponent:0.0];
+        gradientLayer.colors = @[(id)fromColor.CGColor, (id)toColor.CGColor];
+        gradientLayer.locations = @[@0.0, @1.0];
+        gradientLayer.startPoint = CGPointMake(0, 0);
+        gradientLayer.endPoint = CGPointMake(0, 1.0);
+        [_maskView.layer addSublayer:gradientLayer];
+    }
+    return _maskView;
 }
 
 - (UICollectionView *)collectionView {

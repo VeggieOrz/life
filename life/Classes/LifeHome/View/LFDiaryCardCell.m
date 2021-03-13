@@ -57,7 +57,7 @@
     
     self.ymLabel = ({
         UILabel *label = [UILabel new];
-        label.font = [UIFont systemFontOfSize:10.0f];
+        label.font = [UIFont fontWithName:@"STKaiti" size:12.0f];
         label.textColor = [UIColor whiteColor];
         label.text = @"2021年，三月";
         label;
@@ -66,7 +66,7 @@
     
     self.dayLabel = ({
         UILabel *label = [UILabel new];
-        label.font = [UIFont systemFontOfSize:16.0f];
+        label.font = [UIFont fontWithName:@"STKaiti" size:18.0f];
         label.textColor = [UIColor whiteColor];
         label.text = @"13";
         label;
@@ -74,7 +74,7 @@
     [self.bgView addSubview:self.dayLabel];
     self.wtLabel = ({
         UILabel *label = [UILabel new];
-        label.font = [UIFont systemFontOfSize:10.0f];
+        label.font = [UIFont fontWithName:@"STKaiti" size:12.0f];
         label.textColor = [UIColor whiteColor];
         label.text = @"星期六 15:36";
         label;

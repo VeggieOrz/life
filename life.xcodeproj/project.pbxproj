@@ -14,6 +14,7 @@
 		9B4BCF5025FB5A86008D4D1D /* LFHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF4F25FB5A86008D4D1D /* LFHomeHeaderView.m */; };
 		9B4BCF5C25FC5D55008D4D1D /* STKaiti.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF5525FC5BF6008D4D1D /* STKaiti.ttf */; };
 		9B4BCF5E25FC5D8F008D4D1D /* STKaiti.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4BCF5525FC5BF6008D4D1D /* STKaiti.ttf */; };
+		9B4BCF6325FCB1F6008D4D1D /* LFGlobalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF6225FCB1F6008D4D1D /* LFGlobalConfig.m */; };
 		9BA8EF5425D8DCBF0086A1CD /* LFTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8EF5325D8DCBF0086A1CD /* LFTimeLineViewController.m */; };
 		9BA8EF5825D8DD820086A1CD /* LFTimeLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8EF5725D8DD820086A1CD /* LFTimeLineTableViewCell.m */; };
 		9BB5FBF825C6DFAA00DD5665 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5FBF725C6DFAA00DD5665 /* UIView+frame.m */; };
@@ -55,6 +56,8 @@
 		9B4BCF4E25FB5A86008D4D1D /* LFHomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFHomeHeaderView.h; sourceTree = "<group>"; };
 		9B4BCF4F25FB5A86008D4D1D /* LFHomeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFHomeHeaderView.m; sourceTree = "<group>"; };
 		9B4BCF5525FC5BF6008D4D1D /* STKaiti.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STKaiti.ttf; sourceTree = "<group>"; };
+		9B4BCF6125FCB1F5008D4D1D /* LFGlobalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFGlobalConfig.h; sourceTree = "<group>"; };
+		9B4BCF6225FCB1F6008D4D1D /* LFGlobalConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFGlobalConfig.m; sourceTree = "<group>"; };
 		9BA8EF5225D8DCBF0086A1CD /* LFTimeLineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTimeLineViewController.h; sourceTree = "<group>"; };
 		9BA8EF5325D8DCBF0086A1CD /* LFTimeLineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFTimeLineViewController.m; sourceTree = "<group>"; };
 		9BA8EF5625D8DD820086A1CD /* LFTimeLineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTimeLineTableViewCell.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 		9B4BCF6025FCAD4C008D4D1D /* LifeGlobal */ = {
 			isa = PBXGroup;
 			children = (
+				9B4BCF6125FCB1F5008D4D1D /* LFGlobalConfig.h */,
+				9B4BCF6225FCB1F6008D4D1D /* LFGlobalConfig.m */,
 			);
 			path = LifeGlobal;
 			sourceTree = "<group>";
@@ -625,6 +630,7 @@
 				9BB5FBF825C6DFAA00DD5665 /* UIView+frame.m in Sources */,
 				9BC188B725E1043A00DE1FD1 /* UICollectionViewCell+Smart.m in Sources */,
 				9B4BCF4025F21A92008D4D1D /* LFAlertBackgroundView.m in Sources */,
+				9B4BCF6325FCB1F6008D4D1D /* LFGlobalConfig.m in Sources */,
 				9BC1813125E0FE6400DE1FD1 /* LFDiaryCardCell.m in Sources */,
 				9BC1813525E100B300DE1FD1 /* LFDiaryCardFlowLayout.m in Sources */,
 				9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */,

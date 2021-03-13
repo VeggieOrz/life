@@ -125,7 +125,6 @@
     if (!_dailySentence) {
         _dailySentence = [UILabel new];
         _dailySentence.font = [UIFont fontWithName:@"STKaiti" size:12.0f];
-//        _dailySentence.font = [UIFont systemFontOfSize:12.0f];
         _dailySentence.textColor = [UIColor colorWithRGB:0x4f4f4f];
         _dailySentence.text = @"你眼里有星辰大海";
     }
