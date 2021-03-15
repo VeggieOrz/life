@@ -7,7 +7,7 @@
 //
 
 #import "LFSettingViewController.h"
-#import "LFWeatherSelectorView.h"
+#import "LFDiaryEditViewController.h"
 
 @interface LFSettingViewController ()
 
@@ -22,13 +22,14 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    LFDiaryEditViewController *diaryEditVC = [[LFDiaryEditViewController alloc] init];
+    [self.navigationController pushViewController:diaryEditVC animated:NO];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [LFWeatherSelectorView showWithInitIdex:1
-                                touchRemove:YES
-                                      block:^(NSInteger index) {
-        NSLog(@"[LFWeatherSelectorView] %d", (int)index);
-    }];
 }
 
 #pragma mark - Public Method

@@ -126,7 +126,7 @@
         _dailySentence = [UILabel new];
         _dailySentence.font = [UIFont fontWithName:@"STKaiti" size:12.0f];
         _dailySentence.textColor = [UIColor colorWithRGB:0x4f4f4f];
-        _dailySentence.text = @"你眼里有星辰大海";
+        _dailySentence.text = @"见到你后才开始相信爱情";
     }
     return _dailySentence;
 }

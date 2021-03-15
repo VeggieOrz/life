@@ -34,9 +34,10 @@
     timeLiveNavVC.tabBarItem.title = @"时间轴";
     
     LFSettingViewController *settingVC = [[LFSettingViewController alloc] init];
-    settingVC.tabBarItem.title = @"设置";
+    UINavigationController *settingNavVC = [[UINavigationController alloc] initWithRootViewController:settingVC];
+    settingNavVC.tabBarItem.title = @"设置";
     
-    tbController.viewControllers = @[homeNavVC, timeLiveNavVC, settingVC];
+    tbController.viewControllers = @[homeNavVC, timeLiveNavVC, settingNavVC];
     
     [self.window makeKeyAndVisible];
     return YES;
