@@ -20,6 +20,10 @@
 @property (nonatomic, strong) UILabel *dayLabel;
 // 星期、时间显示
 @property (nonatomic, strong) UILabel *wtLabel;
+// 标题
+@property (nonatomic, strong) UILabel *titleLabel;
+// 内容
+@property (nonatomic, strong) UILabel *contentLabel;
 
 @end
 
@@ -39,7 +43,8 @@
 #pragma mark - Public Method
 
 - (void)configWithDiary:(LFDiary *)diary {
-    
+    self.titleLabel.text = diary.diaryTitle;
+    self.contentLabel.text = diary.diaryContent;
 }
 
 #pragma mark - Private Method
@@ -80,6 +85,9 @@
         label;
     });
     [self.bgView addSubview:self.wtLabel];
+    
+    [self.contentView addSubview:self.titleLabel];
+    [self.contentView addSubview:self.contentLabel];
 }
 
 - (void)setupLayoutConstrain {
@@ -99,6 +107,40 @@
         make.centerX.equalTo(self.bgView);
         make.top.equalTo(self.dayLabel.mas_bottom).offset(3);
     }];
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.bgView.mas_bottom).offset(16);
+        make.left.equalTo(self.contentView).offset(16);
+        make.right.equalTo(self.contentView).offset(-16);
+    }];
+    [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(8);
+        make.left.right.equalTo(self.titleLabel);
+    }];
+}
+
+#pragma mark - Getter Method
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.backgroundColor = [UIColor clearColor];
+        _titleLabel.textColor = [UIColor colorWithRGB:0x0f0f0f];
+        _titleLabel.font = [UIFont fontWithName:@"STKaiti" size:13.0f];
+        _titleLabel.text = @"还是会想你";
+    }
+    return _titleLabel;
+}
+
+- (UILabel *)contentLabel {
+    if (!_contentLabel) {
+        _contentLabel = [[UILabel alloc] init];
+        _contentLabel.backgroundColor = [UIColor clearColor];
+        _contentLabel.numberOfLines = 0;
+        _contentLabel.textColor = [UIColor colorWithRGB:0x4f4f4f];
+        _contentLabel.font = [UIFont fontWithName:@"STKaiti" size:12.0f];
+        _contentLabel.text = @"既不能断干净又不能和好如初的关系最难受";
+    }
+    return _contentLabel;
 }
 
 @end

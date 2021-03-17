@@ -43,6 +43,7 @@
 		9BC1904A25ECE28A00DE1FD1 /* LFDateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1904925ECE28A00DE1FD1 /* LFDateButton.m */; };
 		9BC1904E25ECE59900DE1FD1 /* LFWeatherSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1904D25ECE59900DE1FD1 /* LFWeatherSelectorView.m */; };
 		9BC1905325ED1DBA00DE1FD1 /* LFWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1905225ED1DBA00DE1FD1 /* LFWeatherCell.m */; };
+		9BCF8B6C2601F375008855CB /* LFKeyBoardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF8B6B2601F375008855CB /* LFKeyBoardToolBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,8 @@
 		9BC1904D25ECE59900DE1FD1 /* LFWeatherSelectorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFWeatherSelectorView.m; sourceTree = "<group>"; };
 		9BC1905125ED1DBA00DE1FD1 /* LFWeatherCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFWeatherCell.h; sourceTree = "<group>"; };
 		9BC1905225ED1DBA00DE1FD1 /* LFWeatherCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFWeatherCell.m; sourceTree = "<group>"; };
+		9BCF8B6A2601F375008855CB /* LFKeyBoardToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFKeyBoardToolBar.h; sourceTree = "<group>"; };
+		9BCF8B6B2601F375008855CB /* LFKeyBoardToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFKeyBoardToolBar.m; sourceTree = "<group>"; };
 		A3E688FAE9198C1219CB4311 /* Pods_life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5C4A66B3519C8C9F23DD44 /* Pods-life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-life.debug.xcconfig"; path = "Target Support Files/Pods-life/Pods-life.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -315,6 +318,8 @@
 				9BC1904D25ECE59900DE1FD1 /* LFWeatherSelectorView.m */,
 				9BC1905125ED1DBA00DE1FD1 /* LFWeatherCell.h */,
 				9BC1905225ED1DBA00DE1FD1 /* LFWeatherCell.m */,
+				9BCF8B6A2601F375008855CB /* LFKeyBoardToolBar.h */,
+				9BCF8B6B2601F375008855CB /* LFKeyBoardToolBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -656,6 +661,7 @@
 				9BBD32662572A2C500FDA7CC /* AppDelegate.m in Sources */,
 				9BBD37A82577B8F800FDA7CC /* LFUser.m in Sources */,
 				9BBD37AE2577BC7E00FDA7CC /* LFRegisterViewController.m in Sources */,
+				9BCF8B6C2601F375008855CB /* LFKeyBoardToolBar.m in Sources */,
 				9B4BCF5025FB5A86008D4D1D /* LFHomeHeaderView.m in Sources */,
 				9BC1811C25DCD79100DE1FD1 /* LFDiary.m in Sources */,
 			);

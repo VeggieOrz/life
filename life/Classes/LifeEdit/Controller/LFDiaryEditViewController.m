@@ -7,11 +7,15 @@
 //
 
 #import "LFDiaryEditViewController.h"
+#import "LFDateButton.h"
 #import "LFWeatherSelectorView.h"
 #import "LFUIMacro.h"
+#import "UIView+frame.h"
 #import <Masonry/Masonry.h>
 
-@interface LFDiaryEditViewController ()
+@interface LFDiaryEditViewController () <UITextViewDelegate>
+// 时间选择按钮
+@property (nonatomic, strong) LFDateButton *dateButton;
 // 标题输入框
 @property (nonatomic, strong) UITextField *titleTextField;
 // 天气选择按钮
@@ -20,6 +24,8 @@
 @property (nonatomic, strong) UIView *horizontalLine;
 // 内容输入框
 @property (nonatomic, strong) UITextView *contentTextView;
+// UITextView 的 placeHolder
+@property (nonatomic, strong) UILabel *placeHolderLabel;
 
 @end
 
@@ -31,10 +37,45 @@
     [super viewDidLoad];
     [self setupSubViews];
     [self setupLayoutConstrain];
+    [self registerForKeyBoardNotification];
+}
+
+- (void)dealloc {
+    
 }
 
 #pragma mark - Public Method
 
+
+#pragma mark - Notification
+
+//UIKeyboardWillShowNotification
+//UIKeyboardDidShowNotification
+//UIKeyboardWillHideNotification
+//UIKeyboardDidHideNotification
+
+- (void)registerForKeyBoardNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidHideNotification object:nil];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    NSLog(@"%s %@", __func__, notification.userInfo);
+}
+
+- (void)keyboardDidShow:(NSNotification *)notification {
+    NSLog(@"%s %@", __func__, notification.userInfo);
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    NSLog(@"%s %@", __func__, notification.userInfo);
+}
+
+- (void)keyboardDidHide:(NSNotification *)notification {
+    NSLog(@"%s %@", __func__, notification.userInfo);
+}
 
 #pragma mark - Action Method
 
@@ -49,12 +90,25 @@
     }];
 }
 
+#pragma mark - UITextViewDelegate
+
+- (void)textViewDidChange:(UITextView *)textView {
+    if (textView.text.length > 0) {
+        self.placeHolderLabel.hidden = YES;
+    } else {
+        self.placeHolderLabel.hidden = NO;
+    }
+}
+
 #pragma mark - Private Method
 
-- (NSAttributedString *)getAttributedString:(NSString *)placeholder
-                                       font:(UIFont *)font
+- (NSAttributedString *)getAttributedString:(nonnull NSString *)placeholder
+                                       font:(nonnull UIFont *)font
                                   textColor:(UIColor *)textColor {
-    NSDictionary *attributes = @{};
+    NSDictionary *attributes = @{
+        NSFontAttributeName:font,
+        NSForegroundColorAttributeName:textColor
+    };
     NSAttributedString *attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder
                                                                                 attributes:attributes] ;
     return attributedPlaceholder;
@@ -67,6 +121,7 @@
     [self.view addSubview:self.weatherBtn];
     [self.view addSubview:self.horizontalLine];
     [self.view addSubview:self.contentTextView];
+    [self.view addSubview:self.placeHolderLabel];
 }
 
 - (void)setupLayoutConstrain {
@@ -91,10 +146,15 @@
     }];
     
     [self.contentTextView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleTextField.mas_bottom).offset(44);
+        make.top.equalTo(self.titleTextField.mas_bottom).offset(16);
         make.bottom.equalTo(self.view);
         make.left.equalTo(self.view.mas_left).offset(16);
         make.right.equalTo(self.view.mas_right).offset(-16);
+    }];
+    
+    [self.placeHolderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentTextView).offset(5);
+        make.top.equalTo(self.contentTextView).offset(7);
     }];
 }
 
@@ -105,8 +165,9 @@
         _titleTextField = [[UITextField alloc] init];
         _titleTextField.font = [UIFont fontWithName:@"STKaiti" size:22.0f];
         _titleTextField.textColor = [UIColor blackColor];
-//        _titleTextField.backgroundColor = [UIColor redColor];
-        _titleTextField.attributedPlaceholder = nil;
+        _titleTextField.attributedPlaceholder = [self getAttributedString:@"标题"
+                                                                     font:[UIFont fontWithName:@"STKaiti" size:22.0f]
+                                                                textColor:[UIColor blackColor]];
     }
     return _titleTextField;
 }
@@ -125,7 +186,17 @@
 - (UIView *)horizontalLine {
     if (!_horizontalLine) {
         _horizontalLine = [[UIView alloc] init];
-        _horizontalLine.backgroundColor = [UIColor blackColor];
+        _horizontalLine.backgroundColor = [UIColor clearColor];
+        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+        shapeLayer.fillColor = [UIColor clearColor].CGColor;
+        shapeLayer.strokeColor = [UIColor blackColor].CGColor;
+        shapeLayer.lineWidth = 1.0f;
+        shapeLayer.lineDashPattern = @[@5, @5]; // 设置虚线
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        [path moveToPoint:CGPointMake(0, 0)];
+        [path addLineToPoint:CGPointMake(ScreenWidth - 92, 0)];
+        shapeLayer.path = path.CGPath;
+        [_horizontalLine.layer addSublayer:shapeLayer];
     }
     return _horizontalLine;
 }
@@ -136,8 +207,20 @@
         _contentTextView.font = [UIFont fontWithName:@"STKaiti" size:18.0f];
         _contentTextView.textColor = [UIColor blackColor];
         _contentTextView.backgroundColor = [UIColor greenColor];
+        _contentTextView.delegate = self;
     }
     return _contentTextView;
+}
+
+- (UILabel *)placeHolderLabel {
+    if (!_placeHolderLabel) {
+        _placeHolderLabel = [[UILabel alloc] init];
+        _placeHolderLabel.backgroundColor = [UIColor clearColor];
+        _placeHolderLabel.attributedText = [self getAttributedString:@"说说今天发生了什么事情吧~"
+                                                                font:[UIFont fontWithName:@"STKaiti" size:18.0f]
+                                                           textColor:[UIColor blackColor]];
+    }
+    return _placeHolderLabel;
 }
 
 @end
