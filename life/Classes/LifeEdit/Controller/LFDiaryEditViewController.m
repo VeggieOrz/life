@@ -9,11 +9,15 @@
 #import "LFDiaryEditViewController.h"
 #import "LFDateButton.h"
 #import "LFWeatherSelectorView.h"
+#import "LFKeyBoardToolBar.h"
 #import "LFUIMacro.h"
 #import "UIView+frame.h"
 #import <Masonry/Masonry.h>
 
-@interface LFDiaryEditViewController () <UITextViewDelegate>
+const CGFloat kLRPadding = 16.0f;
+const CGFloat kToolBarHeight = 44.0f;
+
+@interface LFDiaryEditViewController () <UITextViewDelegate, LFKeyBoardToolBarDelegate>
 // 时间选择按钮
 @property (nonatomic, strong) LFDateButton *dateButton;
 // 标题输入框
@@ -26,6 +30,8 @@
 @property (nonatomic, strong) UITextView *contentTextView;
 // UITextView 的 placeHolder
 @property (nonatomic, strong) UILabel *placeHolderLabel;
+// 键盘弹起后的工具栏
+@property (nonatomic, strong) LFKeyBoardToolBar *toolBar;
 
 @end
 
@@ -56,25 +62,59 @@
 
 - (void)registerForKeyBoardNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardWillHideNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {
     NSLog(@"%s %@", __func__, notification.userInfo);
-}
-
-- (void)keyboardDidShow:(NSNotification *)notification {
-    NSLog(@"%s %@", __func__, notification.userInfo);
+    NSDictionary *userInfo = notification.userInfo;
+    CGSize size = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    NSTimeInterval duration = [[userInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    
+    [self.view layoutIfNeeded];
+    [UIView animateWithDuration:duration animations:^{
+        [self.contentTextView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view).offset(-(size.height + kToolBarHeight));
+        }];
+        
+        [self.toolBar mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view).offset(-size.height);
+        }];
+        [self.view layoutIfNeeded];
+    }];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
     NSLog(@"%s %@", __func__, notification.userInfo);
+    NSDictionary *userInfo = notification.userInfo;
+    NSTimeInterval duration = [[userInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    
+    [self.view layoutIfNeeded];
+    [UIView animateWithDuration:duration animations:^{
+        [self.contentTextView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view);
+        }];
+        
+        [self.toolBar mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view).offset(kToolBarHeight);
+        }];
+        [self.view layoutIfNeeded];
+    }];
 }
 
-- (void)keyboardDidHide:(NSNotification *)notification {
-    NSLog(@"%s %@", __func__, notification.userInfo);
+#pragma mark - LFKeyBoardToolBarDelegate
+
+- (void)didTapUpButton:(LFKeyBoardToolBar *)toolBar {
+    [self.titleTextField becomeFirstResponder];
+}
+
+- (void)didTapDownButton:(LFKeyBoardToolBar *)toolBar {
+    [self.contentTextView becomeFirstResponder];
+}
+
+- (void)didTapDoneButton:(LFKeyBoardToolBar *)toolBar {
+    [self.titleTextField resignFirstResponder];
+    [self.contentTextView resignFirstResponder];
 }
 
 #pragma mark - Action Method
@@ -122,12 +162,13 @@
     [self.view addSubview:self.horizontalLine];
     [self.view addSubview:self.contentTextView];
     [self.view addSubview:self.placeHolderLabel];
+    [self.view addSubview:self.toolBar];
 }
 
 - (void)setupLayoutConstrain {
     [self.titleTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view.mas_left).offset(16);
-        make.right.equalTo(self.weatherBtn.mas_left).offset(-16);
+        make.left.equalTo(self.view.mas_left).offset(kLRPadding);
+        make.right.equalTo(self.weatherBtn.mas_left).offset(-kLRPadding);
         make.top.equalTo(self.view.mas_top).offset(StatusBar_NaviBar_Height);
         make.height.equalTo(@60);
     }];
@@ -135,7 +176,7 @@
     [self.weatherBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(44, 44));
         make.centerY.equalTo(self.titleTextField);
-        make.right.equalTo(self.view.mas_right).offset(-16);
+        make.right.equalTo(self.view.mas_right).offset(-kLRPadding);
     }];
     
     [self.horizontalLine mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -146,15 +187,21 @@
     }];
     
     [self.contentTextView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleTextField.mas_bottom).offset(16);
+        make.top.equalTo(self.titleTextField.mas_bottom).offset(kLRPadding);
         make.bottom.equalTo(self.view);
-        make.left.equalTo(self.view.mas_left).offset(16);
-        make.right.equalTo(self.view.mas_right).offset(-16);
+        make.left.equalTo(self.view.mas_left).offset(kLRPadding);
+        make.right.equalTo(self.view.mas_right).offset(-kLRPadding);
     }];
     
     [self.placeHolderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentTextView).offset(5);
         make.top.equalTo(self.contentTextView).offset(7);
+    }];
+    
+    [self.toolBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view).offset(kToolBarHeight);
+        make.left.right.equalTo(self.view);
+        make.height.equalTo(@(kToolBarHeight));
     }];
 }
 
@@ -221,6 +268,15 @@
                                                            textColor:[UIColor blackColor]];
     }
     return _placeHolderLabel;
+}
+
+- (LFKeyBoardToolBar *)toolBar {
+    if (!_toolBar) {
+        _toolBar = [[LFKeyBoardToolBar alloc] init];
+        _toolBar.backgroundColor = [UIColor redColor];
+        _toolBar.delegate = self;
+    }
+    return _toolBar;
 }
 
 @end

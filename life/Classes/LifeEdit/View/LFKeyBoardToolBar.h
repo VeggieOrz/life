@@ -10,7 +10,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class LFKeyBoardToolBar;
+
+@protocol LFKeyBoardToolBarDelegate <NSObject>
+
+@required
+- (void)didTapUpButton:(LFKeyBoardToolBar *)toolBar;
+- (void)didTapDownButton:(LFKeyBoardToolBar *)toolBar;
+- (void)didTapDoneButton:(LFKeyBoardToolBar *)toolBar;
+
+@end
+
 @interface LFKeyBoardToolBar : UIView
+
+@property (nonatomic, weak) id<LFKeyBoardToolBarDelegate> delegate;
 
 @end
 
