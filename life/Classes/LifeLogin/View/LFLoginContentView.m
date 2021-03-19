@@ -30,12 +30,24 @@ CGFloat const kLFLoginElementTBPadding = 20.0f;  // 控件之间的距离
 
 @implementation LFLoginContentView
 
+#pragma mark - Life Cycle
+
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setupUI];
     }
     return self;
 }
+
+#pragma mark - Public Method
+
+- (void)dismissKeyBoard {
+    [self.emailEditView dismissKeyBoard];
+    [self.passwordEditView dismissKeyBoard];
+}
+
+
+#pragma mark - UI About
 
 - (void)setupUI {
     [self addSubview:self.view];

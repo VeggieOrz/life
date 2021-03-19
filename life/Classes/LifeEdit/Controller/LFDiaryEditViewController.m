@@ -47,7 +47,8 @@ const CGFloat kToolBarHeight = 44.0f;
 }
 
 - (void)dealloc {
-    
+    // 移除观察者
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Public Method

@@ -34,10 +34,6 @@
     return self;
 }
 
-- (void)setSecureTextEntry:(BOOL)secureTextEntry {
-    self.inputField.secureTextEntry = secureTextEntry;
-}
-
 - (void)layoutSubviews {
     [super layoutSubviews];
     if (self.layer.cornerRadius < 0.01f) {
@@ -46,6 +42,16 @@
         self.layer.cornerRadius = self.bounds.size.height / 2;
         self.layer.masksToBounds = YES;
     }
+}
+
+#pragma mark - Public Method
+
+- (void)setSecureTextEntry:(BOOL)secureTextEntry {
+    self.inputField.secureTextEntry = secureTextEntry;
+}
+
+- (void)dismissKeyBoard {
+    [self.inputField resignFirstResponder];
 }
 
 #pragma mark - UI About

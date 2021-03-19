@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LFRegisterContentView : UIView
 
+@property (nonatomic, readonly) UIButton *registerBtn;
+@property (nonatomic, readonly) UIButton *closeBtn;
+
+/// 收起键盘
+- (void)dismissKeyBoard;
+
 @end
 
 NS_ASSUME_NONNULL_END

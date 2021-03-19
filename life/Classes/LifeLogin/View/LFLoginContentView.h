@@ -12,6 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LFLoginContentView : UIView
 
+@property (nonatomic, readonly) UIButton *loginBtn;
+@property (nonatomic, readonly) UIButton *registerBtn;
+@property (nonatomic, readonly) UIButton *forgetBtn;
+
+/// 收起键盘
+- (void)dismissKeyBoard;
+
 @end
 
 NS_ASSUME_NONNULL_END

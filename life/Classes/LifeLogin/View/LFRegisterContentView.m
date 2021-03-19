@@ -8,6 +8,7 @@
 
 #import "LFRegisterContentView.h"
 #import "LFTextEditView.h"
+#import "LFUIMacro.h"
 #import "UIColor+RGBA.h"
 #import <Masonry/Masonry.h>
 
@@ -23,17 +24,29 @@ CGFloat const kLFRegisterElementTBPadding = 20.0f;  // 控件之间的距离
 @property (nonatomic, strong) LFTextEditView *nickNameEditView;
 @property (nonatomic, strong) LFTextEditView *passwordEditView;
 @property (nonatomic, strong) UIButton *registerBtn;
+@property (nonatomic, strong) UIButton *closeBtn;
 
 @end
 
 @implementation LFRegisterContentView
 
+#pragma mark - Life Cycle
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setupUI];
     }
     return self;
 }
+
+#pragma mark - Public Method
+
+- (void)dismissKeyBoard {
+    [self.emailEditView dismissKeyBoard];
+    [self.nickNameEditView dismissKeyBoard];
+    [self.passwordEditView dismissKeyBoard];
+}
+
+#pragma mark - UI About
 
 - (void)setupUI {
     [self addSubview:self.view];
@@ -42,6 +55,7 @@ CGFloat const kLFRegisterElementTBPadding = 20.0f;  // 控件之间的距离
     [self.view addSubview:self.nickNameEditView];
     [self.view addSubview:self.passwordEditView];
     [self.view addSubview:self.registerBtn];
+    [self addSubview:self.closeBtn];
     
     [self.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(self);
@@ -82,6 +96,12 @@ CGFloat const kLFRegisterElementTBPadding = 20.0f;  // 控件之间的距离
         make.left.mas_equalTo(self.view.mas_left).offset(kLFRegisterElementLRPadding);
         make.right.mas_equalTo(self.view.mas_right).offset(-kLFRegisterElementLRPadding);
         make.height.mas_equalTo(kLFRegisterElementHeight);
+    }];
+    
+    [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.mas_top).offset(StatusBar_Height);
+        make.right.equalTo(self.mas_right).offset(-16);
+        make.width.height.equalTo(@24);
     }];
 }
 
@@ -140,6 +160,15 @@ CGFloat const kLFRegisterElementTBPadding = 20.0f;  // 控件之间的距离
         _registerBtn.layer.masksToBounds = YES;
     }
     return _registerBtn;
+}
+
+- (UIButton *)closeBtn {
+    if (!_closeBtn) {
+        _closeBtn = [UIButton new];
+        UIImage *image = [UIImage imageNamed:@"login_close"];
+        [_closeBtn setBackgroundImage:image forState:UIControlStateNormal];
+    }
+    return _closeBtn;
 }
 
 @end

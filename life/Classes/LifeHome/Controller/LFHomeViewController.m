@@ -15,6 +15,7 @@
 #import "UIView+frame.h"
 #import "LFHomeHeaderView.h"
 #import "LFLoginViewController.h"
+#import "LFRegisterViewController.h"
 #import <Masonry/Masonry.h>
 
 @interface LFHomeViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -41,7 +42,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 //    LFLoginViewController *loginVC = [[LFLoginViewController alloc] init];
-//    [self.navigationController pushViewController:loginVC animated:NO];
+    LFRegisterViewController *registerVC = [[LFRegisterViewController alloc] init];
+    [self dismissViewControllerAnimated:YES completion:^{
+//        [UIApplication sharedApplication].keyWindow.rootViewController = loginVC;
+        [UIApplication sharedApplication].keyWindow.rootViewController = registerVC;
+    }];
 }
 
 #pragma mark - Public Method
