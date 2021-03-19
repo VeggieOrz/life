@@ -28,26 +28,12 @@
 
 #pragma mark - Action Mehtod
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.contentView dismissKeyBoard];
-}
 
-- (void)didTapRegisterBtn:(id)sender {
-    // 检查输入格式
-    
-    // 发送注册请求
-}
-
-- (void)didTapCloseBtn:(id)sender {
-    // 跳转到登陆页
-    
-}
 
 #pragma mark - Priavte Method
 
 - (void)setupButtonAction {
-    [self.contentView.registerBtn addTarget:self action:@selector(didTapRegisterBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.contentView.closeBtn addTarget:self action:@selector(didTapCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
+   
 }
 
 @end

@@ -41,11 +41,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    LFLoginViewController *loginVC = [[LFLoginViewController alloc] init];
-    LFRegisterViewController *registerVC = [[LFRegisterViewController alloc] init];
+    LFLoginViewController *loginVC = [[LFLoginViewController alloc] init];
     [self dismissViewControllerAnimated:YES completion:^{
-//        [UIApplication sharedApplication].keyWindow.rootViewController = loginVC;
-        [UIApplication sharedApplication].keyWindow.rootViewController = registerVC;
+        [UIApplication sharedApplication].keyWindow.rootViewController = loginVC;
     }];
 }
 
