@@ -7,9 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "LFHomeViewController.h"
-#import "LFTimeLineViewController.h"
-#import "LFSettingViewController.h"
+#import "LFTabBarController.h"
+#import "LFLoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,23 +20,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
+    // 判断是否登录
+    if (true) {
+        LFLoginViewController *loginVC = [[LFLoginViewController alloc] init];
+        [self.window setRootViewController:loginVC];
+    } else {
+        LFTabBarController *tbController = [[LFTabBarController alloc] init];
+        [self.window setRootViewController:tbController];
+    }
     
-    UITabBarController *tbController = [[UITabBarController alloc] init];
-    [self.window setRootViewController:tbController];
-    
-    LFHomeViewController *homeVC = [[LFHomeViewController alloc] init];
-    UINavigationController *homeNavVC = [[UINavigationController alloc] initWithRootViewController:homeVC];
-    homeNavVC.tabBarItem.title = @"主页";
-    
-    LFTimeLineViewController *timeLineVC = [[LFTimeLineViewController alloc] init];
-    UINavigationController *timeLiveNavVC = [[UINavigationController alloc] initWithRootViewController:timeLineVC];
-    timeLiveNavVC.tabBarItem.title = @"时间轴";
-    
-    LFSettingViewController *settingVC = [[LFSettingViewController alloc] init];
-    UINavigationController *settingNavVC = [[UINavigationController alloc] initWithRootViewController:settingVC];
-    settingNavVC.tabBarItem.title = @"设置";
-    
-    tbController.viewControllers = @[homeNavVC, timeLiveNavVC, settingNavVC];
     
     [self.window makeKeyAndVisible];
     return YES;

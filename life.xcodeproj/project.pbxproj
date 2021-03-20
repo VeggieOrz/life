@@ -44,6 +44,7 @@
 		9BC1904E25ECE59900DE1FD1 /* LFWeatherSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1904D25ECE59900DE1FD1 /* LFWeatherSelectorView.m */; };
 		9BC1905325ED1DBA00DE1FD1 /* LFWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1905225ED1DBA00DE1FD1 /* LFWeatherCell.m */; };
 		9BCF8B6C2601F375008855CB /* LFKeyBoardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF8B6B2601F375008855CB /* LFKeyBoardToolBar.m */; };
+		9BEF9460260591B00057B1E4 /* LFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEF945F260591B00057B1E4 /* LFTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +117,8 @@
 		9BC1905225ED1DBA00DE1FD1 /* LFWeatherCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFWeatherCell.m; sourceTree = "<group>"; };
 		9BCF8B6A2601F375008855CB /* LFKeyBoardToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFKeyBoardToolBar.h; sourceTree = "<group>"; };
 		9BCF8B6B2601F375008855CB /* LFKeyBoardToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFKeyBoardToolBar.m; sourceTree = "<group>"; };
+		9BEF945E260591B00057B1E4 /* LFTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTabBarController.h; sourceTree = "<group>"; };
+		9BEF945F260591B00057B1E4 /* LFTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFTabBarController.m; sourceTree = "<group>"; };
 		A3E688FAE9198C1219CB4311 /* Pods_life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5C4A66B3519C8C9F23DD44 /* Pods-life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-life.debug.xcconfig"; path = "Target Support Files/Pods-life/Pods-life.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -266,6 +269,8 @@
 				9BB5FBF325C6932F00DD5665 /* LFUIMacro.h */,
 				9B4BCF3E25F21A91008D4D1D /* LFAlertBackgroundView.h */,
 				9B4BCF3F25F21A91008D4D1D /* LFAlertBackgroundView.m */,
+				9BEF945E260591B00057B1E4 /* LFTabBarController.h */,
+				9BEF945F260591B00057B1E4 /* LFTabBarController.m */,
 			);
 			path = LifeUICommon;
 			sourceTree = "<group>";
@@ -636,6 +641,7 @@
 				9BC188B725E1043A00DE1FD1 /* UICollectionViewCell+Smart.m in Sources */,
 				9B4BCF4025F21A92008D4D1D /* LFAlertBackgroundView.m in Sources */,
 				9B4BCF6325FCB1F6008D4D1D /* LFGlobalConfig.m in Sources */,
+				9BEF9460260591B00057B1E4 /* LFTabBarController.m in Sources */,
 				9BC1813125E0FE6400DE1FD1 /* LFDiaryCardCell.m in Sources */,
 				9BC1813525E100B300DE1FD1 /* LFDiaryCardFlowLayout.m in Sources */,
 				9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */,

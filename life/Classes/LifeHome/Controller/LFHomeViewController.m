@@ -34,17 +34,12 @@
     [super viewDidLoad];
     // 隐藏tabbar
     self.hidesBottomBarWhenPushed = YES;
-//    self.view.backgroundColor = [UIColor blueColor];
     [self setupSubViews];
     [self setupLayoutConstraint];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    LFLoginViewController *loginVC = [[LFLoginViewController alloc] init];
-    [self dismissViewControllerAnimated:YES completion:^{
-        [UIApplication sharedApplication].keyWindow.rootViewController = loginVC;
-    }];
 }
 
 #pragma mark - Public Method
