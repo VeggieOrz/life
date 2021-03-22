@@ -30,6 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 获取中文年份字符串（二零二零年、二零二一年……）
 @property (nullable, nonatomic, readonly, copy) NSString *lf_yearString_CN;
 
+// 获取中文月份字符串(一月, 二月……)
+@property (nullable, nonatomic, readonly, copy) NSString *lf_monthStr_CN;
+
 // 获取英文月份字符串(Jua, Feb...)
 @property (nullable, nonatomic, readonly, copy) NSString *lf_monthStr_EN;
 

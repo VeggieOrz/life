@@ -9,6 +9,7 @@
 #import "LFDiaryCardCell.h"
 #import "LFDiary.h"
 #import "UIColor+RGBA.h"
+#import "NSDate+Easy.h"
 #import <Masonry/Masonry.h>
 
 @interface LFDiaryCardCell ()
@@ -43,6 +44,12 @@
 #pragma mark - Public Method
 
 - (void)configWithDiary:(LFDiary *)diary {
+    // 时间设置
+    NSDate *diaryDate = diary.diaryDate;
+    self.ymLabel.text = [NSString stringWithFormat:@"%d年，%@", (int)diaryDate.lf_year, diaryDate.lf_monthStr_CN];
+    self.dayLabel.text = @(diaryDate.lf_day).stringValue;
+    self.wtLabel.text = [NSString stringWithFormat:@"%@ %02d:%2d", diaryDate.lf_weekdayString_CN, (int)diaryDate.lf_hour, (int)diaryDate.lf_minute];
+    // 内容设置
     self.titleLabel.text = diary.diaryTitle;
     self.contentLabel.text = diary.diaryContent;
 }

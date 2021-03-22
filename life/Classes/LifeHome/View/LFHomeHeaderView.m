@@ -8,6 +8,7 @@
 
 #import "LFHomeHeaderView.h"
 #import "UIColor+RGBA.h"
+#import "NSDate+Easy.h"
 #import <Masonry/Masonry.h>
 
 @interface LFHomeHeaderView ()
@@ -40,6 +41,8 @@
 #pragma mark - Public Method
 
 #pragma mark - Private Method
+
+
 
 #pragma mark - UI About
 
@@ -88,7 +91,7 @@
         _dayLabel = [UILabel new];
         _dayLabel.font = [UIFont fontWithName:@"STKaiti" size:50.0f];
         _dayLabel.textColor = [UIColor colorWithRGB:0x444444];
-        _dayLabel.text = @"13";
+        _dayLabel.text = @([NSDate date].lf_day).stringValue;
     }
     return _dayLabel;
 }
@@ -98,7 +101,7 @@
         _monthLabel = [UILabel new];
         _monthLabel.font = [UIFont fontWithName:@"STKaiti" size:20.0f];
         _monthLabel.textColor = [UIColor colorWithRGB:0x444444];
-        _monthLabel.text = @"Mar";
+        _monthLabel.text = [NSDate date].lf_monthStr_EN;
     }
     return _monthLabel;
 }
@@ -108,7 +111,8 @@
         _timeLabel = [UILabel new];
         _timeLabel.font = [UIFont fontWithName:@"STKaiti" size:10.0f];
         _timeLabel.textColor = [UIColor colorWithRGB:0x444444];
-        _timeLabel.text = @"21:35:11";
+        NSDate *date = [NSDate date];
+        _timeLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d", (int)date.lf_hour, (int)date.lf_minute, (int)date.lf_second];
     }
     return _timeLabel;
 }
