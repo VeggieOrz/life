@@ -104,4 +104,28 @@ static const NSCalendarUnit unitFlags = (NSCalendarUnitYear | NSCalendarUnitMont
     return @"";
 }
 
+- (NSString *)lf_weekdayString_CN {
+    NSArray *weeks = @[@"星期日", @"星期一", @"星期二", @"星期三", @"星期四", @"星期五", @"星期六"];
+    return weeks[self.lf_weekday - 1];
+}
+
+
+- (NSString *)lf_yearString_CN {
+    NSInteger year = self.lf_year;
+    NSArray *nums = @[@"零", @"一", @"二", @"三", @"四", @"五", @"六", @"七", @"八",@"九"];
+    NSMutableString *mutableString = [NSMutableString string];
+    for (int i = 1000; i >= 1; i /= 10) {
+        NSInteger index = year / i;
+        year %= i;
+        [mutableString appendString:nums[index]];
+    }
+    [mutableString appendString:@"年"];
+    return [mutableString copy];
+}
+
+- (NSString *)lf_monthStr_EN {
+    NSArray *months = @[@"Jan", @"Feb", @"Mar", @"Apr", @"May", @"Jun", @"Jul", @"Aug", @"Sept", @"Oct", @"Nov", @"Dec"];
+    return months[self.lf_month - 1];
+}
+
 @end
