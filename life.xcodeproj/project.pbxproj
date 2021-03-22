@@ -15,6 +15,7 @@
 		9B4BCF5C25FC5D55008D4D1D /* STKaiti.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF5525FC5BF6008D4D1D /* STKaiti.ttf */; };
 		9B4BCF5E25FC5D8F008D4D1D /* STKaiti.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4BCF5525FC5BF6008D4D1D /* STKaiti.ttf */; };
 		9B4BCF6325FCB1F6008D4D1D /* LFGlobalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF6225FCB1F6008D4D1D /* LFGlobalConfig.m */; };
+		9BA8DA64260610B100CC9504 /* LFDiaryDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8DA63260610B100CC9504 /* LFDiaryDetailHeaderView.m */; };
 		9BA8EF5425D8DCBF0086A1CD /* LFTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8EF5325D8DCBF0086A1CD /* LFTimeLineViewController.m */; };
 		9BA8EF5825D8DD820086A1CD /* LFTimeLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8EF5725D8DD820086A1CD /* LFTimeLineTableViewCell.m */; };
 		9BB5FBF825C6DFAA00DD5665 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5FBF725C6DFAA00DD5665 /* UIView+frame.m */; };
@@ -60,6 +61,8 @@
 		9B4BCF5525FC5BF6008D4D1D /* STKaiti.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STKaiti.ttf; sourceTree = "<group>"; };
 		9B4BCF6125FCB1F5008D4D1D /* LFGlobalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFGlobalConfig.h; sourceTree = "<group>"; };
 		9B4BCF6225FCB1F6008D4D1D /* LFGlobalConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFGlobalConfig.m; sourceTree = "<group>"; };
+		9BA8DA62260610B100CC9504 /* LFDiaryDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDiaryDetailHeaderView.h; sourceTree = "<group>"; };
+		9BA8DA63260610B100CC9504 /* LFDiaryDetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDiaryDetailHeaderView.m; sourceTree = "<group>"; };
 		9BA8EF5225D8DCBF0086A1CD /* LFTimeLineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTimeLineViewController.h; sourceTree = "<group>"; };
 		9BA8EF5325D8DCBF0086A1CD /* LFTimeLineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFTimeLineViewController.m; sourceTree = "<group>"; };
 		9BA8EF5625D8DD820086A1CD /* LFTimeLineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTimeLineTableViewCell.h; sourceTree = "<group>"; };
@@ -325,6 +328,8 @@
 				9BC1905225ED1DBA00DE1FD1 /* LFWeatherCell.m */,
 				9BCF8B6A2601F375008855CB /* LFKeyBoardToolBar.h */,
 				9BCF8B6B2601F375008855CB /* LFKeyBoardToolBar.m */,
+				9BA8DA62260610B100CC9504 /* LFDiaryDetailHeaderView.h */,
+				9BA8DA63260610B100CC9504 /* LFDiaryDetailHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -665,6 +670,7 @@
 				9BBD37B92578AFC300FDA7CC /* UIColor+RGBA.m in Sources */,
 				9BC1904225E9E75D00DE1FD1 /* LFSettingViewController.m in Sources */,
 				9BBD32662572A2C500FDA7CC /* AppDelegate.m in Sources */,
+				9BA8DA64260610B100CC9504 /* LFDiaryDetailHeaderView.m in Sources */,
 				9BBD37A82577B8F800FDA7CC /* LFUser.m in Sources */,
 				9BBD37AE2577BC7E00FDA7CC /* LFRegisterViewController.m in Sources */,
 				9BCF8B6C2601F375008855CB /* LFKeyBoardToolBar.m in Sources */,

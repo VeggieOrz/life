@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LFDiaryDetailHeaderView : UIView
 
+@property (nonatomic, strong) NSDate *date;
+
+- (instancetype)initWithDate:(NSDate *)date;
+
 @end
 
 NS_ASSUME_NONNULL_END

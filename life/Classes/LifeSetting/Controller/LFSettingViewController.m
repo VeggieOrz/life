@@ -8,6 +8,7 @@
 
 #import "LFSettingViewController.h"
 #import "LFDiaryEditViewController.h"
+#import "LFDiaryDetailShowViewController.h"
 
 @interface LFSettingViewController ()
 
@@ -24,7 +25,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    LFDiaryEditViewController *diaryEditVC = [[LFDiaryEditViewController alloc] init];
+//    LFDiaryEditViewController *diaryEditVC = [[LFDiaryEditViewController alloc] init];
+    LFDiaryDetailShowViewController *diaryEditVC = [[LFDiaryDetailShowViewController alloc] init];
     [self.navigationController pushViewController:diaryEditVC animated:NO];
 }
 

@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class LFDiary;
+
 NS_ASSUME_NONNULL_BEGIN
 
 /// 日记详情页
 @interface LFDiaryDetailShowViewController : UIViewController
+
+@property (nonatomic, strong) LFDiary *diary;
 
 @end
 

@@ -33,7 +33,6 @@
     settingNavVC.tabBarItem.title = @"设置";
     
     self.viewControllers = @[homeNavVC, timeLiveNavVC, settingNavVC];
-    
 }
 
 @end
