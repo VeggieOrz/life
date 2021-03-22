@@ -47,7 +47,7 @@
         [path addArcWithCenter:CGPointMake(radius, radius) radius:radius startAngle:-M_PI endAngle:-M_PI_2 clockwise:YES];//左上
         
         _shapeLayer = [CAShapeLayer layer];
-        _shapeLayer.fillColor = [UIColor clearColor].CGColor;
+        _shapeLayer.fillColor = [UIColor whiteColor].CGColor;
         _shapeLayer.lineWidth=0.5;
         _shapeLayer.strokeColor= [UIColor blackColor].CGColor;
         _shapeLayer.path= path.CGPath;

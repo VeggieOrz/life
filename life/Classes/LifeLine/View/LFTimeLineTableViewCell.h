@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class LFEvenModel;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LFTimeLineTableViewCell : UITableViewCell
 
-- (void)configWithModel:(id)model;
+- (void)configWithModel:(LFEvenModel *)model;
 
 @end
 

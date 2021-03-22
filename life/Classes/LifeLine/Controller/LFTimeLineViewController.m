@@ -23,8 +23,8 @@ const CGFloat kTimeLineCellHeight = 105;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupSubViews];
     [self.tableView registerClass:[LFTimeLineTableViewCell class] forCellReuseIdentifier:@"LFTimeLineTableViewCell"];
-    [self.view addSubview:self.tableView];
 }
 
 #pragma mark - UITableViewDataSource
@@ -51,7 +51,7 @@ const CGFloat kTimeLineCellHeight = 105;
 #pragma mark - UIAbout
 
 - (void)setupSubViews {
-    
+    [self.view addSubview:self.tableView];
 }
 
 - (void)setupLayoutConstraint {
