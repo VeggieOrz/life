@@ -10,6 +10,7 @@
 		96A88E3CFBFB053CAE4590B7 /* Pods_life.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E688FAE9198C1219CB4311 /* Pods_life.framework */; };
 		9B104478257A8B1C008728CF /* LFRegisterContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B104477257A8B1C008728CF /* LFRegisterContentView.m */; };
 		9B10447B257B217E008728CF /* LFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B10447A257B217E008728CF /* LFHomeViewController.m */; };
+		9B158C2F2609DC6200A10400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B158C2E2609DC6200A10400 /* Assets.xcassets */; };
 		9B4BCF4025F21A92008D4D1D /* LFAlertBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF3F25F21A91008D4D1D /* LFAlertBackgroundView.m */; };
 		9B4BCF5025FB5A86008D4D1D /* LFHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF4F25FB5A86008D4D1D /* LFHomeHeaderView.m */; };
 		9B4BCF5C25FC5D55008D4D1D /* STKaiti.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF5525FC5BF6008D4D1D /* STKaiti.ttf */; };
@@ -23,7 +24,6 @@
 		9BB5FBF825C6DFAA00DD5665 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5FBF725C6DFAA00DD5665 /* UIView+frame.m */; };
 		9BBD32662572A2C500FDA7CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD32652572A2C500FDA7CC /* AppDelegate.m */; };
 		9BBD32722572A2C500FDA7CC /* life.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD32702572A2C500FDA7CC /* life.xcdatamodeld */; };
-		9BBD32742572A2C600FDA7CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBD32732572A2C600FDA7CC /* Assets.xcassets */; };
 		9BBD32772572A2C600FDA7CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBD32752572A2C600FDA7CC /* LaunchScreen.storyboard */; };
 		9BBD327A2572A2C600FDA7CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD32792572A2C600FDA7CC /* main.m */; };
 		9BBD37A82577B8F800FDA7CC /* LFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37A72577B8F800FDA7CC /* LFUser.m */; };
@@ -56,6 +56,7 @@
 		9B104477257A8B1C008728CF /* LFRegisterContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFRegisterContentView.m; sourceTree = "<group>"; };
 		9B104479257B217E008728CF /* LFHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFHomeViewController.h; sourceTree = "<group>"; };
 		9B10447A257B217E008728CF /* LFHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFHomeViewController.m; sourceTree = "<group>"; };
+		9B158C2E2609DC6200A10400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B4BCF3E25F21A91008D4D1D /* LFAlertBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFAlertBackgroundView.h; sourceTree = "<group>"; };
 		9B4BCF3F25F21A91008D4D1D /* LFAlertBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFAlertBackgroundView.m; sourceTree = "<group>"; };
 		9B4BCF4E25FB5A86008D4D1D /* LFHomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFHomeHeaderView.h; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		9BBD32642572A2C500FDA7CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BBD32652572A2C500FDA7CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9BBD32712572A2C500FDA7CC /* life.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = life.xcdatamodel; sourceTree = "<group>"; };
-		9BBD32732572A2C600FDA7CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BBD32762572A2C600FDA7CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BBD32782572A2C600FDA7CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BBD32792572A2C600FDA7CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 				9BBD37A52577AFC800FDA7CC /* Storyboard */,
 				9BBD378C2577A88300FDA7CC /* Localization */,
 				9BBD378B2577A87200FDA7CC /* Fonts */,
-				9BBD32732572A2C600FDA7CC /* Assets.xcassets */,
+				9B158C2E2609DC6200A10400 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -597,8 +597,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B4BCF5E25FC5D8F008D4D1D /* STKaiti.ttf in Resources */,
+				9B158C2F2609DC6200A10400 /* Assets.xcassets in Resources */,
 				9BBD32772572A2C600FDA7CC /* LaunchScreen.storyboard in Resources */,
-				9BBD32742572A2C600FDA7CC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

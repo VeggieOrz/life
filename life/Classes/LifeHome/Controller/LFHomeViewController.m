@@ -16,6 +16,7 @@
 #import "UIImage+Color.h"
 #import "LFHomeHeaderView.h"
 #import "LFLoginViewController.h"
+#import "LFDiaryEditViewController.h"
 #import "LFDiaryDetailShowViewController.h"
 #import "LFDiary.h"
 #import <Masonry/Masonry.h>
@@ -35,11 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // 隐藏tabbar
-//    self.hidesBottomBarWhenPushed = YES;
-    UIImage *backgroundImage = [UIImage lf_imageWithColor:[UIColor whiteColor]];
-    [self.navigationController.navigationBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
-    
+    [self setupNavigationBar];
     [self setupSubViews];
     [self setupLayoutConstraint];
 }
@@ -53,6 +50,15 @@
 
 #pragma mark - Private Method
 
+
+#pragma mark - Action Method
+
+- (void)didTapEditButton:(id)sender {
+    LFDiaryEditViewController *editVC = [[LFDiaryEditViewController alloc] init];
+    // 隐藏tabbar
+    editVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:editVC animated:YES];
+}
 
 #pragma mark - UICollectionViewDataSource
 
@@ -71,10 +77,26 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     LFDiaryDetailShowViewController *detailVC = [[LFDiaryDetailShowViewController alloc] init];
     detailVC.diary = self.diary;
+    // 隐藏tabbar
+    detailVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 #pragma mark - UI About
+
+- (void)setupNavigationBar {
+    // 设置导航栏颜色
+    UIImage *backgroundImage = [UIImage lf_imageWithColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    // 设置右边按钮
+    UIButton *editButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    editButton.imageEdgeInsets = UIEdgeInsetsMake(0, 28, 22, 0);
+    UIImage *image = [UIImage imageNamed:@"home_edit"];
+    [editButton setImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [editButton addTarget:self action:@selector(didTapEditButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:editButton];
+    self.navigationItem.rightBarButtonItem = rightItem;
+}
 
 - (void)setupSubViews {
     [self.view addSubview:self.headerView];

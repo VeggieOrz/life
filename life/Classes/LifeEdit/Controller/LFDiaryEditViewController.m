@@ -41,6 +41,7 @@ const CGFloat kToolBarHeight = 44.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupNavigationBar];
     [self setupSubViews];
     [self setupLayoutConstrain];
     [self registerForKeyBoardNotification];
@@ -157,6 +158,10 @@ const CGFloat kToolBarHeight = 44.0f;
 
 #pragma mark - UI About
 
+- (void)setupNavigationBar {
+    
+}
+
 - (void)setupSubViews {
     [self.view addSubview:self.titleTextField];
     [self.view addSubview:self.weatherBtn];
@@ -170,7 +175,7 @@ const CGFloat kToolBarHeight = 44.0f;
     [self.titleTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left).offset(kLRPadding);
         make.right.equalTo(self.weatherBtn.mas_left).offset(-kLRPadding);
-        make.top.equalTo(self.view.mas_top).offset(StatusBar_NaviBar_Height);
+        make.top.equalTo(self.view.mas_top);
         make.height.equalTo(@60);
     }];
     
