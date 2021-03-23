@@ -86,7 +86,7 @@
     if (!_inputField) {
         _inputField = [[UITextField alloc] init];
         _inputField.textColor = [UIColor colorWithRGB:0x515151];
-        _inputField.font = [UIFont systemFontOfSize:14.0f];
+        _inputField.font = [UIFont fontWithName:@"STKaiti" size:16.0f];
     }
     return _inputField;
 }

@@ -147,6 +147,7 @@ CGFloat const kLFLoginElementTBPadding = 20.0f;  // 控件之间的距离
         _loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
         [_loginBtn setBackgroundColor:[UIColor colorWithRGB:0x515151]];
+        _loginBtn.titleLabel.font = [UIFont fontWithName:@"STKaiti" size:16.0f];
         _loginBtn.layer.cornerRadius = kLFLoginElementHeight / 2.0;
         _loginBtn.layer.masksToBounds = YES;
     }
@@ -156,7 +157,7 @@ CGFloat const kLFLoginElementTBPadding = 20.0f;  // 控件之间的距离
 - (UIButton *)registerBtn {
     if (!_registerBtn) {
         _registerBtn = [[UIButton alloc] init];
-        _registerBtn.titleLabel.font = [UIFont systemFontOfSize:14.0];
+        _registerBtn.titleLabel.font = [UIFont fontWithName:@"STKaiti" size:16.0f];
         [_registerBtn setTitleColor:[UIColor colorWithRGB:0x515151] forState:UIControlStateNormal];
         [_registerBtn setTitle:@"注册账号" forState:UIControlStateNormal];
     }
@@ -166,7 +167,7 @@ CGFloat const kLFLoginElementTBPadding = 20.0f;  // 控件之间的距离
 - (UIButton *)forgetBtn {
     if (!_forgetBtn) {
         _forgetBtn = [[UIButton alloc] init];
-        _forgetBtn.titleLabel.font = [UIFont systemFontOfSize:14.0];
+        _forgetBtn.titleLabel.font = [UIFont fontWithName:@"STKaiti" size:16.0f];
         [_forgetBtn setTitleColor:[UIColor colorWithRGB:0x515151] forState:UIControlStateNormal];
         [_forgetBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
     }

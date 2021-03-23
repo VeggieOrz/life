@@ -154,6 +154,7 @@ CGFloat const kLFRegisterElementTBPadding = 20.0f;  // 控件之间的距离
 - (UIButton *)registerBtn {
     if (!_registerBtn) {
         _registerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _registerBtn.titleLabel.font = [UIFont fontWithName:@"STKaiti" size:16.0f];
         [_registerBtn setTitle:@"注册" forState:UIControlStateNormal];
         [_registerBtn setBackgroundColor:[UIColor colorWithRGB:0x515151]];
         _registerBtn.layer.cornerRadius = kLFRegisterElementHeight / 2.0;
