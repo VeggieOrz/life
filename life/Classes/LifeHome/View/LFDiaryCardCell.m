@@ -48,7 +48,7 @@
     NSDate *diaryDate = diary.diaryDate;
     self.ymLabel.text = [NSString stringWithFormat:@"%d年，%@", (int)diaryDate.lf_year, diaryDate.lf_monthStr_CN];
     self.dayLabel.text = @(diaryDate.lf_day).stringValue;
-    self.wtLabel.text = [NSString stringWithFormat:@"%@ %02d:%2d", diaryDate.lf_weekdayString_CN, (int)diaryDate.lf_hour, (int)diaryDate.lf_minute];
+    self.wtLabel.text = [NSString stringWithFormat:@"%@ %02d:%02d", diaryDate.lf_weekdayString_CN, (int)diaryDate.lf_hour, (int)diaryDate.lf_minute];
     // 内容设置
     self.titleLabel.text = diary.diaryTitle;
     self.contentLabel.text = diary.diaryContent;
@@ -131,6 +131,7 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.backgroundColor = [UIColor clearColor];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.textColor = [UIColor colorWithRGB:0x0f0f0f];
         _titleLabel.font = [UIFont fontWithName:@"STKaiti" size:13.0f];
         _titleLabel.text = @"还是会想你";

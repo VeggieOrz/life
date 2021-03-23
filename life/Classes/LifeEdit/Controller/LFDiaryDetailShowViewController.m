@@ -36,6 +36,7 @@
     [super viewDidLoad];
     [self setupSubViews];
     [self setupLayoutConstrain];
+    [self _configData];
 }
 
 #pragma mark - Public Method
@@ -43,6 +44,11 @@
 
 #pragma mark - Private Method
 
+- (void)_configData {
+    self.headerView.date = self.diary.diaryDate;
+    self.titleLabel.text = self.diary.diaryTitle;
+    self.contentLabel.text = self.diary.diaryContent;
+}
 
 #pragma mark - UI About
 
@@ -66,7 +72,8 @@
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.headerView.mas_bottom).offset(10);
-        make.centerX.equalTo(self.scrollContentView);
+        make.left.equalTo(self.view).offset(30);
+        make.right.equalTo(self.view).offset(-30);
     }];
     
     [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -96,6 +103,7 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.font = [UIFont fontWithName:@"STKaiti" size:20.0f];
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.text = @"网络层设计方案";

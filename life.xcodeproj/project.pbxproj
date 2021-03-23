@@ -17,6 +17,7 @@
 		9B4BCF6325FCB1F6008D4D1D /* LFGlobalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF6225FCB1F6008D4D1D /* LFGlobalConfig.m */; };
 		9BA8DA64260610B100CC9504 /* LFDiaryDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8DA63260610B100CC9504 /* LFDiaryDetailHeaderView.m */; };
 		9BA8DA682608836500CC9504 /* LFEvenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8DA672608836500CC9504 /* LFEvenModel.m */; };
+		9BA8E1E6260893B800CC9504 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8E1E5260893B800CC9504 /* UIImage+Color.m */; };
 		9BA8EF5425D8DCBF0086A1CD /* LFTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8EF5325D8DCBF0086A1CD /* LFTimeLineViewController.m */; };
 		9BA8EF5825D8DD820086A1CD /* LFTimeLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8EF5725D8DD820086A1CD /* LFTimeLineTableViewCell.m */; };
 		9BB5FBF825C6DFAA00DD5665 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5FBF725C6DFAA00DD5665 /* UIView+frame.m */; };
@@ -66,6 +67,8 @@
 		9BA8DA63260610B100CC9504 /* LFDiaryDetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDiaryDetailHeaderView.m; sourceTree = "<group>"; };
 		9BA8DA662608836500CC9504 /* LFEvenModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFEvenModel.h; sourceTree = "<group>"; };
 		9BA8DA672608836500CC9504 /* LFEvenModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFEvenModel.m; sourceTree = "<group>"; };
+		9BA8E1E4260893B800CC9504 /* UIImage+Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		9BA8E1E5260893B800CC9504 /* UIImage+Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		9BA8EF5225D8DCBF0086A1CD /* LFTimeLineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTimeLineViewController.h; sourceTree = "<group>"; };
 		9BA8EF5325D8DCBF0086A1CD /* LFTimeLineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFTimeLineViewController.m; sourceTree = "<group>"; };
 		9BA8EF5625D8DD820086A1CD /* LFTimeLineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTimeLineTableViewCell.h; sourceTree = "<group>"; };
@@ -485,6 +488,8 @@
 				9BC188B625E1043A00DE1FD1 /* UICollectionViewCell+Smart.m */,
 				9BC188B925E106AF00DE1FD1 /* UICollectionReusableView+Smart.h */,
 				9BC188BA25E106AF00DE1FD1 /* UICollectionReusableView+Smart.m */,
+				9BA8E1E4260893B800CC9504 /* UIImage+Color.h */,
+				9BA8E1E5260893B800CC9504 /* UIImage+Color.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -670,6 +675,7 @@
 				9BC1905325ED1DBA00DE1FD1 /* LFWeatherCell.m in Sources */,
 				9BC1813925E1014200DE1FD1 /* UICollectionView+Smart.m in Sources */,
 				9B10447B257B217E008728CF /* LFHomeViewController.m in Sources */,
+				9BA8E1E6260893B800CC9504 /* UIImage+Color.m in Sources */,
 				9BA8EF5425D8DCBF0086A1CD /* LFTimeLineViewController.m in Sources */,
 				9BA8EF5825D8DD820086A1CD /* LFTimeLineTableViewCell.m in Sources */,
 				9BBD32722572A2C500FDA7CC /* life.xcdatamodeld in Sources */,

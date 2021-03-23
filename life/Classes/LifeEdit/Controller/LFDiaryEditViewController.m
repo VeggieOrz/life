@@ -151,7 +151,7 @@ const CGFloat kToolBarHeight = 44.0f;
         NSForegroundColorAttributeName:textColor
     };
     NSAttributedString *attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeholder
-                                                                                attributes:attributes] ;
+                                                                                attributes:attributes];
     return attributedPlaceholder;
 }
 

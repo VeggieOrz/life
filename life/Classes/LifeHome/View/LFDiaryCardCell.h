@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class LFDiary;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LFDiaryCardCell : UICollectionViewCell
+
+- (void)configWithDiary:(LFDiary *)diary;
 
 @end
 

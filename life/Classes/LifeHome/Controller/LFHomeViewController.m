@@ -13,9 +13,11 @@
 #import "UICollectionView+Smart.h"
 #import "UIColor+RGBA.h"
 #import "UIView+frame.h"
+#import "UIImage+Color.h"
 #import "LFHomeHeaderView.h"
 #import "LFLoginViewController.h"
-#import "LFRegisterViewController.h"
+#import "LFDiaryDetailShowViewController.h"
+#import "LFDiary.h"
 #import <Masonry/Masonry.h>
 
 @interface LFHomeViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -23,6 +25,7 @@
 @property (nonatomic, strong) LFHomeHeaderView *headerView;
 @property (nonatomic, strong) UIView *maskView; // 渐变蒙层
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) LFDiary *diary;
 
 @end
 
@@ -33,7 +36,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 隐藏tabbar
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
+    UIImage *backgroundImage = [UIImage lf_imageWithColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    
     [self setupSubViews];
     [self setupLayoutConstraint];
 }
@@ -56,13 +62,16 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     LFDiaryCardCell *cell = [collectionView dequeueReusableCellWithCellClass:[LFDiaryCardCell class] forIndexPath:indexPath];
+    [cell configWithDiary:self.diary];
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    LFDiaryDetailShowViewController *detailVC = [[LFDiaryDetailShowViewController alloc] init];
+    detailVC.diary = self.diary;
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 #pragma mark - UI About
@@ -77,7 +86,7 @@
 
 - (void)setupLayoutConstraint {
     [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(StatusBar_NaviBar_Height);
+        make.top.equalTo(self.view.mas_top);
         make.left.right.equalTo(self.view);
         make.height.equalTo(@176);
     }];
@@ -129,6 +138,18 @@
         [_collectionView registerClass:[LFDiaryCardCell class]];
     }
     return _collectionView;
+}
+
+// 测试代码
+- (LFDiary *)diary {
+    if (!_diary) {
+        _diary = [LFDiary new];
+        _diary.diaryWeather = LFDiaryWeatherCloudy;
+        _diary.diaryDate = [NSDate date];
+        _diary.diaryTitle = @"还是会想你";
+        _diary.diaryContent = @"既不能断干净又不能和好如初的关系最难受";
+    }
+    return _diary;
 }
 
 @end

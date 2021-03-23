@@ -71,7 +71,7 @@
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.mas_centerX);
         make.top.equalTo(self.monthLabel.mas_bottom).offset(12);
-        make.width.equalTo(@170);
+        make.width.equalTo(@190);
         make.height.equalTo(@0.5);
     }];
     [self.dailySentence mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -89,7 +89,7 @@
 - (UILabel *)dayLabel {
     if (!_dayLabel) {
         _dayLabel = [UILabel new];
-        _dayLabel.font = [UIFont fontWithName:@"STKaiti" size:50.0f];
+        _dayLabel.font = [UIFont fontWithName:@"STKaiti" size:60.0f];
         _dayLabel.textColor = [UIColor colorWithRGB:0x444444];
         _dayLabel.text = @([NSDate date].lf_day).stringValue;
     }
@@ -99,7 +99,7 @@
 - (UILabel *)monthLabel {
     if (!_monthLabel) {
         _monthLabel = [UILabel new];
-        _monthLabel.font = [UIFont fontWithName:@"STKaiti" size:20.0f];
+        _monthLabel.font = [UIFont fontWithName:@"STKaiti" size:25.0f];
         _monthLabel.textColor = [UIColor colorWithRGB:0x444444];
         _monthLabel.text = [NSDate date].lf_monthStr_EN;
     }
@@ -109,7 +109,7 @@
 - (UILabel *)timeLabel {
     if (!_timeLabel) {
         _timeLabel = [UILabel new];
-        _timeLabel.font = [UIFont fontWithName:@"STKaiti" size:10.0f];
+        _timeLabel.font = [UIFont fontWithName:@"STKaiti" size:14.0f];
         _timeLabel.textColor = [UIColor colorWithRGB:0x444444];
         NSDate *date = [NSDate date];
         _timeLabel.text = [NSString stringWithFormat:@"%02d:%02d:%02d", (int)date.lf_hour, (int)date.lf_minute, (int)date.lf_second];
@@ -128,7 +128,7 @@
 - (UILabel *)dailySentence {
     if (!_dailySentence) {
         _dailySentence = [UILabel new];
-        _dailySentence.font = [UIFont fontWithName:@"STKaiti" size:12.0f];
+        _dailySentence.font = [UIFont fontWithName:@"STKaiti" size:14.0f];
         _dailySentence.textColor = [UIColor colorWithRGB:0x4f4f4f];
         _dailySentence.text = @"见到你后才开始相信爱情";
     }
@@ -138,7 +138,7 @@
 - (UILabel *)todaySentenceTip {
     if (!_todaySentenceTip) {
         _todaySentenceTip = [UILabel new];
-        _todaySentenceTip.font = [UIFont fontWithName:@"STKaiti" size:10.0f];
+        _todaySentenceTip.font = [UIFont fontWithName:@"STKaiti" size:12.0f];
         _todaySentenceTip.textColor = [UIColor colorWithRGB:0x4f4f4f];
         _todaySentenceTip.text = @"今日一文";
     }
