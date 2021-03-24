@@ -96,6 +96,7 @@
     [editButton addTarget:self action:@selector(didTapEditButton:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:editButton];
     self.navigationItem.rightBarButtonItem = rightItem;
+    
 }
 
 - (void)setupSubViews {

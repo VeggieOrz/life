@@ -12,6 +12,7 @@
 #import "LFKeyBoardToolBar.h"
 #import "LFUIMacro.h"
 #import "UIView+frame.h"
+#import "UIColor+RGBA.h"
 #import <Masonry/Masonry.h>
 
 const CGFloat kLRPadding = 16.0f;
@@ -41,6 +42,7 @@ const CGFloat kToolBarHeight = 44.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self setupNavigationBar];
     [self setupSubViews];
     [self setupLayoutConstrain];
@@ -56,11 +58,6 @@ const CGFloat kToolBarHeight = 44.0f;
 
 
 #pragma mark - Notification
-
-//UIKeyboardWillShowNotification
-//UIKeyboardDidShowNotification
-//UIKeyboardWillHideNotification
-//UIKeyboardDidHideNotification
 
 - (void)registerForKeyBoardNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -115,13 +112,21 @@ const CGFloat kToolBarHeight = 44.0f;
 }
 
 - (void)didTapDoneButton:(LFKeyBoardToolBar *)toolBar {
-    [self.titleTextField resignFirstResponder];
-    [self.contentTextView resignFirstResponder];
+    [self dismissKeyBoard];
 }
 
 #pragma mark - Action Method
 
+- (void)didTapDateButton:(id)sender {
+    // 收起键盘
+    [self dismissKeyBoard];
+    // 弹出日期选择器
+}
+
 - (void)didTapWeatherBtn:(id)sender {
+    // 收起键盘
+    [self dismissKeyBoard];
+    // 展示弹窗
     [LFWeatherSelectorView showWithInitIdex:self.weatherBtn.tag
                                 touchRemove:YES
                                       block:^(NSInteger index) {
@@ -130,6 +135,16 @@ const CGFloat kToolBarHeight = 44.0f;
         UIImage *image = [UIImage imageNamed:imageName];
         [self.weatherBtn setBackgroundImage:image forState:UIControlStateNormal];
     }];
+}
+
+- (void)didTapBackButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)didTapFinishButton:(id)sender {
+    // 保存日记
+    // 发送请求
+    // 刷新主页数据
 }
 
 #pragma mark - UITextViewDelegate
@@ -156,10 +171,35 @@ const CGFloat kToolBarHeight = 44.0f;
     return attributedPlaceholder;
 }
 
+- (void)dismissKeyBoard {
+    [self.titleTextField resignFirstResponder];
+    [self.contentTextView resignFirstResponder];
+}
+
 #pragma mark - UI About
 
 - (void)setupNavigationBar {
+    // 设置左边的返回按钮
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    backButton.imageEdgeInsets = UIEdgeInsetsMake(11, 0, 11, 28);
+    UIImage *backImage = [UIImage imageNamed:@"home_fanhui"];
+    [backButton setImage:[backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(didTapBackButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    self.navigationItem.leftBarButtonItem = leftItem;
     
+    // 设置右边的返回按钮
+    UIButton *finishButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    finishButton.imageEdgeInsets = UIEdgeInsetsMake(10, 26, 10, 0);
+    UIImage *finishImage = [UIImage imageNamed:@"home_finish"];
+    [finishButton setImage:[finishImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [finishButton addTarget:self action:@selector(didTapFinishButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:finishButton];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    // 设置中间按钮
+    self.navigationItem.titleView = self.dateButton;
+    // 解决自定义返回按钮时，侧滑不可用的问题
+    self.navigationController.interactivePopGestureRecognizer.delegate = nil;
 }
 
 - (void)setupSubViews {
@@ -213,6 +253,17 @@ const CGFloat kToolBarHeight = 44.0f;
 
 #pragma mark - Getter Method
 
+- (LFDateButton *)dateButton {
+    if (!_dateButton) {
+        _dateButton = [[LFDateButton alloc] initWithDate:[NSDate date]];
+        _dateButton.titleLabel.font = [UIFont fontWithName:@"STKaiti" size:14.0f];
+        _dateButton.contentEdgeInsets = UIEdgeInsetsMake(5, 10, 5, 10);
+        [_dateButton setTitleColor:[UIColor colorWithRGB:0x5783ae] forState:UIControlStateNormal];
+        [_dateButton addTarget:self action:@selector(didTapDateButton:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _dateButton;
+}
+
 - (UITextField *)titleTextField {
     if (!_titleTextField) {
         _titleTextField = [[UITextField alloc] init];
@@ -220,7 +271,7 @@ const CGFloat kToolBarHeight = 44.0f;
         _titleTextField.textColor = [UIColor blackColor];
         _titleTextField.attributedPlaceholder = [self getAttributedString:@"标题"
                                                                      font:[UIFont fontWithName:@"STKaiti" size:22.0f]
-                                                                textColor:[UIColor blackColor]];
+                                                                textColor:[UIColor colorWithRGB:0xc7c7c7]];
     }
     return _titleTextField;
 }
@@ -242,7 +293,7 @@ const CGFloat kToolBarHeight = 44.0f;
         _horizontalLine.backgroundColor = [UIColor clearColor];
         CAShapeLayer *shapeLayer = [CAShapeLayer layer];
         shapeLayer.fillColor = [UIColor clearColor].CGColor;
-        shapeLayer.strokeColor = [UIColor blackColor].CGColor;
+        shapeLayer.strokeColor = [UIColor colorWithRGB:0xc7c7c7].CGColor;
         shapeLayer.lineWidth = 1.0f;
         shapeLayer.lineDashPattern = @[@5, @5]; // 设置虚线
         UIBezierPath *path = [UIBezierPath bezierPath];
@@ -259,7 +310,7 @@ const CGFloat kToolBarHeight = 44.0f;
         _contentTextView = [[UITextView alloc] init];
         _contentTextView.font = [UIFont fontWithName:@"STKaiti" size:18.0f];
         _contentTextView.textColor = [UIColor blackColor];
-        _contentTextView.backgroundColor = [UIColor greenColor];
+        _contentTextView.backgroundColor = [UIColor whiteColor];
         _contentTextView.delegate = self;
     }
     return _contentTextView;
@@ -271,7 +322,7 @@ const CGFloat kToolBarHeight = 44.0f;
         _placeHolderLabel.backgroundColor = [UIColor clearColor];
         _placeHolderLabel.attributedText = [self getAttributedString:@"说说今天发生了什么事情吧~"
                                                                 font:[UIFont fontWithName:@"STKaiti" size:18.0f]
-                                                           textColor:[UIColor blackColor]];
+                                                           textColor:[UIColor colorWithRGB:0xc7c7c7]];
     }
     return _placeHolderLabel;
 }
@@ -279,7 +330,7 @@ const CGFloat kToolBarHeight = 44.0f;
 - (LFKeyBoardToolBar *)toolBar {
     if (!_toolBar) {
         _toolBar = [[LFKeyBoardToolBar alloc] init];
-        _toolBar.backgroundColor = [UIColor redColor];
+        _toolBar.backgroundColor = [UIColor colorWithRGB:0xf7f7f7];
         _toolBar.delegate = self;
     }
     return _toolBar;
