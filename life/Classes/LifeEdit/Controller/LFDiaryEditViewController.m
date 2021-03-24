@@ -18,7 +18,7 @@
 const CGFloat kLRPadding = 16.0f;
 const CGFloat kToolBarHeight = 44.0f;
 
-@interface LFDiaryEditViewController () <UITextViewDelegate, LFKeyBoardToolBarDelegate>
+@interface LFDiaryEditViewController () <UITextViewDelegate, UITextFieldDelegate, LFKeyBoardToolBarDelegate>
 // 时间选择按钮
 @property (nonatomic, strong) LFDateButton *dateButton;
 // 标题输入框
@@ -147,7 +147,19 @@ const CGFloat kToolBarHeight = 44.0f;
     // 刷新主页数据
 }
 
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    [self.toolBar setViewsWithStatus:YES];
+    return YES;
+}
+
 #pragma mark - UITextViewDelegate
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    [self.toolBar setViewsWithStatus:NO];
+    return YES;
+}
 
 - (void)textViewDidChange:(UITextView *)textView {
     if (textView.text.length > 0) {
@@ -256,9 +268,6 @@ const CGFloat kToolBarHeight = 44.0f;
 - (LFDateButton *)dateButton {
     if (!_dateButton) {
         _dateButton = [[LFDateButton alloc] initWithDate:[NSDate date]];
-        _dateButton.titleLabel.font = [UIFont fontWithName:@"STKaiti" size:14.0f];
-        _dateButton.contentEdgeInsets = UIEdgeInsetsMake(5, 10, 5, 10);
-        [_dateButton setTitleColor:[UIColor colorWithRGB:0x5783ae] forState:UIControlStateNormal];
         [_dateButton addTarget:self action:@selector(didTapDateButton:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _dateButton;
@@ -269,6 +278,7 @@ const CGFloat kToolBarHeight = 44.0f;
         _titleTextField = [[UITextField alloc] init];
         _titleTextField.font = [UIFont fontWithName:@"STKaiti" size:22.0f];
         _titleTextField.textColor = [UIColor blackColor];
+        _titleTextField.delegate = self;
         _titleTextField.attributedPlaceholder = [self getAttributedString:@"标题"
                                                                      font:[UIFont fontWithName:@"STKaiti" size:22.0f]
                                                                 textColor:[UIColor colorWithRGB:0xc7c7c7]];

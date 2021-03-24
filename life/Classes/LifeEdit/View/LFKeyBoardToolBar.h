@@ -25,6 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<LFKeyBoardToolBarDelegate> delegate;
 
+/// 设置按钮状态和标题展示
+/// @param isUp YES 表示第一响应器是标题输入框，NO 表示为内容输入框
+- (void)setViewsWithStatus:(BOOL)isUp;
+
 @end
 
 NS_ASSUME_NONNULL_END

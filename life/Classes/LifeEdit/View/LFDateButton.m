@@ -20,6 +20,9 @@
     if (self = [super init]) {
         self.date = date;
         self.layer.borderColor = [UIColor colorWithRGB:0x5783ae].CGColor;
+        self.titleLabel.font = [UIFont fontWithName:@"STKaiti" size:14.0f];
+        self.contentEdgeInsets = UIEdgeInsetsMake(5, 10, 5, 10);
+        [self setTitleColor:[UIColor colorWithRGB:0x5783ae] forState:UIControlStateNormal];
         self.layer.borderWidth = 1.0f;
         self.layer.cornerRadius = 6.0f;
     }

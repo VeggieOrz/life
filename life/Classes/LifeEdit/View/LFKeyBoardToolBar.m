@@ -13,6 +13,7 @@
 @interface LFKeyBoardToolBar ()
 
 @property (nonatomic, strong) UIView *topLine;
+@property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIButton *upButton;
 @property (nonatomic, strong) UIButton *downButton;
 @property (nonatomic, strong) UIButton *doneButton;
@@ -31,7 +32,15 @@
     return self;
 }
 
-#pragma mark - Private Method
+#pragma mark - Public Method
+
+- (void)setViewsWithStatus:(BOOL)isUp {
+    self.upButton.enabled = !isUp;
+    self.titleLabel.hidden = !isUp;
+    self.downButton.enabled = isUp;
+}
+
+#pragma mark - Acton Method
 
 - (void)didTapUpButton:(id)sender {
     if ([self.delegate respondsToSelector:@selector(didTapUpButton:)]) {
@@ -55,6 +64,7 @@
 
 - (void)setupSubViews {
     [self addSubview:self.topLine];
+    [self addSubview:self.titleLabel];
     [self addSubview:self.upButton];
     [self addSubview:self.downButton];
     [self addSubview:self.doneButton];
@@ -67,12 +77,20 @@
         make.height.equalTo(@0.5);
     }];
     
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self);
+    }];
+    
     [self.upButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(14);
         make.centerY.equalTo(self);
+        make.width.height.equalTo(@22);
     }];
     
     [self.downButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.upButton.mas_right).offset(12);
         make.centerY.equalTo(self);
+        make.width.height.equalTo(@22);
     }];
     
     [self.doneButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -91,9 +109,21 @@
     return _topLine;
 }
 
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [UILabel new];
+        _titleLabel.font = [UIFont fontWithName:@"STKaiti" size:18.0f];
+        _titleLabel.textColor = [UIColor colorWithRGB:0xc7c7c7];
+        _titleLabel.text = @"标题";
+    }
+    return _titleLabel;
+}
+
 - (UIButton *)upButton {
     if (!_upButton) {
         _upButton = [UIButton new];
+        [_upButton setImage:[UIImage imageNamed:@"edit_up_enable"] forState:UIControlStateNormal];
+        [_upButton setImage:[UIImage imageNamed:@"edit_up_disable"] forState:UIControlStateDisabled];
         [_upButton addTarget:self action:@selector(didTapUpButton:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _upButton;
@@ -102,6 +132,8 @@
 - (UIButton *)downButton {
     if (!_downButton) {
         _downButton = [UIButton new];
+        [_downButton setImage:[UIImage imageNamed:@"edit_down_enable"] forState:UIControlStateNormal];
+        [_downButton setImage:[UIImage imageNamed:@"edit_down_disable"] forState:UIControlStateDisabled];
         [_downButton addTarget:self action:@selector(didTapDownButton:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _downButton;
