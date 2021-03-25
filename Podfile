@@ -10,5 +10,8 @@ target 'life' do
   pod 'Masonry', '1.1.0'
   pod 'AFNetworking', '~> 4.0'
   pod 'MJExtension', '3.2.2'
+  pod 'MBProgressHUD', '~> 1.2.0'
+  pod 'MJRefresh', '~> 3.5.0'
+  
 
 end
