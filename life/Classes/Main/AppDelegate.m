@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LFTabBarController.h"
 #import "LFLoginViewController.h"
+#import <UserNotifications/UNUserNotificationCenter.h>
 
 @interface AppDelegate ()
 
@@ -28,8 +29,6 @@
         LFTabBarController *tbController = [[LFTabBarController alloc] init];
         [self.window setRootViewController:tbController];
     }
-    
-    
     [self.window makeKeyAndVisible];
     return YES;
 }

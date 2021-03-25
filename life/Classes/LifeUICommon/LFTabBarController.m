@@ -10,6 +10,7 @@
 #import "LFHomeViewController.h"
 #import "LFTimeLineViewController.h"
 #import "LFSettingViewController.h"
+#import "LFNavigationController.h"
 
 @interface LFTabBarController ()
 
@@ -19,9 +20,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tabBar.tintColor = [UIColor whiteColor];
+    
+//    NSArray *configArray = @[
+//        @{
+//            @"class":@"LFHomeViewController",
+//            @"title":@"主页",
+//            @"image_none_selected":@"",
+//            @"image_selected":@""
+//        },
+//        @{
+//            @"class":@"LFTimeLineViewController",
+//            @"title":@"时间轴",
+//            @"image_none_selected":@"",
+//            @"image_selected":@""
+//        },
+//        @{
+//            @"class":@"LFSettingViewController",
+//            @"title":@"设置",
+//            @"image_none_selected":@"",
+//            @"image_selected":@""
+//        }
+//    ];
     
     LFHomeViewController *homeVC = [[LFHomeViewController alloc] init];
-    UINavigationController *homeNavVC = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    LFNavigationController *homeNavVC = [[LFNavigationController alloc] initWithRootViewController:homeVC];
     homeNavVC.tabBarItem.title = @"主页";
     
     LFTimeLineViewController *timeLineVC = [[LFTimeLineViewController alloc] init];

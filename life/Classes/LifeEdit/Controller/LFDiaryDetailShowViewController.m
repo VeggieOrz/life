@@ -68,8 +68,6 @@
     [backButton addTarget:self action:@selector(didTapBackButton:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     self.navigationItem.leftBarButtonItem = leftItem;
-    // 解决自定义返回按钮时，侧滑不可用的问题
-    self.navigationController.interactivePopGestureRecognizer.delegate = nil;
 }
 
 - (void)setupSubViews {

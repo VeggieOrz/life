@@ -55,8 +55,6 @@
 
 - (void)didTapEditButton:(id)sender {
     LFDiaryEditViewController *editVC = [[LFDiaryEditViewController alloc] init];
-    // 隐藏tabbar
-    editVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:editVC animated:YES];
 }
 
@@ -77,8 +75,6 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     LFDiaryDetailShowViewController *detailVC = [[LFDiaryDetailShowViewController alloc] init];
     detailVC.diary = self.diary;
-    // 隐藏tabbar
-    detailVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

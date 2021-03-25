@@ -210,8 +210,6 @@ const CGFloat kToolBarHeight = 44.0f;
     self.navigationItem.rightBarButtonItem = rightItem;
     // 设置中间按钮
     self.navigationItem.titleView = self.dateButton;
-    // 解决自定义返回按钮时，侧滑不可用的问题
-    self.navigationController.interactivePopGestureRecognizer.delegate = nil;
 }
 
 - (void)setupSubViews {
