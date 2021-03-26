@@ -86,7 +86,7 @@
     [self.navigationController.navigationBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
     // 设置右边按钮
     UIButton *editButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    editButton.imageEdgeInsets = UIEdgeInsetsMake(0, 28, 22, 0);
+    editButton.imageEdgeInsets = UIEdgeInsetsMake(10, 26, 10, 0);
     UIImage *image = [UIImage imageNamed:@"home_edit"];
     [editButton setImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [editButton addTarget:self action:@selector(didTapEditButton:) forControlEvents:UIControlEventTouchUpInside];

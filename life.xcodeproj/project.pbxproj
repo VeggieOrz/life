@@ -18,6 +18,7 @@
 		9B4BCF6325FCB1F6008D4D1D /* LFGlobalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF6225FCB1F6008D4D1D /* LFGlobalConfig.m */; };
 		9B85AD19260C25A90008CAA6 /* LFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B85AD18260C25A90008CAA6 /* LFNavigationController.m */; };
 		9B85AD2C260D757C0008CAA6 /* UIWindow+FlexSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B85AD2B260D757C0008CAA6 /* UIWindow+FlexSetting.m */; };
+		9B85AD32260D7D5F0008CAA6 /* LFUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B85AD31260D7D5F0008CAA6 /* LFUserProfileViewController.m */; };
 		9BA8DA64260610B100CC9504 /* LFDiaryDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8DA63260610B100CC9504 /* LFDiaryDetailHeaderView.m */; };
 		9BA8DA682608836500CC9504 /* LFEvenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8DA672608836500CC9504 /* LFEvenModel.m */; };
 		9BA8E1E6260893B800CC9504 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8E1E5260893B800CC9504 /* UIImage+Color.m */; };
@@ -70,6 +71,8 @@
 		9B85AD18260C25A90008CAA6 /* LFNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFNavigationController.m; sourceTree = "<group>"; };
 		9B85AD2A260D757C0008CAA6 /* UIWindow+FlexSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+FlexSetting.h"; sourceTree = "<group>"; };
 		9B85AD2B260D757C0008CAA6 /* UIWindow+FlexSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+FlexSetting.m"; sourceTree = "<group>"; };
+		9B85AD30260D7D5F0008CAA6 /* LFUserProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFUserProfileViewController.h; sourceTree = "<group>"; };
+		9B85AD31260D7D5F0008CAA6 /* LFUserProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFUserProfileViewController.m; sourceTree = "<group>"; };
 		9BA8DA62260610B100CC9504 /* LFDiaryDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDiaryDetailHeaderView.h; sourceTree = "<group>"; };
 		9BA8DA63260610B100CC9504 /* LFDiaryDetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDiaryDetailHeaderView.m; sourceTree = "<group>"; };
 		9BA8DA662608836500CC9504 /* LFEvenModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFEvenModel.h; sourceTree = "<group>"; };
@@ -166,6 +169,23 @@
 			path = LifeGlobal;
 			sourceTree = "<group>";
 		};
+		9B85AD2E260D7CEA0008CAA6 /* LifeProfile */ = {
+			isa = PBXGroup;
+			children = (
+				9B85AD2F260D7D160008CAA6 /* Controller */,
+			);
+			path = LifeProfile;
+			sourceTree = "<group>";
+		};
+		9B85AD2F260D7D160008CAA6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9B85AD30260D7D5F0008CAA6 /* LFUserProfileViewController.h */,
+				9B85AD31260D7D5F0008CAA6 /* LFUserProfileViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		9BBD32582572A2C500FDA7CC = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +253,7 @@
 				9BBD37A02577AB2300FDA7CC /* LifeLine */,
 				9BBD379C2577AB2300FDA7CC /* LifeLogin */,
 				9BBD37982577AB2200FDA7CC /* LifeSetting */,
+				9B85AD2E260D7CEA0008CAA6 /* LifeProfile */,
 				9BBD378E2577A90800FDA7CC /* LifeHome */,
 			);
 			path = Classes;
@@ -686,6 +707,7 @@
 				9BC1813925E1014200DE1FD1 /* UICollectionView+Smart.m in Sources */,
 				9B10447B257B217E008728CF /* LFHomeViewController.m in Sources */,
 				9BA8E1E6260893B800CC9504 /* UIImage+Color.m in Sources */,
+				9B85AD32260D7D5F0008CAA6 /* LFUserProfileViewController.m in Sources */,
 				9BA8EF5425D8DCBF0086A1CD /* LFTimeLineViewController.m in Sources */,
 				9BA8EF5825D8DD820086A1CD /* LFTimeLineTableViewCell.m in Sources */,
 				9BBD32722572A2C500FDA7CC /* life.xcdatamodeld in Sources */,

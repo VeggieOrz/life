@@ -9,8 +9,9 @@
 #import "LFTabBarController.h"
 #import "LFHomeViewController.h"
 #import "LFTimeLineViewController.h"
-#import "LFSettingViewController.h"
+#import "LFUserProfileViewController.h"
 #import "LFNavigationController.h"
+#import "UIColor+RGBA.h"
 
 @interface LFTabBarController ()
 
@@ -22,40 +23,48 @@
     [super viewDidLoad];
     self.tabBar.tintColor = [UIColor whiteColor];
     
-//    NSArray *configArray = @[
-//        @{
-//            @"class":@"LFHomeViewController",
-//            @"title":@"主页",
-//            @"image_none_selected":@"",
-//            @"image_selected":@""
-//        },
-//        @{
-//            @"class":@"LFTimeLineViewController",
-//            @"title":@"时间轴",
-//            @"image_none_selected":@"",
-//            @"image_selected":@""
-//        },
-//        @{
-//            @"class":@"LFSettingViewController",
-//            @"title":@"设置",
-//            @"image_none_selected":@"",
-//            @"image_selected":@""
-//        }
-//    ];
+    NSArray *configArray = @[
+        @{
+            @"class":@"LFHomeViewController",
+            @"title":@"主页",
+            @"image_none_selected":@"tabbar_home",
+            @"image_selected":@""
+        },
+        @{
+            @"class":@"LFTimeLineViewController",
+            @"title":@"时间轴",
+            @"image_none_selected":@"tabbar_time",
+            @"image_selected":@""
+        },
+        @{
+            @"class":@"LFUserProfileViewController",
+            @"title":@"个人中心",
+            @"image_none_selected":@"tabbar_user",
+            @"image_selected":@""
+        }
+    ];
     
-    LFHomeViewController *homeVC = [[LFHomeViewController alloc] init];
-    LFNavigationController *homeNavVC = [[LFNavigationController alloc] initWithRootViewController:homeVC];
-    homeNavVC.tabBarItem.title = @"主页";
-    
-    LFTimeLineViewController *timeLineVC = [[LFTimeLineViewController alloc] init];
-    UINavigationController *timeLiveNavVC = [[UINavigationController alloc] initWithRootViewController:timeLineVC];
-    timeLiveNavVC.tabBarItem.title = @"时间轴";
-    
-    LFSettingViewController *settingVC = [[LFSettingViewController alloc] init];
-    UINavigationController *settingNavVC = [[UINavigationController alloc] initWithRootViewController:settingVC];
-    settingNavVC.tabBarItem.title = @"设置";
-    
-    self.viewControllers = @[homeNavVC, timeLiveNavVC, settingNavVC];
+    [configArray enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull dict, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIViewController *vc = [NSClassFromString(dict[@"class"]) new];
+        LFNavigationController *navVC = [[LFNavigationController alloc] initWithRootViewController:vc];
+        UITabBarItem *item = navVC.tabBarItem;
+        item.title = dict[@"title"];
+        item.image = [UIImage imageNamed:dict[@"image_none_selected"]];
+        item.selectedImage = [UIImage imageNamed:dict[@"image_selected"]];
+        item.imageInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+        
+        [item setTitleTextAttributes:@{
+            NSForegroundColorAttributeName : [UIColor colorWithRGB:0x444444],
+            NSFontAttributeName : [UIFont fontWithName:@"STKaiti" size:12.0f]
+        } forState:UIControlStateNormal];
+        [item setTitleTextAttributes:@{
+            NSForegroundColorAttributeName : [UIColor colorWithRGB:0x5783ae],
+            NSFontAttributeName : [UIFont fontWithName:@"STKaiti" size:12.0f]
+        } forState:UIControlStateSelected];
+        [self addChildViewController:navVC];
+    }];
+    // 设置 tabar 被选中图标的填充颜色
+    [self.tabBar setTintColor:[UIColor colorWithRGB:0x5783ae]];
 }
 
 @end

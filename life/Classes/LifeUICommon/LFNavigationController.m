@@ -59,5 +59,4 @@
     return [gestureRecognizer isKindOfClass:UIScreenEdgePanGestureRecognizer.class];
 }
 
-
 @end

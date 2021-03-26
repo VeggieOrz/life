@@ -7,6 +7,8 @@
 //
 
 #import "LFUserProfileViewController.h"
+#import "LFSettingViewController.h"
+#import "UIImage+Color.h"
 
 @interface LFUserProfileViewController ()
 
@@ -16,17 +18,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setupNavigationBar];
+    [self setupSubViews];
+    [self setupLayoutConstraint];
 }
 
-/*
+#pragma mark - Action Method
+
+- (void)didTapEditButton:(id)sender {
+    LFSettingViewController *settingVC = [LFSettingViewController new];
+    [self.navigationController pushViewController:settingVC animated:YES];
+}
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setupNavigationBar {
+    // 设置导航栏颜色
+    UIImage *backgroundImage = [UIImage lf_imageWithColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    // 设置右边按钮
+    UIButton *settingButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    settingButton.imageEdgeInsets = UIEdgeInsetsMake(8, 22, 8, 0);
+    UIImage *image = [UIImage imageNamed:@"profile_setting"];
+    [settingButton setImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [settingButton addTarget:self action:@selector(didTapEditButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
 }
-*/
+
+#pragma mark - UI About
+
+- (void)setupSubViews {
+    
+}
+
+- (void)setupLayoutConstraint {
+    
+}
 
 @end
