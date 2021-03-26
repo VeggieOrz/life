@@ -36,8 +36,12 @@
 
 - (void)setViewsWithStatus:(BOOL)isUp {
     self.upButton.enabled = !isUp;
-    self.titleLabel.hidden = !isUp;
     self.downButton.enabled = isUp;
+    // 动画
+    CGFloat alpha = isUp ? 1.0f : 0;
+    [UIView animateWithDuration:0.5f animations:^{
+        self.titleLabel.alpha = alpha;
+    }];
 }
 
 #pragma mark - Acton Method
