@@ -12,6 +12,6 @@ target 'life' do
   pod 'MJExtension', '3.2.2'
   pod 'MBProgressHUD', '~> 1.2.0'
   pod 'MJRefresh', '~> 3.5.0'
-  
+  pod 'FLEX', '~>4.2.2', :configurations => ['Debug']
 
 end

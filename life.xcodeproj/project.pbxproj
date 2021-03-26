@@ -17,6 +17,7 @@
 		9B4BCF5E25FC5D8F008D4D1D /* STKaiti.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4BCF5525FC5BF6008D4D1D /* STKaiti.ttf */; };
 		9B4BCF6325FCB1F6008D4D1D /* LFGlobalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF6225FCB1F6008D4D1D /* LFGlobalConfig.m */; };
 		9B85AD19260C25A90008CAA6 /* LFNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B85AD18260C25A90008CAA6 /* LFNavigationController.m */; };
+		9B85AD2C260D757C0008CAA6 /* UIWindow+FlexSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B85AD2B260D757C0008CAA6 /* UIWindow+FlexSetting.m */; };
 		9BA8DA64260610B100CC9504 /* LFDiaryDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8DA63260610B100CC9504 /* LFDiaryDetailHeaderView.m */; };
 		9BA8DA682608836500CC9504 /* LFEvenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8DA672608836500CC9504 /* LFEvenModel.m */; };
 		9BA8E1E6260893B800CC9504 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8E1E5260893B800CC9504 /* UIImage+Color.m */; };
@@ -67,6 +68,8 @@
 		9B4BCF6225FCB1F6008D4D1D /* LFGlobalConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFGlobalConfig.m; sourceTree = "<group>"; };
 		9B85AD17260C25A90008CAA6 /* LFNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFNavigationController.h; sourceTree = "<group>"; };
 		9B85AD18260C25A90008CAA6 /* LFNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFNavigationController.m; sourceTree = "<group>"; };
+		9B85AD2A260D757C0008CAA6 /* UIWindow+FlexSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+FlexSetting.h"; sourceTree = "<group>"; };
+		9B85AD2B260D757C0008CAA6 /* UIWindow+FlexSetting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+FlexSetting.m"; sourceTree = "<group>"; };
 		9BA8DA62260610B100CC9504 /* LFDiaryDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDiaryDetailHeaderView.h; sourceTree = "<group>"; };
 		9BA8DA63260610B100CC9504 /* LFDiaryDetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDiaryDetailHeaderView.m; sourceTree = "<group>"; };
 		9BA8DA662608836500CC9504 /* LFEvenModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFEvenModel.h; sourceTree = "<group>"; };
@@ -495,6 +498,8 @@
 				9BC188BA25E106AF00DE1FD1 /* UICollectionReusableView+Smart.m */,
 				9BA8E1E4260893B800CC9504 /* UIImage+Color.h */,
 				9BA8E1E5260893B800CC9504 /* UIImage+Color.m */,
+				9B85AD2A260D757C0008CAA6 /* UIWindow+FlexSetting.h */,
+				9B85AD2B260D757C0008CAA6 /* UIWindow+FlexSetting.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -691,6 +696,7 @@
 				9BBD37A82577B8F800FDA7CC /* LFUser.m in Sources */,
 				9BBD37AE2577BC7E00FDA7CC /* LFRegisterViewController.m in Sources */,
 				9BCF8B6C2601F375008855CB /* LFKeyBoardToolBar.m in Sources */,
+				9B85AD2C260D757C0008CAA6 /* UIWindow+FlexSetting.m in Sources */,
 				9B85AD19260C25A90008CAA6 /* LFNavigationController.m in Sources */,
 				9B4BCF5025FB5A86008D4D1D /* LFHomeHeaderView.m in Sources */,
 				9BC1811C25DCD79100DE1FD1 /* LFDiary.m in Sources */,
