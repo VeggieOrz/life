@@ -151,7 +151,7 @@
     if (!_collectionView) {
         LFDiaryCardFlowLayout *flowLayout = [[LFDiaryCardFlowLayout alloc] init];
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-        _collectionView.backgroundColor = [UIColor colorWithRGB:0xf6f7fb];
+        _collectionView.backgroundColor = [UIColor colorWithRGB:0xf5f6f7];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         [_collectionView registerClass:[LFDiaryCardCell class]];

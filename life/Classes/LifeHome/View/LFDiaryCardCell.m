@@ -35,8 +35,14 @@
         self.contentView.backgroundColor = [UIColor whiteColor];
         [self setupSubViews];
         [self setupLayoutConstrain];
-        self.layer.cornerRadius = 10.0f;
-        self.layer.masksToBounds = YES;
+        // 上层的 contentView 设置圆角
+        self.contentView.layer.cornerRadius = 10.0f;
+        self.contentView.layer.masksToBounds = YES;
+        // 下层的 View 设置阴影
+        self.layer.shadowColor = [UIColor blackColor].CGColor;//shadowColor阴影颜色
+        self.layer.shadowOffset = CGSizeMake(5,5);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
+        self.layer.shadowOpacity = 0.1;//阴影透明度，默认0
+        self.layer.shadowRadius = 3;
     }
     return self;
 }
