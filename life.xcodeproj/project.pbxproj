@@ -11,6 +11,8 @@
 		9B104478257A8B1C008728CF /* LFRegisterContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B104477257A8B1C008728CF /* LFRegisterContentView.m */; };
 		9B10447B257B217E008728CF /* LFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B10447A257B217E008728CF /* LFHomeViewController.m */; };
 		9B158C2F2609DC6200A10400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B158C2E2609DC6200A10400 /* Assets.xcassets */; };
+		9B407CD1261C5EE800916FA7 /* LFEventEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B407CD0261C5EE800916FA7 /* LFEventEditViewController.m */; };
+		9B407CD5261C5EFB00916FA7 /* LFEventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B407CD4261C5EFB00916FA7 /* LFEventDetailViewController.m */; };
 		9B4BCF4025F21A92008D4D1D /* LFAlertBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF3F25F21A91008D4D1D /* LFAlertBackgroundView.m */; };
 		9B4BCF5025FB5A86008D4D1D /* LFHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF4F25FB5A86008D4D1D /* LFHomeHeaderView.m */; };
 		9B4BCF5C25FC5D55008D4D1D /* STKaiti.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF5525FC5BF6008D4D1D /* STKaiti.ttf */; };
@@ -60,6 +62,10 @@
 		9B104479257B217E008728CF /* LFHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFHomeViewController.h; sourceTree = "<group>"; };
 		9B10447A257B217E008728CF /* LFHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFHomeViewController.m; sourceTree = "<group>"; };
 		9B158C2E2609DC6200A10400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B407CCF261C5EE800916FA7 /* LFEventEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFEventEditViewController.h; sourceTree = "<group>"; };
+		9B407CD0261C5EE800916FA7 /* LFEventEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFEventEditViewController.m; sourceTree = "<group>"; };
+		9B407CD3261C5EFB00916FA7 /* LFEventDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFEventDetailViewController.h; sourceTree = "<group>"; };
+		9B407CD4261C5EFB00916FA7 /* LFEventDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFEventDetailViewController.m; sourceTree = "<group>"; };
 		9B4BCF3E25F21A91008D4D1D /* LFAlertBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFAlertBackgroundView.h; sourceTree = "<group>"; };
 		9B4BCF3F25F21A91008D4D1D /* LFAlertBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFAlertBackgroundView.m; sourceTree = "<group>"; };
 		9B4BCF4E25FB5A86008D4D1D /* LFHomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFHomeHeaderView.h; sourceTree = "<group>"; };
@@ -153,11 +159,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9B4BCF4C25F903F8008D4D1D /* LifeNet */ = {
+		9B4BCF4C25F903F8008D4D1D /* LifeNetwork */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = LifeNet;
+			path = LifeNetwork;
 			sourceTree = "<group>";
 		};
 		9B4BCF6025FCAD4C008D4D1D /* LifeGlobal */ = {
@@ -248,7 +254,7 @@
 				9B4BCF6025FCAD4C008D4D1D /* LifeGlobal */,
 				9BBD37932577A9FA00FDA7CC /* LifeCommon */,
 				9BBD37922577A9ED00FDA7CC /* LifeUICommon */,
-				9B4BCF4C25F903F8008D4D1D /* LifeNet */,
+				9B4BCF4C25F903F8008D4D1D /* LifeNetwork */,
 				9BBD37942577AB2200FDA7CC /* LifeEdit */,
 				9BBD37A02577AB2300FDA7CC /* LifeLine */,
 				9BBD379C2577AB2300FDA7CC /* LifeLogin */,
@@ -463,6 +469,10 @@
 			children = (
 				9BA8EF5225D8DCBF0086A1CD /* LFTimeLineViewController.h */,
 				9BA8EF5325D8DCBF0086A1CD /* LFTimeLineViewController.m */,
+				9B407CCF261C5EE800916FA7 /* LFEventEditViewController.h */,
+				9B407CD0261C5EE800916FA7 /* LFEventEditViewController.m */,
+				9B407CD3261C5EFB00916FA7 /* LFEventDetailViewController.h */,
+				9B407CD4261C5EFB00916FA7 /* LFEventDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -689,6 +699,7 @@
 				9B4BCF6325FCB1F6008D4D1D /* LFGlobalConfig.m in Sources */,
 				9BEF9460260591B00057B1E4 /* LFTabBarController.m in Sources */,
 				9BC1813125E0FE6400DE1FD1 /* LFDiaryCardCell.m in Sources */,
+				9B407CD1261C5EE800916FA7 /* LFEventEditViewController.m in Sources */,
 				9BC1813525E100B300DE1FD1 /* LFDiaryCardFlowLayout.m in Sources */,
 				9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */,
 				9BC1812C25DE9E0A00DE1FD1 /* NSDate+Easy.m in Sources */,
@@ -705,6 +716,7 @@
 				9BBD37B42578775200FDA7CC /* LFTextEditView.m in Sources */,
 				9BC1905325ED1DBA00DE1FD1 /* LFWeatherCell.m in Sources */,
 				9BC1813925E1014200DE1FD1 /* UICollectionView+Smart.m in Sources */,
+				9B407CD5261C5EFB00916FA7 /* LFEventDetailViewController.m in Sources */,
 				9B10447B257B217E008728CF /* LFHomeViewController.m in Sources */,
 				9BA8E1E6260893B800CC9504 /* UIImage+Color.m in Sources */,
 				9B85AD32260D7D5F0008CAA6 /* LFUserProfileViewController.m in Sources */,

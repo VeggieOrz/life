@@ -7,8 +7,11 @@
 //
 
 #import "LFNavigationController.h"
+#import "UIView+frame.h"
 
 @interface LFNavigationController () <UINavigationControllerDelegate, UIGestureRecognizerDelegate>
+
+@property (nonatomic, strong) UIImageView *shadowImageView;
 
 @end
 
@@ -18,6 +21,12 @@
     [super viewDidLoad];
     __weak typeof(self) weakSelf = self;
     self.delegate = weakSelf;
+}
+
+#pragma mark - Public Method
+
+- (void)setShadowImageHidden:(BOOL)hidden {
+    self.shadowImageView.hidden = hidden;
 }
 
 #pragma mark - Override Method
@@ -55,8 +64,33 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     return YES;
 }
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     return [gestureRecognizer isKindOfClass:UIScreenEdgePanGestureRecognizer.class];
+}
+
+#pragma mark - Private Method
+
+- (UIImageView *)findShadowImageView:(UIView *)view {
+    if ([view isKindOfClass:[UIImageView class]] && view.height <= 1.0f) {
+        return (UIImageView *)view;
+    }
+    for (UIView *subView in view.subviews) {
+        UIImageView *imageView = [self findShadowImageView:subView];
+        if (imageView != nil) {
+            return imageView;
+        }
+    }
+    return nil;
+}
+
+#pragma mark - Getter Method
+
+- (UIImageView *)shadowImageView {
+    if (!_shadowImageView) {
+        _shadowImageView = [self findShadowImageView:self.navigationBar];
+    }
+    return _shadowImageView;
 }
 
 @end

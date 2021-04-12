@@ -7,19 +7,22 @@
 //
 
 #import "LFHomeViewController.h"
+#import "LFLoginViewController.h"
+#import "LFDiaryEditViewController.h"
+#import "LFDiaryDetailShowViewController.h"
+#import "LFNavigationController.h"
 #import "LFUIMacro.h"
 #import "LFDiaryCardCell.h"
 #import "LFDiaryCardFlowLayout.h"
+#import "LFHomeHeaderView.h"
 #import "UICollectionView+Smart.h"
 #import "UIColor+RGBA.h"
 #import "UIView+frame.h"
 #import "UIImage+Color.h"
-#import "LFHomeHeaderView.h"
-#import "LFLoginViewController.h"
-#import "LFDiaryEditViewController.h"
-#import "LFDiaryDetailShowViewController.h"
 #import "LFDiary.h"
+
 #import <Masonry/Masonry.h>
+#import <MJRefresh/MJRefresh.h>
 
 @interface LFHomeViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -43,6 +46,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    if ([self.navigationController isKindOfClass:[LFNavigationController class]]) {
+        [(LFNavigationController *)self.navigationController setShadowImageHidden:YES];
+    }
 }
 
 #pragma mark - Public Method
@@ -61,7 +67,7 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return 1;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -165,8 +171,8 @@
         _diary = [LFDiary new];
         _diary.diaryWeather = LFDiaryWeatherCloudy;
         _diary.diaryDate = [NSDate date];
-        _diary.diaryTitle = @"还是会想你";
-        _diary.diaryContent = @"既不能断干净又不能和好如初的关系最难受";
+        _diary.diaryTitle = @"欢迎来到Life";
+        _diary.diaryContent = @"    Life  主要面向有记录生活的需求，但又由于某些原因不方便将记录的内容暴露在公众面前的用户。为他们提供相对封闭记录环境，提供以文字为主的记录方式；\n    并以用户标记的重要事件作为时间轴，陈列人生中那些重要的日子。同时引入当下流行的组件化机制，以适应客户端系统的扩展性和模块化需求，保证证产品良好的代码结构的同时，能让产品后期快速融入新的good idea。";
     }
     return _diary;
 }

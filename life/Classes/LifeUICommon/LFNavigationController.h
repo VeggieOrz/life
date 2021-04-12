@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LFNavigationController : UINavigationController
 
+- (void)setShadowImageHidden:(BOOL)hidden;
+
 @end
 
 NS_ASSUME_NONNULL_END
