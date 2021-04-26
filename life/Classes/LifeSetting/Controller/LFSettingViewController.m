@@ -7,6 +7,7 @@
 //
 
 #import "LFSettingViewController.h"
+#import "LFSettingFactory.h"
 #import "UIColor+RGBA.h"
 
 @interface LFSettingViewController ()
@@ -38,10 +39,18 @@
 
 #pragma mark - Private Method
 
+#pragma mark - Override Method
+
+- (void)createDataSource {
+    NSArray *sectionsArr = [LFSettingFactory settingPageData];
+    LFSettingTableViewDataSource *dataSource = [[LFSettingTableViewDataSource alloc] initWithViewModelsArray:sectionsArr];
+    self.dataSource = dataSource;
+}
+
 #pragma mark - Action Method
 
 - (void)didTapBackButton:(id)sender {
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UI About

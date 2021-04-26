@@ -13,6 +13,17 @@
 		9B158C2F2609DC6200A10400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B158C2E2609DC6200A10400 /* Assets.xcassets */; };
 		9B407CD1261C5EE800916FA7 /* LFEventEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B407CD0261C5EE800916FA7 /* LFEventEditViewController.m */; };
 		9B407CD5261C5EFB00916FA7 /* LFEventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B407CD4261C5EFB00916FA7 /* LFEventDetailViewController.m */; };
+		9B4084F42630392E00916FA7 /* LFNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4084F32630392E00916FA7 /* LFNetworkManager.m */; };
+		9B4084F8263039DB00916FA7 /* LFSettingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4084F7263039DB00916FA7 /* LFSettingTableView.m */; };
+		9B4085002630422800916FA7 /* LFSettingItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4084FF2630422800916FA7 /* LFSettingItemCell.m */; };
+		9B4085042630442C00916FA7 /* LFSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4085032630442C00916FA7 /* LFSettingItem.m */; };
+		9B4085082630446400916FA7 /* LFSettingSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4085072630446400916FA7 /* LFSettingSectionModel.m */; };
+		9B408512263414C300916FA7 /* LFSettingTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B408511263414C300916FA7 /* LFSettingTableViewDataSource.m */; };
+		9B4085162634160200916FA7 /* LFSettingFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4085152634160200916FA7 /* LFSettingFactory.m */; };
+		9B40851A2634618900916FA7 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4085192634618900916FA7 /* NSArray+Safe.m */; };
+		9B40851E2634619D00916FA7 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B40851D2634619D00916FA7 /* NSDictionary+Safe.m */; };
+		9B40852226347A6500916FA7 /* LFSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B40852126347A6500916FA7 /* LFSettingTableViewController.m */; };
+		9B4085262636AFD600916FA7 /* LFSettingAboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4085252636AFD500916FA7 /* LFSettingAboutMeViewController.m */; };
 		9B4BCF4025F21A92008D4D1D /* LFAlertBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF3F25F21A91008D4D1D /* LFAlertBackgroundView.m */; };
 		9B4BCF5025FB5A86008D4D1D /* LFHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF4F25FB5A86008D4D1D /* LFHomeHeaderView.m */; };
 		9B4BCF5C25FC5D55008D4D1D /* STKaiti.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF5525FC5BF6008D4D1D /* STKaiti.ttf */; };
@@ -66,6 +77,29 @@
 		9B407CD0261C5EE800916FA7 /* LFEventEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFEventEditViewController.m; sourceTree = "<group>"; };
 		9B407CD3261C5EFB00916FA7 /* LFEventDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFEventDetailViewController.h; sourceTree = "<group>"; };
 		9B407CD4261C5EFB00916FA7 /* LFEventDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFEventDetailViewController.m; sourceTree = "<group>"; };
+		9B4084F22630392E00916FA7 /* LFNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFNetworkManager.h; sourceTree = "<group>"; };
+		9B4084F32630392E00916FA7 /* LFNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFNetworkManager.m; sourceTree = "<group>"; };
+		9B4084F6263039DB00916FA7 /* LFSettingTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFSettingTableView.h; sourceTree = "<group>"; };
+		9B4084F7263039DB00916FA7 /* LFSettingTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFSettingTableView.m; sourceTree = "<group>"; };
+		9B4084FE2630422800916FA7 /* LFSettingItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFSettingItemCell.h; sourceTree = "<group>"; };
+		9B4084FF2630422800916FA7 /* LFSettingItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFSettingItemCell.m; sourceTree = "<group>"; };
+		9B4085022630442C00916FA7 /* LFSettingItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFSettingItem.h; sourceTree = "<group>"; };
+		9B4085032630442C00916FA7 /* LFSettingItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFSettingItem.m; sourceTree = "<group>"; };
+		9B4085062630446400916FA7 /* LFSettingSectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFSettingSectionModel.h; sourceTree = "<group>"; };
+		9B4085072630446400916FA7 /* LFSettingSectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFSettingSectionModel.m; sourceTree = "<group>"; };
+		9B408510263414C300916FA7 /* LFSettingTableViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFSettingTableViewDataSource.h; sourceTree = "<group>"; };
+		9B408511263414C300916FA7 /* LFSettingTableViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFSettingTableViewDataSource.m; sourceTree = "<group>"; };
+		9B4085142634160200916FA7 /* LFSettingFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFSettingFactory.h; sourceTree = "<group>"; };
+		9B4085152634160200916FA7 /* LFSettingFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFSettingFactory.m; sourceTree = "<group>"; };
+		9B4085182634618900916FA7 /* NSArray+Safe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Safe.h"; sourceTree = "<group>"; };
+		9B4085192634618900916FA7 /* NSArray+Safe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
+		9B40851C2634619D00916FA7 /* NSDictionary+Safe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Safe.h"; sourceTree = "<group>"; };
+		9B40851D2634619D00916FA7 /* NSDictionary+Safe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Safe.m"; sourceTree = "<group>"; };
+		9B40852026347A6500916FA7 /* LFSettingTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFSettingTableViewController.h; sourceTree = "<group>"; };
+		9B40852126347A6500916FA7 /* LFSettingTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFSettingTableViewController.m; sourceTree = "<group>"; };
+		9B4085242636AFD500916FA7 /* LFSettingAboutMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFSettingAboutMeViewController.h; sourceTree = "<group>"; };
+		9B4085252636AFD500916FA7 /* LFSettingAboutMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFSettingAboutMeViewController.m; sourceTree = "<group>"; };
+		9B4085282636B86000916FA7 /* LFInfoMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFInfoMacro.h; sourceTree = "<group>"; };
 		9B4BCF3E25F21A91008D4D1D /* LFAlertBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFAlertBackgroundView.h; sourceTree = "<group>"; };
 		9B4BCF3F25F21A91008D4D1D /* LFAlertBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFAlertBackgroundView.m; sourceTree = "<group>"; };
 		9B4BCF4E25FB5A86008D4D1D /* LFHomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFHomeHeaderView.h; sourceTree = "<group>"; };
@@ -159,9 +193,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B40850C2634124700916FA7 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				9B4085142634160200916FA7 /* LFSettingFactory.h */,
+				9B4085152634160200916FA7 /* LFSettingFactory.m */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		9B4BCF4C25F903F8008D4D1D /* LifeNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				9B4084F22630392E00916FA7 /* LFNetworkManager.h */,
+				9B4084F32630392E00916FA7 /* LFNetworkManager.m */,
 			);
 			path = LifeNetwork;
 			sourceTree = "<group>";
@@ -323,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				9BBD37B62578AC7B00FDA7CC /* Category */,
+				9B4085282636B86000916FA7 /* LFInfoMacro.h */,
 			);
 			path = LifeCommon;
 			sourceTree = "<group>";
@@ -378,6 +424,7 @@
 		9BBD37982577AB2200FDA7CC /* LifeSetting */ = {
 			isa = PBXGroup;
 			children = (
+				9B40850C2634124700916FA7 /* Factory */,
 				9BBD37992577AB2200FDA7CC /* Controller */,
 				9BBD379A2577AB2300FDA7CC /* Model */,
 				9BBD379B2577AB2300FDA7CC /* View */,
@@ -391,6 +438,10 @@
 			children = (
 				9BC1904025E9E75D00DE1FD1 /* LFSettingViewController.h */,
 				9BC1904125E9E75D00DE1FD1 /* LFSettingViewController.m */,
+				9B40852026347A6500916FA7 /* LFSettingTableViewController.h */,
+				9B40852126347A6500916FA7 /* LFSettingTableViewController.m */,
+				9B4085242636AFD500916FA7 /* LFSettingAboutMeViewController.h */,
+				9B4085252636AFD500916FA7 /* LFSettingAboutMeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -398,6 +449,12 @@
 		9BBD379A2577AB2300FDA7CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B4085022630442C00916FA7 /* LFSettingItem.h */,
+				9B4085032630442C00916FA7 /* LFSettingItem.m */,
+				9B4085062630446400916FA7 /* LFSettingSectionModel.h */,
+				9B4085072630446400916FA7 /* LFSettingSectionModel.m */,
+				9B408510263414C300916FA7 /* LFSettingTableViewDataSource.h */,
+				9B408511263414C300916FA7 /* LFSettingTableViewDataSource.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -405,6 +462,10 @@
 		9BBD379B2577AB2300FDA7CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9B4084F6263039DB00916FA7 /* LFSettingTableView.h */,
+				9B4084F7263039DB00916FA7 /* LFSettingTableView.m */,
+				9B4084FE2630422800916FA7 /* LFSettingItemCell.h */,
+				9B4084FF2630422800916FA7 /* LFSettingItemCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -539,6 +600,10 @@
 			isa = PBXGroup;
 			children = (
 				9BC1812925DE9D6500DE1FD1 /* NSDate */,
+				9B4085182634618900916FA7 /* NSArray+Safe.h */,
+				9B4085192634618900916FA7 /* NSArray+Safe.m */,
+				9B40851C2634619D00916FA7 /* NSDictionary+Safe.h */,
+				9B40851D2634619D00916FA7 /* NSDictionary+Safe.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -696,11 +761,16 @@
 				9BB5FBF825C6DFAA00DD5665 /* UIView+frame.m in Sources */,
 				9BC188B725E1043A00DE1FD1 /* UICollectionViewCell+Smart.m in Sources */,
 				9B4BCF4025F21A92008D4D1D /* LFAlertBackgroundView.m in Sources */,
+				9B4085002630422800916FA7 /* LFSettingItemCell.m in Sources */,
 				9B4BCF6325FCB1F6008D4D1D /* LFGlobalConfig.m in Sources */,
 				9BEF9460260591B00057B1E4 /* LFTabBarController.m in Sources */,
+				9B408512263414C300916FA7 /* LFSettingTableViewDataSource.m in Sources */,
+				9B40852226347A6500916FA7 /* LFSettingTableViewController.m in Sources */,
 				9BC1813125E0FE6400DE1FD1 /* LFDiaryCardCell.m in Sources */,
 				9B407CD1261C5EE800916FA7 /* LFEventEditViewController.m in Sources */,
+				9B4085262636AFD600916FA7 /* LFSettingAboutMeViewController.m in Sources */,
 				9BC1813525E100B300DE1FD1 /* LFDiaryCardFlowLayout.m in Sources */,
+				9B40851E2634619D00916FA7 /* NSDictionary+Safe.m in Sources */,
 				9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */,
 				9BC1812C25DE9E0A00DE1FD1 /* NSDate+Easy.m in Sources */,
 				9BBD327A2572A2C600FDA7CC /* main.m in Sources */,
@@ -708,7 +778,9 @@
 				9BC1903E25E740EC00DE1FD1 /* LFDiaryEditViewController.m in Sources */,
 				9BBD37AB2577BBF800FDA7CC /* LFLoginViewController.m in Sources */,
 				9BC1904A25ECE28A00DE1FD1 /* LFDateButton.m in Sources */,
+				9B4084F42630392E00916FA7 /* LFNetworkManager.m in Sources */,
 				9BC180FA25D92C0700DE1FD1 /* LFBubbleView.m in Sources */,
+				9B4084F8263039DB00916FA7 /* LFSettingTableView.m in Sources */,
 				9B104478257A8B1C008728CF /* LFRegisterContentView.m in Sources */,
 				9BA8DA682608836500CC9504 /* LFEvenModel.m in Sources */,
 				9BC1904625EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.m in Sources */,
@@ -716,8 +788,10 @@
 				9BBD37B42578775200FDA7CC /* LFTextEditView.m in Sources */,
 				9BC1905325ED1DBA00DE1FD1 /* LFWeatherCell.m in Sources */,
 				9BC1813925E1014200DE1FD1 /* UICollectionView+Smart.m in Sources */,
+				9B4085162634160200916FA7 /* LFSettingFactory.m in Sources */,
 				9B407CD5261C5EFB00916FA7 /* LFEventDetailViewController.m in Sources */,
 				9B10447B257B217E008728CF /* LFHomeViewController.m in Sources */,
+				9B40851A2634618900916FA7 /* NSArray+Safe.m in Sources */,
 				9BA8E1E6260893B800CC9504 /* UIImage+Color.m in Sources */,
 				9B85AD32260D7D5F0008CAA6 /* LFUserProfileViewController.m in Sources */,
 				9BA8EF5425D8DCBF0086A1CD /* LFTimeLineViewController.m in Sources */,
@@ -726,10 +800,12 @@
 				9BBD37B92578AFC300FDA7CC /* UIColor+RGBA.m in Sources */,
 				9BC1904225E9E75D00DE1FD1 /* LFSettingViewController.m in Sources */,
 				9BBD32662572A2C500FDA7CC /* AppDelegate.m in Sources */,
+				9B4085082630446400916FA7 /* LFSettingSectionModel.m in Sources */,
 				9BA8DA64260610B100CC9504 /* LFDiaryDetailHeaderView.m in Sources */,
 				9BBD37A82577B8F800FDA7CC /* LFUser.m in Sources */,
 				9BBD37AE2577BC7E00FDA7CC /* LFRegisterViewController.m in Sources */,
 				9BCF8B6C2601F375008855CB /* LFKeyBoardToolBar.m in Sources */,
+				9B4085042630442C00916FA7 /* LFSettingItem.m in Sources */,
 				9B85AD2C260D757C0008CAA6 /* UIWindow+FlexSetting.m in Sources */,
 				9B85AD19260C25A90008CAA6 /* LFNavigationController.m in Sources */,
 				9B4BCF5025FB5A86008D4D1D /* LFHomeHeaderView.m in Sources */,

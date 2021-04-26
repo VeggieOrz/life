@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LFSettingTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 设置页
-@interface LFSettingViewController : UIViewController
+@interface LFSettingViewController : LFSettingTableViewController
 
 @end
 
