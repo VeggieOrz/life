@@ -7,7 +7,10 @@
 //
 
 #import "LFSettingViewController.h"
+#import "LFSettingAboutMeViewController.h"
+#import "LFSettingFeedbackViewController.h"
 #import "LFSettingFactory.h"
+#import "LFSettingItem.h"
 #import "UIColor+RGBA.h"
 
 @interface LFSettingViewController ()
@@ -20,24 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
     [self setupNavigationBar];
-    [self setupSubViews];
-    [self setupLayoutConstraint];
 }
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
-#pragma mark - Public Method
-
-
-#pragma mark - Private Method
 
 #pragma mark - Override Method
 
@@ -45,6 +32,39 @@
     NSArray *sectionsArr = [LFSettingFactory settingPageData];
     LFSettingTableViewDataSource *dataSource = [[LFSettingTableViewDataSource alloc] initWithViewModelsArray:sectionsArr];
     self.dataSource = dataSource;
+}
+
+- (void)didSelectItem:(LFSettingItem *)item atIndexPath:(NSIndexPath *)indexPath {
+    switch (item.identifier) {
+        case 0: {
+            NSLog(@"账号安全");
+        } break;
+            
+        case 1: {
+            
+            NSLog(@"日常记事提醒");
+        } break;
+            
+        case 2: {
+            NSLog(@"清除缓存");
+        } break;
+            
+        case 3: {
+            LFSettingFeedbackViewController *feedbackVC = [LFSettingFeedbackViewController new];
+            [self.navigationController pushViewController:feedbackVC animated:YES];
+            NSLog(@"意见反馈");
+        } break;
+            
+        case 4: {
+            NSLog(@"关于Life");
+            LFSettingAboutMeViewController *aboutMeVC = [LFSettingAboutMeViewController new];
+            [self.navigationController pushViewController:aboutMeVC animated:YES];
+        } break;
+            
+        case 5: {
+            NSLog(@"退出登录");
+        } break;
+    }
 }
 
 #pragma mark - Action Method
@@ -72,16 +92,5 @@
     label.text = @"设置";
     self.navigationItem.titleView = label;
 }
-
-- (void)setupSubViews {
-    
-}
-
-- (void)setupLayoutConstraint {
-    
-}
-
-#pragma mark - Getter Method
-
 
 @end

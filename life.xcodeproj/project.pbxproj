@@ -24,6 +24,7 @@
 		9B40851E2634619D00916FA7 /* NSDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B40851D2634619D00916FA7 /* NSDictionary+Safe.m */; };
 		9B40852226347A6500916FA7 /* LFSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B40852126347A6500916FA7 /* LFSettingTableViewController.m */; };
 		9B4085262636AFD600916FA7 /* LFSettingAboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4085252636AFD500916FA7 /* LFSettingAboutMeViewController.m */; };
+		9B40852F2636E60E00916FA7 /* LFSettingFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B40852E2636E60E00916FA7 /* LFSettingFeedbackViewController.m */; };
 		9B4BCF4025F21A92008D4D1D /* LFAlertBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF3F25F21A91008D4D1D /* LFAlertBackgroundView.m */; };
 		9B4BCF5025FB5A86008D4D1D /* LFHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF4F25FB5A86008D4D1D /* LFHomeHeaderView.m */; };
 		9B4BCF5C25FC5D55008D4D1D /* STKaiti.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF5525FC5BF6008D4D1D /* STKaiti.ttf */; };
@@ -100,6 +101,8 @@
 		9B4085242636AFD500916FA7 /* LFSettingAboutMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFSettingAboutMeViewController.h; sourceTree = "<group>"; };
 		9B4085252636AFD500916FA7 /* LFSettingAboutMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFSettingAboutMeViewController.m; sourceTree = "<group>"; };
 		9B4085282636B86000916FA7 /* LFInfoMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFInfoMacro.h; sourceTree = "<group>"; };
+		9B40852D2636E60E00916FA7 /* LFSettingFeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFSettingFeedbackViewController.h; sourceTree = "<group>"; };
+		9B40852E2636E60E00916FA7 /* LFSettingFeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFSettingFeedbackViewController.m; sourceTree = "<group>"; };
 		9B4BCF3E25F21A91008D4D1D /* LFAlertBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFAlertBackgroundView.h; sourceTree = "<group>"; };
 		9B4BCF3F25F21A91008D4D1D /* LFAlertBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFAlertBackgroundView.m; sourceTree = "<group>"; };
 		9B4BCF4E25FB5A86008D4D1D /* LFHomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFHomeHeaderView.h; sourceTree = "<group>"; };
@@ -442,6 +445,8 @@
 				9B40852126347A6500916FA7 /* LFSettingTableViewController.m */,
 				9B4085242636AFD500916FA7 /* LFSettingAboutMeViewController.h */,
 				9B4085252636AFD500916FA7 /* LFSettingAboutMeViewController.m */,
+				9B40852D2636E60E00916FA7 /* LFSettingFeedbackViewController.h */,
+				9B40852E2636E60E00916FA7 /* LFSettingFeedbackViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -801,6 +806,7 @@
 				9BC1904225E9E75D00DE1FD1 /* LFSettingViewController.m in Sources */,
 				9BBD32662572A2C500FDA7CC /* AppDelegate.m in Sources */,
 				9B4085082630446400916FA7 /* LFSettingSectionModel.m in Sources */,
+				9B40852F2636E60E00916FA7 /* LFSettingFeedbackViewController.m in Sources */,
 				9BA8DA64260610B100CC9504 /* LFDiaryDetailHeaderView.m in Sources */,
 				9BBD37A82577B8F800FDA7CC /* LFUser.m in Sources */,
 				9BBD37AE2577BC7E00FDA7CC /* LFRegisterViewController.m in Sources */,
@@ -950,6 +956,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwh.life;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -969,6 +976,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lwh.life;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
