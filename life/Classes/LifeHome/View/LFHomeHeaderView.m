@@ -33,7 +33,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         [self setupSubViews];
-        [self setupLayoutConstrain];
+        [self setupLayoutConstraint];
     }
     return self;
 }
@@ -55,7 +55,7 @@
     [self addSubview:self.todaySentenceTip];
 }
 
-- (void)setupLayoutConstrain {
+- (void)setupLayoutConstraint {
     [self.dayLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.mas_centerX);
         make.top.equalTo(self);

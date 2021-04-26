@@ -30,7 +30,7 @@
 - (instancetype)initWithDate:(NSDate *)date {
     if (self = [super init]) {
         [self setupSubViews];
-        [self setupLayoutConstrain];
+        [self setupLayoutConstraint];
         self.date = date;
     }
     return self;
@@ -126,7 +126,7 @@
     [self.contentView addSubview:self.verticalLine3];
 }
 
-- (void)setupLayoutConstrain {
+- (void)setupLayoutConstraint {
     [self.dayLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.mas_top).offset(20);
         make.left.equalTo(self.mas_left).offset(36);

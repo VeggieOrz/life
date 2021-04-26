@@ -27,7 +27,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         [self setupSubViews];
-        [self setupLayoutConstrain];
+        [self setupLayoutConstraint];
     }
     return self;
 }
@@ -74,7 +74,7 @@
     [self addSubview:self.doneButton];
 }
 
-- (void)setupLayoutConstrain {
+- (void)setupLayoutConstraint {
     [self.topLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
         make.top.equalTo(self);

@@ -45,7 +45,7 @@ const CGFloat kToolBarHeight = 44.0f;
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupNavigationBar];
     [self setupSubViews];
-    [self setupLayoutConstrain];
+    [self setupLayoutConstraint];
     [self registerForKeyBoardNotification];
 }
 
@@ -221,7 +221,7 @@ const CGFloat kToolBarHeight = 44.0f;
     [self.view addSubview:self.toolBar];
 }
 
-- (void)setupLayoutConstrain {
+- (void)setupLayoutConstraint {
     [self.titleTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left).offset(kLRPadding);
         make.right.equalTo(self.weatherBtn.mas_left).offset(-kLRPadding);

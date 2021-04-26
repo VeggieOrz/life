@@ -23,7 +23,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupNavigationBar];
     [self setupSubViews];
-    [self setupLayoutConstrain];
+    [self setupLayoutConstraint];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -77,7 +77,7 @@
     
 }
 
-- (void)setupLayoutConstrain {
+- (void)setupLayoutConstraint {
     
 }
 

@@ -34,7 +34,7 @@
     if (self = [super initWithFrame:frame]) {
         self.contentView.backgroundColor = [UIColor whiteColor];
         [self setupSubViews];
-        [self setupLayoutConstrain];
+        [self setupLayoutConstraint];
         // 上层的 contentView 设置圆角
         self.contentView.layer.cornerRadius = 10.0f;
         self.contentView.layer.masksToBounds = YES;
@@ -103,7 +103,7 @@
     [self.contentView addSubview:self.contentLabel];
 }
 
-- (void)setupLayoutConstrain {
+- (void)setupLayoutConstraint {
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.contentView);
         make.height.equalTo(@70);

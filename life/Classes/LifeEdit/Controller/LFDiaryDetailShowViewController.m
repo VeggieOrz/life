@@ -37,7 +37,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupNavigationBar];
     [self setupSubViews];
-    [self setupLayoutConstrain];
+    [self setupLayoutConstraint];
     [self _configData];
 }
 
@@ -77,7 +77,7 @@
     [self.scrollContentView addSubview:self.contentLabel];
 }
 
-- (void)setupLayoutConstrain {
+- (void)setupLayoutConstraint {
     [self.scrollContentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.equalTo(self.view);
     }];
