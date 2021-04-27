@@ -19,6 +19,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// 设置页的基类，支持 TableView 的 section 切圆角
 @interface LFSettingTableViewController : UIViewController <LFSettingTableViewControllerDelegate, LFSettingTableViewDelegate>
 
 @property (nonatomic, readwrite, strong) LFSettingTableView *tableView;

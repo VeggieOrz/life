@@ -40,7 +40,6 @@
     item2.title = @"清除缓存";
     
     LFSettingSectionModel *section0 = [[LFSettingSectionModel alloc] initWithItemsArray:@[item0, item1, item2]];
-    section0.sectionHeaderHeight = 20.0f;
     
     // section1
     LFSettingItem *item3 = [LFSettingItem new];
@@ -54,7 +53,6 @@
     item4.title = @"关于Life";
     
     LFSettingSectionModel *section1 = [[LFSettingSectionModel alloc] initWithItemsArray:@[item3, item4]];
-    section1.sectionHeaderHeight = 20.0f;
     
     // section2
     LFSettingItem *logoutItem = [LFSettingItem new];
@@ -64,7 +62,6 @@
 
     
     LFSettingSectionModel *section2 = [[LFSettingSectionModel alloc] initWithItemsArray:@[logoutItem]];
-    section2.sectionHeaderHeight = 20.0f;
     
     return @[section0, section1, section2];
 }

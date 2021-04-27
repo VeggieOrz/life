@@ -9,6 +9,7 @@
 #import "LFSettingItemCell.h"
 #import "LFSettingItem.h"
 #import "LFUIMacro.h"
+#import "UIColor+RGBA.h"
 #import <Masonry/Masonry.h>
 
 const CGFloat kCellPadding = 16.0f;
@@ -110,7 +111,7 @@ const CGFloat kCellPadding = 16.0f;
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = [UIFont fontWithName:@"STKaiti" size:14.0f];
+        _titleLabel.font = [UIFont fontWithName:@"STKaiti" size:16.0f];
         _titleLabel.textColor = [UIColor blackColor];
     }
     return _titleLabel;
@@ -135,8 +136,8 @@ const CGFloat kCellPadding = 16.0f;
 - (UIButton *)centerButton {
     if (!_centerButton) {
         _centerButton = [[UIButton alloc] init];
-        _centerButton.backgroundColor = [UIColor redColor];
-        _centerButton.titleLabel.font = [UIFont fontWithName:@"STKaiti" size:14.0f];
+        _centerButton.backgroundColor = [UIColor colorWithRGB:0x0 alpha:0.1f];
+        _centerButton.titleLabel.font = [UIFont fontWithName:@"STKaiti" size:16.0f];
         [_centerButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _centerButton.layer.cornerRadius = 12.0f;
     }

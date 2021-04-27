@@ -8,7 +8,7 @@
 
 #import "LFSettingItem.h"
 
-const CGFloat kSettingCellDefautHeight = 46.0f;
+const CGFloat kSettingCellDefautHeight = 50.0f;
 
 @implementation LFSettingItem
 
