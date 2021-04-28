@@ -27,6 +27,21 @@
     return self;
 }
 
+- (instancetype)initWithNum:(NSString *)num unit:(NSString *)unit text:(NSString *)text {
+    if (self = [self init]) {
+        self.numLabel.text = num;
+        self.unitLabel.text = unit;
+        self.textLabel.text = text;
+    }
+    return self;
+}
+
+#pragma mark - Public Method
+
+- (void)updateWithNum:(NSString *)num {
+    self.numLabel.text = num;
+}
+
 #pragma mark - UI About
 
 - (void)setupSubViews {

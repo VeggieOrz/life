@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LFProfileDataShowView : UIView
 
+- (instancetype)initWithNum:(NSString *)num unit:(NSString *)unit text:(NSString *)text;
+
+- (void)updateWithNum:(NSString *)num;
+
 @end
 
 NS_ASSUME_NONNULL_END
