@@ -13,6 +13,10 @@
 
 @property (nonatomic, assign) uint64_t uid;
 @property (nonatomic, copy) NSString *nickName;
+@property (nonatomic, copy) NSString *email;
 @property (nonatomic, copy) NSString *phoneNumber;
+@property (nonatomic, copy) NSString *password;
+
++ (LFUser *)currentUser;
 
 @end

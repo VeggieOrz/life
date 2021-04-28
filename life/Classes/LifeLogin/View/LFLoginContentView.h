@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LFLoginContentView : UIView
 
+@property (nonatomic, copy, readonly) NSString *email;
+@property (nonatomic, copy, readonly) NSString *password;
+
 @property (nonatomic, readonly) UIButton *loginBtn;
 @property (nonatomic, readonly) UIButton *registerBtn;
 @property (nonatomic, readonly) UIButton *forgetBtn;

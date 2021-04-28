@@ -10,6 +10,11 @@
 #import "LFLoginContentView.h"
 #import "LFRegisterContentView.h"
 #import "LFTabBarController.h"
+#import "LFProgressHUD.h"
+#import "UIView+frame.h"
+
+#import "LFUser.h"
+#import "LFUser+KSCurrent.h"
 
 @interface LFLoginViewController ()
 // 登陆页 UI
@@ -25,8 +30,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self setupSubViews];
     [self setupButtonAction];
+    [self registerForKeyBoardNotification];
+}
+
+- (void)dealloc {
+    // 移除观察者
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Notification
+
+- (void)registerForKeyBoardNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    NSLog(@"[LFDiaryEditViewController]:%s %@", __func__, notification.userInfo);
+    NSDictionary *userInfo = notification.userInfo;
+    CGSize size = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    NSTimeInterval duration = [[userInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    
+    // TODO: 这里的 100 只是临时处理
+    [UIView animateWithDuration:duration animations:^{
+        if (self.isLoginPage) {
+            self.loginContentView.y = -100;
+        } else {
+            self.registerContentView.y = -100;
+        }
+    }];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    NSLog(@"[LFDiaryEditViewController]: %s %@", __func__, notification.userInfo);
+    NSDictionary *userInfo = notification.userInfo;
+    NSTimeInterval duration = [[userInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    
+    [UIView animateWithDuration:duration animations:^{
+        if (self.isLoginPage) {
+            self.loginContentView.frame = self.view.bounds;
+        } else {
+            self.registerContentView.frame = self.view.bounds;
+        }
+    }];
 }
 
 #pragma mark - Action Method
@@ -41,14 +90,34 @@
 
 - (void)didTaploginBtn:(id)sender {
     // 验证输入格式
-    
-    // 发起登陆请求
-    
-    // 跳转到主页
-    LFTabBarController *tabBarController = [[LFTabBarController alloc] init];
-    [self dismissViewControllerAnimated:YES completion:^{
-        [UIApplication sharedApplication].keyWindow.rootViewController = tabBarController;
-    }];
+    NSString *email = self.loginContentView.email;
+    NSString *password = self.loginContentView.password;
+    if (!([[LFUser currentUser].email isEqual:email] && [[LFUser currentUser].password isEqual:password])) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"密码错误"
+                                                                       message:@"请确认邮箱和密码是否正确"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * _Nonnull action) {
+            //响应事件
+            NSLog(@"action = %@", action);
+        }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        // 发起登陆请求
+        // 模仿网络请求
+        [LFProgressHUD showHUDAddedTo:self.view animated:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [LFProgressHUD hideHUDForView:self.view animated:YES];
+            // 跳转到主页
+            LFTabBarController *tabBarController = [[LFTabBarController alloc] init];
+            [self dismissViewControllerAnimated:YES completion:^{
+                [UIApplication sharedApplication].keyWindow.rootViewController = tabBarController;
+            }];
+        });
+    }
 }
 
 - (void)didTapToRegisterPageBtn:(id)sender {
@@ -67,9 +136,18 @@
 
 - (void)didTapRegisterBtn:(id)sender {
     // 检查输入格式
+    LFUser *user = [LFUser new];
+    user.email = self.registerContentView.email;
+    user.nickName = self.registerContentView.nickName;
+    user.password = self.registerContentView.password;
     
     // 发送注册请求
-    
+    [LFProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [LFUser setCurrentUser:user];
+        [LFProgressHUD hideHUDForView:self.view animated:YES];
+        [self performSelector:@selector(didTapCloseBtn:) withObject:nil];
+    });
 }
 
 - (void)didTapCloseBtn:(id)sender {

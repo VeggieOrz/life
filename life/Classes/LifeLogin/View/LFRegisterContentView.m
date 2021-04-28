@@ -46,6 +46,18 @@ CGFloat const kLFRegisterElementTBPadding = 20.0f;  // 控件之间的距离
     [self.passwordEditView dismissKeyBoard];
 }
 
+- (NSString *)nickName {
+    return self.nickNameEditView.inputField.text;
+}
+
+- (NSString *)email {
+    return self.emailEditView.inputField.text;
+}
+
+- (NSString *)password {
+    return self.passwordEditView.inputField.text;
+}
+
 #pragma mark - UI About
 
 - (void)setupUI {

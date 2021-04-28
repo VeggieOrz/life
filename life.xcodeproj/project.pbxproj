@@ -27,6 +27,8 @@
 		9B40852F2636E60E00916FA7 /* LFSettingFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B40852E2636E60E00916FA7 /* LFSettingFeedbackViewController.m */; };
 		9B4085372638552D00916FA7 /* LFProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4085362638552C00916FA7 /* LFProfileHeaderView.m */; };
 		9B40853C263870BC00916FA7 /* LFProfileDataShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B40853B263870BC00916FA7 /* LFProfileDataShowView.m */; };
+		9B40854026392CED00916FA7 /* LFProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B40853F26392CEC00916FA7 /* LFProgressHUD.m */; };
+		9B408CBF2639434A00916FA7 /* LFUser+KSCurrent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B408CBE2639434900916FA7 /* LFUser+KSCurrent.m */; };
 		9B4BCF4025F21A92008D4D1D /* LFAlertBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF3F25F21A91008D4D1D /* LFAlertBackgroundView.m */; };
 		9B4BCF5025FB5A86008D4D1D /* LFHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF4F25FB5A86008D4D1D /* LFHomeHeaderView.m */; };
 		9B4BCF5C25FC5D55008D4D1D /* STKaiti.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 9B4BCF5525FC5BF6008D4D1D /* STKaiti.ttf */; };
@@ -47,7 +49,6 @@
 		9BBD327A2572A2C600FDA7CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD32792572A2C600FDA7CC /* main.m */; };
 		9BBD37A82577B8F800FDA7CC /* LFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37A72577B8F800FDA7CC /* LFUser.m */; };
 		9BBD37AB2577BBF800FDA7CC /* LFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37AA2577BBF800FDA7CC /* LFLoginViewController.m */; };
-		9BBD37AE2577BC7E00FDA7CC /* LFRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37AD2577BC7E00FDA7CC /* LFRegisterViewController.m */; };
 		9BBD37B12577F37E00FDA7CC /* LFLoginContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37B02577F37E00FDA7CC /* LFLoginContentView.m */; };
 		9BBD37B42578775200FDA7CC /* LFTextEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37B32578775200FDA7CC /* LFTextEditView.m */; };
 		9BBD37B92578AFC300FDA7CC /* UIColor+RGBA.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD37B82578AFC300FDA7CC /* UIColor+RGBA.m */; };
@@ -109,6 +110,10 @@
 		9B4085362638552C00916FA7 /* LFProfileHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFProfileHeaderView.m; sourceTree = "<group>"; };
 		9B40853A263870BC00916FA7 /* LFProfileDataShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFProfileDataShowView.h; sourceTree = "<group>"; };
 		9B40853B263870BC00916FA7 /* LFProfileDataShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFProfileDataShowView.m; sourceTree = "<group>"; };
+		9B40853E26392CEC00916FA7 /* LFProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFProgressHUD.h; sourceTree = "<group>"; };
+		9B40853F26392CEC00916FA7 /* LFProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFProgressHUD.m; sourceTree = "<group>"; };
+		9B408CBD2639434900916FA7 /* LFUser+KSCurrent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LFUser+KSCurrent.h"; sourceTree = "<group>"; };
+		9B408CBE2639434900916FA7 /* LFUser+KSCurrent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LFUser+KSCurrent.m"; sourceTree = "<group>"; };
 		9B4BCF3E25F21A91008D4D1D /* LFAlertBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFAlertBackgroundView.h; sourceTree = "<group>"; };
 		9B4BCF3F25F21A91008D4D1D /* LFAlertBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFAlertBackgroundView.m; sourceTree = "<group>"; };
 		9B4BCF4E25FB5A86008D4D1D /* LFHomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFHomeHeaderView.h; sourceTree = "<group>"; };
@@ -146,8 +151,6 @@
 		9BBD37A72577B8F800FDA7CC /* LFUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFUser.m; sourceTree = "<group>"; };
 		9BBD37A92577BBF800FDA7CC /* LFLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFLoginViewController.h; sourceTree = "<group>"; };
 		9BBD37AA2577BBF800FDA7CC /* LFLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFLoginViewController.m; sourceTree = "<group>"; };
-		9BBD37AC2577BC7E00FDA7CC /* LFRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFRegisterViewController.h; sourceTree = "<group>"; };
-		9BBD37AD2577BC7E00FDA7CC /* LFRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFRegisterViewController.m; sourceTree = "<group>"; };
 		9BBD37AF2577F37E00FDA7CC /* LFLoginContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFLoginContentView.h; sourceTree = "<group>"; };
 		9BBD37B02577F37E00FDA7CC /* LFLoginContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFLoginContentView.m; sourceTree = "<group>"; };
 		9BBD37B22578775200FDA7CC /* LFTextEditView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTextEditView.h; sourceTree = "<group>"; };
@@ -381,6 +384,8 @@
 				9BEF945F260591B00057B1E4 /* LFTabBarController.m */,
 				9B85AD17260C25A90008CAA6 /* LFNavigationController.h */,
 				9B85AD18260C25A90008CAA6 /* LFNavigationController.m */,
+				9B40853E26392CEC00916FA7 /* LFProgressHUD.h */,
+				9B40853F26392CEC00916FA7 /* LFProgressHUD.m */,
 			);
 			path = LifeUICommon;
 			sourceTree = "<group>";
@@ -509,8 +514,6 @@
 			children = (
 				9BBD37A92577BBF800FDA7CC /* LFLoginViewController.h */,
 				9BBD37AA2577BBF800FDA7CC /* LFLoginViewController.m */,
-				9BBD37AC2577BC7E00FDA7CC /* LFRegisterViewController.h */,
-				9BBD37AD2577BC7E00FDA7CC /* LFRegisterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -520,6 +523,8 @@
 			children = (
 				9BBD37A62577B8F800FDA7CC /* LFUser.h */,
 				9BBD37A72577B8F800FDA7CC /* LFUser.m */,
+				9B408CBD2639434900916FA7 /* LFUser+KSCurrent.h */,
+				9B408CBE2639434900916FA7 /* LFUser+KSCurrent.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -810,6 +815,7 @@
 				9B40853C263870BC00916FA7 /* LFProfileDataShowView.m in Sources */,
 				9BC1904625EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.m in Sources */,
 				9BC188BB25E106AF00DE1FD1 /* UICollectionReusableView+Smart.m in Sources */,
+				9B40854026392CED00916FA7 /* LFProgressHUD.m in Sources */,
 				9BBD37B42578775200FDA7CC /* LFTextEditView.m in Sources */,
 				9BC1905325ED1DBA00DE1FD1 /* LFWeatherCell.m in Sources */,
 				9BC1813925E1014200DE1FD1 /* UICollectionView+Smart.m in Sources */,
@@ -829,10 +835,10 @@
 				9B40852F2636E60E00916FA7 /* LFSettingFeedbackViewController.m in Sources */,
 				9BA8DA64260610B100CC9504 /* LFDiaryDetailHeaderView.m in Sources */,
 				9BBD37A82577B8F800FDA7CC /* LFUser.m in Sources */,
-				9BBD37AE2577BC7E00FDA7CC /* LFRegisterViewController.m in Sources */,
 				9BCF8B6C2601F375008855CB /* LFKeyBoardToolBar.m in Sources */,
 				9B4085042630442C00916FA7 /* LFSettingItem.m in Sources */,
 				9B85AD2C260D757C0008CAA6 /* UIWindow+FlexSetting.m in Sources */,
+				9B408CBF2639434A00916FA7 /* LFUser+KSCurrent.m in Sources */,
 				9B85AD19260C25A90008CAA6 /* LFNavigationController.m in Sources */,
 				9B4BCF5025FB5A86008D4D1D /* LFHomeHeaderView.m in Sources */,
 				9BC1811C25DCD79100DE1FD1 /* LFDiary.m in Sources */,

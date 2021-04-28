@@ -65,7 +65,7 @@ const CGFloat kToolBarHeight = 44.0f;
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification {
-    NSLog(@"%s %@", __func__, notification.userInfo);
+    NSLog(@"[LFDiaryEditViewController]:%s %@", __func__, notification.userInfo);
     NSDictionary *userInfo = notification.userInfo;
     CGSize size = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     NSTimeInterval duration = [[userInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
@@ -84,7 +84,7 @@ const CGFloat kToolBarHeight = 44.0f;
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
-    NSLog(@"%s %@", __func__, notification.userInfo);
+    NSLog(@"[LFDiaryEditViewController]: %s %@", __func__, notification.userInfo);
     NSDictionary *userInfo = notification.userInfo;
     NSTimeInterval duration = [[userInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
