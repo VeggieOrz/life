@@ -49,6 +49,10 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)didTapMoreButton:(id)sender {
+    
+}
+
 #pragma mark - Private Method
 
 - (void)_configData {
@@ -68,6 +72,15 @@
     [backButton addTarget:self action:@selector(didTapBackButton:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     self.navigationItem.leftBarButtonItem = leftItem;
+    
+    // 设置右边的更多按钮
+    UIButton *moreButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    moreButton.imageEdgeInsets = UIEdgeInsetsMake(10, 26, 10, 0);
+    UIImage *finishImage = [UIImage imageNamed:@"home_gengduo"];
+    [moreButton setImage:[finishImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [moreButton addTarget:self action:@selector(didTapMoreButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:moreButton];
+    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
 - (void)setupSubViews {

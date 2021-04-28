@@ -200,7 +200,7 @@ const CGFloat kToolBarHeight = 44.0f;
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     self.navigationItem.leftBarButtonItem = leftItem;
     
-    // 设置右边的返回按钮
+    // 设置右边的完成按钮
     UIButton *finishButton = [UIButton buttonWithType:UIButtonTypeSystem];
     finishButton.imageEdgeInsets = UIEdgeInsetsMake(10, 26, 10, 0);
     UIImage *finishImage = [UIImage imageNamed:@"home_finish"];
