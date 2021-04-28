@@ -10,6 +10,7 @@
 #import "LFWeatherCell.h"
 #import "UICollectionView+Smart.h"
 #import "LFUIMacro.h"
+#import "UIColor+RGBA.h"
 #import <Masonry/Masonry.h>
 
 const NSInteger kWeatherCellCount = 12;
@@ -141,8 +142,8 @@ const CGFloat kOkButtonHeight = 38.0f;
 - (UIButton *)okButton {
     if (!_okButton) {
         _okButton = [[UIButton alloc] init];
-        _okButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        [_okButton setBackgroundColor:[UIColor greenColor]];
+        _okButton.titleLabel.font = [UIFont fontWithName:@"STKaiti" size:14];
+        [_okButton setBackgroundColor:[UIColor colorWithRGB:0x8bd9d9]];
         [_okButton setTitle:@"确定" forState:UIControlStateNormal];
         [_okButton addTarget:self action:@selector(didTapOkButton:) forControlEvents:UIControlEventTouchUpInside];
         _okButton.layer.cornerRadius = kOkButtonHeight / 2;

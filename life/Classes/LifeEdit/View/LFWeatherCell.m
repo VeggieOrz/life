@@ -8,6 +8,7 @@
 
 #import "LFWeatherCell.h"
 #import "UIView+frame.h"
+#import "UIColor+RGBA.h"
 #import <Masonry/Masonry.h>
 
 @interface LFWeatherCell ()
@@ -68,7 +69,7 @@
         UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:frame cornerRadius:8.0f];
         _borderLayer.path = path.CGPath;
         _borderLayer.fillColor = [UIColor clearColor].CGColor;
-        _borderLayer.strokeColor = [UIColor blueColor].CGColor;
+        _borderLayer.strokeColor = [UIColor colorWithRGB:0x8bd9d9].CGColor;
         _borderLayer.hidden = YES;
     }
     return _borderLayer;
