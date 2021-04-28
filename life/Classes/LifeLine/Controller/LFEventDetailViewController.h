@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class LFEvenModel;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LFEventDetailViewController : UIViewController
+
+@property (nonatomic, strong) LFEvenModel *eventModel;
 
 @end
 

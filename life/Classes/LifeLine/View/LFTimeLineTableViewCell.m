@@ -12,6 +12,7 @@
 #import "LFBubbleView.h"
 #import "LFEvenModel.h"
 #import "UIView+frame.h"
+#import "UIColor+RGBA.h"
 #import "NSDate+Easy.h"
 
 const CGFloat kLineLeftPadding = 67.0f;
@@ -41,7 +42,7 @@ const CGFloat kContentUDPadding = 5.0f;
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.contentView.backgroundColor = [UIColor grayColor];
+        self.contentView.backgroundColor = [UIColor colorWithRGB:0xf5f6f7];
         [self setupSubViews];
     }
     return self;
@@ -56,11 +57,11 @@ const CGFloat kContentUDPadding = 5.0f;
 #pragma mark - Private Method
 
 - (NSAttributedString *)_getStringWithDate:(NSDate *)date {
-//    NSString *str = @"04周四\n2021.02";
-    NSString *str = [NSString stringWithFormat:@"%02d%@\n%d.%02d", (int)date.lf_day, date.lf_weekdayString, (int)date.lf_year, (int)date.lf_month];
+    NSString *str = @"04周四\n2021.02";
+//    NSString *str = [NSString stringWithFormat:@"%02d%@\n%d.%02d", (int)date.lf_day, date.lf_weekdayString, (int)date.lf_year, (int)date.lf_month];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:str];
-    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16.0f] range:NSMakeRange(0, 2)];
-    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12.0f] range:NSMakeRange(2, str.length - 2)];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16.0f weight:UIFontWeightMedium] range:NSMakeRange(0, 2)];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"STKaiti" size:12.0f] range:NSMakeRange(2, str.length - 2)];
     return attributedString;
 }
 
@@ -83,6 +84,7 @@ const CGFloat kContentUDPadding = 5.0f;
         CGRect frame = CGRectMake(8, 16, 47, 40);
         _dateLabel = [[UILabel alloc] initWithFrame:frame];
         _dateLabel.numberOfLines = 0;
+//        _dateLabel.text = @"??";
     }
     return _dateLabel;
 }
