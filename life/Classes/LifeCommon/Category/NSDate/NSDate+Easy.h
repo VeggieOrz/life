@@ -27,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 获取中文星期字符串（星期一、星期二……）
 @property (nullable, nonatomic, readonly, copy) NSString *lf_weekdayString_CN;
 
+// 获取英文星期字符串（Mon、Tues……）
+@property (nullable, nonatomic, readonly, copy) NSString *lf_weekdayString_EN;
+
 // 获取中文年份字符串（二零二零年、二零二一年……）
 @property (nullable, nonatomic, readonly, copy) NSString *lf_yearString_CN;
 

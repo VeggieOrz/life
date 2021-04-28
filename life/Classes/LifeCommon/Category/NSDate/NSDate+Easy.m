@@ -109,6 +109,12 @@ static const NSCalendarUnit unitFlags = (NSCalendarUnitYear | NSCalendarUnitMont
     return weeks[self.lf_weekday - 1];
 }
 
+- (NSString *)lf_weekdayString_EN {
+    //Tues.；星期三 Wed.；星期四 Thur.；星期五 Fri.；星期六 Sat.；星期日 Sun.
+    NSArray *weeks = @[@"Sun", @"Mon", @"Tues", @"Wed", @"Thur", @"Fri", @"Sat"];
+    return weeks[self.lf_weekday - 1];
+}
+
 
 - (NSString *)lf_yearString_CN {
     NSInteger year = self.lf_year;
