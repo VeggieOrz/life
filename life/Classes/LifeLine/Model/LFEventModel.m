@@ -1,13 +1,13 @@
 //
-//  LFEvenModel.m
+//  LFEventModel.m
 //  life
 //
 //  Created by liuweihong on 2021/3/22.
 //  Copyright © 2021 veggie. All rights reserved.
 //
 
-#import "LFEvenModel.h"
+#import "LFEventModel.h"
 
-@implementation LFEvenModel
+@implementation LFEventModel
 
 @end

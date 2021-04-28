@@ -10,7 +10,7 @@
 #import "LFTimeLineViewController.h"
 #import "LFUIMacro.h"
 #import "LFBubbleView.h"
-#import "LFEvenModel.h"
+#import "LFEventModel.h"
 #import "UIView+frame.h"
 #import "UIColor+RGBA.h"
 #import "NSDate+Easy.h"
@@ -33,8 +33,8 @@ const CGFloat kContentUDPadding = 5.0f;
 @property (nonatomic, strong) LFBubbleView *bubbleView;
 // 内容标签
 @property (nonatomic, strong) UILabel *contentLabel;
-// 日记图片
-//@property (nonatomic, strong) UIImageView *contentImageView;
+// 过去的时间
+@property (nonatomic, strong) UILabel *passTimeLabel;
 
 @end
 
@@ -50,8 +50,9 @@ const CGFloat kContentUDPadding = 5.0f;
 
 #pragma mark - Public Method
 
-- (void)configWithModel:(LFEvenModel *)model {
-    self.dateLabel.attributedText = [self _getStringWithDate:model.evenDate];
+- (void)configWithModel:(LFEventModel *)model {
+    self.dateLabel.attributedText = [self _getStringWithDate:model.eventDate];
+    
 }
 
 #pragma mark - Private Method
@@ -74,7 +75,6 @@ const CGFloat kContentUDPadding = 5.0f;
     [self.contentView addSubview:self.verticalLine2];
     [self.contentView addSubview:self.bubbleView];
     [self.bubbleView addSubview:self.contentLabel];
-//    [self.contentView addSubview:self.contentImageView];
 }
 
 #pragma mark - Getter Method
@@ -142,12 +142,5 @@ const CGFloat kContentUDPadding = 5.0f;
     }
     return _contentLabel;
 }
-
-//- (UIImageView *)contentImageView {
-//    if (!_contentImageView) {
-//
-//    }
-//    return _contentImageView;
-//}
 
 @end

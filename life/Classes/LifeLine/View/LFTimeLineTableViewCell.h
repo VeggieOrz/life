@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class LFEvenModel;
+@class LFEventModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LFTimeLineTableViewCell : UITableViewCell
 
-- (void)configWithModel:(LFEvenModel *)model;
+- (void)configWithModel:(LFEventModel *)model;
 
 @end
 
