@@ -37,7 +37,11 @@
 
 #pragma mark - Action Method
 
-- (void)didTapEditButton:(id)sender {
+- (void)didTapMessageButton:(id)sender {
+    
+}
+
+- (void)didTapSettingButton:(id)sender {
     LFSettingViewController *settingVC = [LFSettingViewController new];
     [self.navigationController pushViewController:settingVC animated:YES];
 }
@@ -48,12 +52,22 @@
     // 设置导航栏颜色
     UIImage *backgroundImage = [UIImage lf_imageWithColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
+    
+    // 设置左边的提醒
+    UIButton *messageButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    messageButton.imageEdgeInsets = UIEdgeInsetsMake(10, 0, 10, 26);
+    UIImage *backImage = [UIImage imageNamed:@"profile_tixing"];
+    [messageButton setImage:[backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [messageButton addTarget:self action:@selector(didTapMessageButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:messageButton];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    
     // 设置右边按钮
     UIButton *settingButton = [UIButton buttonWithType:UIButtonTypeSystem];
     settingButton.imageEdgeInsets = UIEdgeInsetsMake(8, 22, 8, 0);
     UIImage *image = [UIImage imageNamed:@"profile_setting"];
     [settingButton setImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-    [settingButton addTarget:self action:@selector(didTapEditButton:) forControlEvents:UIControlEventTouchUpInside];
+    [settingButton addTarget:self action:@selector(didTapSettingButton:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
     self.navigationItem.rightBarButtonItem = rightItem;
 }
