@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BD7B48426A8266100EFE17C /* LFEventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD7B48326A8266100EFE17C /* LFEventModel.m */; };
 		96A88E3CFBFB053CAE4590B7 /* Pods_life.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E688FAE9198C1219CB4311 /* Pods_life.framework */; };
 		9B104478257A8B1C008728CF /* LFRegisterContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B104477257A8B1C008728CF /* LFRegisterContentView.m */; };
 		9B10447B257B217E008728CF /* LFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B10447A257B217E008728CF /* LFHomeViewController.m */; };
@@ -38,7 +39,6 @@
 		9B85AD2C260D757C0008CAA6 /* UIWindow+FlexSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B85AD2B260D757C0008CAA6 /* UIWindow+FlexSetting.m */; };
 		9B85AD32260D7D5F0008CAA6 /* LFUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B85AD31260D7D5F0008CAA6 /* LFUserProfileViewController.m */; };
 		9BA8DA64260610B100CC9504 /* LFDiaryDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8DA63260610B100CC9504 /* LFDiaryDetailHeaderView.m */; };
-		9BA8DA682608836500CC9504 /* LFEvenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8DA672608836500CC9504 /* LFEvenModel.m */; };
 		9BA8E1E6260893B800CC9504 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8E1E5260893B800CC9504 /* UIImage+Color.m */; };
 		9BA8EF5425D8DCBF0086A1CD /* LFTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8EF5325D8DCBF0086A1CD /* LFTimeLineViewController.m */; };
 		9BA8EF5825D8DD820086A1CD /* LFTimeLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8EF5725D8DD820086A1CD /* LFTimeLineTableViewCell.m */; };
@@ -72,6 +72,8 @@
 
 /* Begin PBXFileReference section */
 		01CFFBFD9884916CF7AEFC6B /* Pods-life.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-life.release.xcconfig"; path = "Target Support Files/Pods-life/Pods-life.release.xcconfig"; sourceTree = "<group>"; };
+		2BD7B48226A8266100EFE17C /* LFEventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFEventModel.h; sourceTree = "<group>"; };
+		2BD7B48326A8266100EFE17C /* LFEventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFEventModel.m; sourceTree = "<group>"; };
 		9B104476257A8B1C008728CF /* LFRegisterContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFRegisterContentView.h; sourceTree = "<group>"; };
 		9B104477257A8B1C008728CF /* LFRegisterContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFRegisterContentView.m; sourceTree = "<group>"; };
 		9B104479257B217E008728CF /* LFHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFHomeViewController.h; sourceTree = "<group>"; };
@@ -129,8 +131,6 @@
 		9B85AD31260D7D5F0008CAA6 /* LFUserProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFUserProfileViewController.m; sourceTree = "<group>"; };
 		9BA8DA62260610B100CC9504 /* LFDiaryDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDiaryDetailHeaderView.h; sourceTree = "<group>"; };
 		9BA8DA63260610B100CC9504 /* LFDiaryDetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDiaryDetailHeaderView.m; sourceTree = "<group>"; };
-		9BA8DA662608836500CC9504 /* LFEvenModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFEvenModel.h; sourceTree = "<group>"; };
-		9BA8DA672608836500CC9504 /* LFEvenModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFEvenModel.m; sourceTree = "<group>"; };
 		9BA8E1E4260893B800CC9504 /* UIImage+Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		9BA8E1E5260893B800CC9504 /* UIImage+Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		9BA8EF5225D8DCBF0086A1CD /* LFTimeLineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTimeLineViewController.h; sourceTree = "<group>"; };
@@ -569,8 +569,8 @@
 		9BBD37A22577AB2300FDA7CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9BA8DA662608836500CC9504 /* LFEvenModel.h */,
-				9BA8DA672608836500CC9504 /* LFEvenModel.m */,
+				2BD7B48226A8266100EFE17C /* LFEventModel.h */,
+				2BD7B48326A8266100EFE17C /* LFEventModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -811,7 +811,7 @@
 				9BC180FA25D92C0700DE1FD1 /* LFBubbleView.m in Sources */,
 				9B4084F8263039DB00916FA7 /* LFSettingTableView.m in Sources */,
 				9B104478257A8B1C008728CF /* LFRegisterContentView.m in Sources */,
-				9BA8DA682608836500CC9504 /* LFEvenModel.m in Sources */,
+				2BD7B48426A8266100EFE17C /* LFEventModel.m in Sources */,
 				9B40853C263870BC00916FA7 /* LFProfileDataShowView.m in Sources */,
 				9BC1904625EAAD1900DE1FD1 /* LFDiaryDetailShowViewController.m in Sources */,
 				9BC188BB25E106AF00DE1FD1 /* UICollectionReusableView+Smart.m in Sources */,

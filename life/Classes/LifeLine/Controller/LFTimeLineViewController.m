@@ -9,7 +9,7 @@
 #import "LFTimeLineViewController.h"
 #import "LFTimeLineTableViewCell.h"
 #import "LFEventDetailViewController.h"
-#import "LFEvenModel.h"
+#import "LFEventModel.h"
 #import "UIColor+RGBA.h"
 
 const CGFloat kTimeLineCellHeight = 105;
@@ -38,7 +38,7 @@ const CGFloat kTimeLineCellHeight = 105;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    LFEvenModel *eventModel = [LFEvenModel new];
+    LFEventModel *eventModel = [LFEventModel new];
     LFTimeLineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LFTimeLineTableViewCell"];
     if (cell == nil) {
         cell = [[LFTimeLineTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LFTimeLineTableViewCell"];
@@ -50,8 +50,8 @@ const CGFloat kTimeLineCellHeight = 105;
 #pragma mark - UITabBarDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    LFEvenModel *eventModel = [LFEvenModel new];
-    eventModel.evenDate = [NSDate date];
+    LFEventModel *eventModel = [LFEventModel new];
+    eventModel.eventDate = [NSDate date];
     
     LFEventDetailViewController *eventDetailVC = [LFEventDetailViewController new];
     eventDetailVC.eventModel = eventModel;
